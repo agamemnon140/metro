@@ -15,7 +15,7 @@ import { readFileSync, writeFileSync } from 'node:fs'
 const osm = JSON.parse(readFileSync('scratch/osm.json', 'utf8'))
 const net = JSON.parse(readFileSync('src/data/network.curated.json', 'utf8'))
 
-const TARGET = new Set(['1', '2', '3', '4', '5', '7', '8', '9', '10', '11', '12', '13', '15', '17'])
+const TARGET = new Set(['1', '2', '3', '4', '5', '7', '8', '9', '10', '11', '12', '13', '15'])
 
 // traçado INDICATIVO (não oficial) das linhas em projeto/estudo.
 // {ref} reaproveita uma estação real existente (conexão confirmada pelo metrôCPTM);
@@ -39,21 +39,70 @@ const INDICATIVE = {
     { name: 'Bela Vista', lat: -23.562, lng: -46.642, tier: 3 },
     { ref: 'sao-joaquim' },
   ],
-  // 19-Celeste: Centro de SP <-> Bosque Maia (Guarulhos)
-  '19': [
-    { name: 'Centro (SP)', lat: -23.5475, lng: -46.6395, tier: 1 },
-    { name: 'Tietê', lat: -23.513, lng: -46.625, tier: 3 },
-    { name: 'Ponte da Dutra', lat: -23.485, lng: -46.575, tier: 3 },
-    { name: 'Vila Augusta', lat: -23.468, lng: -46.545, tier: 3 },
-    { name: 'Cerejeiras', lat: -23.458, lng: -46.538, tier: 3 },
-    { name: 'Bosque Maia (Guarulhos)', lat: -23.452, lng: -46.533, tier: 1 },
+  // 17-Ouro: São Paulo-Morumbi <-> Jabaquara-CPB (traçado completo planejado)
+  '17': [
+    { ref: 'sao-paulo-morumbi' },
+    { name: 'Estádio Morumbi', lat: -23.595, lng: -46.715, tier: 3 },
+    { name: 'Américo Maurano', lat: -23.602, lng: -46.722, tier: 3 },
+    { name: 'Paraisópolis', lat: -23.608, lng: -46.725, tier: 3 },
+    { name: 'Panamby', lat: -23.615, lng: -46.722, tier: 3 },
+    { name: 'Morumbi', lat: -23.622, lng: -46.713, tier: 3 },
+    { name: 'Chucri Zaidan', lat: -23.615, lng: -46.7, tier: 3 },
+    { name: 'Vila Cordeiro', lat: -23.62, lng: -46.69, tier: 3 },
+    { ref: 'campo-belo' },
+    { name: 'Vereador José Diniz', lat: -23.62, lng: -46.66, tier: 3 },
+    { name: 'Brooklin Paulista', lat: -23.625, lng: -46.655, tier: 3 },
+    { name: 'Aeroporto de Congonhas', lat: -23.627, lng: -46.65, tier: 1 },
+    { name: 'Washington Luís', lat: -23.63, lng: -46.645, tier: 3 },
+    { name: 'Vila Paulista', lat: -23.635, lng: -46.642, tier: 3 },
+    { name: 'Vila Babilônia', lat: -23.64, lng: -46.638, tier: 3 },
+    { name: 'Cidade Leonor', lat: -23.643, lng: -46.632, tier: 3 },
+    { name: 'Hospital Sabóia', lat: -23.646, lng: -46.628, tier: 3 },
+    { name: 'Jabaquara-CPB', lat: -23.646, lng: -46.62, tier: 1 },
   ],
-  // 20-Rosa: Lapa <-> Santo André (conecta em estações reais)
+  // 19-Celeste: Anhangabaú <-> Bosque Maia (Guarulhos) — estações do projeto
+  '19': [
+    { ref: 'anhangabau' },
+    { ref: 'sao-bento' },
+    { name: 'Cerealistas', lat: -23.538, lng: -46.632, tier: 3 },
+    { name: 'Silva Teles', lat: -23.535, lng: -46.63, tier: 3 },
+    { name: 'Catumbi', lat: -23.53, lng: -46.628, tier: 3 },
+    { name: 'Vila Maria', lat: -23.518, lng: -46.625, tier: 3 },
+    { name: 'Santo Eduardo', lat: -23.518, lng: -46.616, tier: 3 },
+    { name: 'Cerejeiras', lat: -23.513, lng: -46.608, tier: 3 },
+    { name: 'Vila Sabrina', lat: -23.508, lng: -46.6, tier: 3 },
+    { name: 'Jardim Julieta', lat: -23.498, lng: -46.588, tier: 3 },
+    { name: 'Itapegica', lat: -23.488, lng: -46.572, tier: 3 },
+    { name: 'Dutra', lat: -23.482, lng: -46.556, tier: 3 },
+    { name: 'Vila Augusta', lat: -23.468, lng: -46.545, tier: 3 },
+    { name: 'Guarulhos Centro', lat: -23.462, lng: -46.534, tier: 1 },
+    { name: 'Bosque Maia', lat: -23.452, lng: -46.533, tier: 1 },
+  ],
+  // 20-Rosa: Santa Marina <-> Santo André — estações do projeto
   '20': [
+    { ref: 'l6-santa-marina' },
     { ref: 'lapa' },
-    { name: 'Bom Retiro', lat: -23.525, lng: -46.64, tier: 3 },
-    { name: 'Mooca', lat: -23.557, lng: -46.598, tier: 3 },
-    { name: 'São Caetano', lat: -23.623, lng: -46.556, tier: 3 },
+    { name: 'Vila Romana', lat: -23.525, lng: -46.695, tier: 3 },
+    { name: 'Cerro Corá', lat: -23.535, lng: -46.692, tier: 3 },
+    { name: 'Girassol', lat: -23.545, lng: -46.69, tier: 3 },
+    { name: 'Teodoro Sampaio', lat: -23.555, lng: -46.688, tier: 3 },
+    { ref: 'fradique-coutinho' },
+    { name: 'Tabapuã', lat: -23.585, lng: -46.675, tier: 3 },
+    { name: 'Jesuíno Cardoso', lat: -23.595, lng: -46.67, tier: 3 },
+    { name: 'Hélio Pellegrino', lat: -23.6, lng: -46.665, tier: 3 },
+    { ref: 'moema' },
+    { name: 'Rubem Berta', lat: -23.608, lng: -46.645, tier: 3 },
+    { name: 'Indianópolis', lat: -23.612, lng: -46.64, tier: 3 },
+    { ref: 'saude' },
+    { name: 'Abraão de Morais', lat: -23.625, lng: -46.635, tier: 3 },
+    { name: 'Cursino', lat: -23.63, lng: -46.625, tier: 3 },
+    { name: 'Jardim Clímax', lat: -23.638, lng: -46.615, tier: 3 },
+    { name: 'Liviero', lat: -23.645, lng: -46.6, tier: 3 },
+    { name: 'Taboão-Paulicéia', lat: -23.66, lng: -46.58, tier: 3 },
+    { name: 'Rudge Ramos', lat: -23.665, lng: -46.565, tier: 3 },
+    { name: 'Afonsina', lat: -23.665, lng: -46.55, tier: 3 },
+    { name: 'Príncipe de Gales', lat: -23.66, lng: -46.54, tier: 3 },
+    { name: 'Portugal', lat: -23.657, lng: -46.535, tier: 3 },
     { ref: 'santo-andre' },
   ],
   // 22-Marrom: Cotia/Granja Viana <-> Sumaré (Linha 2-Verde)
@@ -188,7 +237,38 @@ const lines = net.lines.map((line) => {
 // estações que precisam de posição esquemática (aparecem em algum stationOrder)
 const needSchem = new Set(lines.flatMap((l) => l.stationOrder))
 
-// ajuste afim geo -> esquemático SÓ para as que faltam (ex.: futuras indicativas)
+// 1) interpola posições faltantes entre estações-âncora (com schematic) ao longo
+//    de cada linha, proporcional à distância geográfica — mantém o traço reto.
+for (const line of lines) {
+  const order = line.stationOrder
+  let i = 0
+  while (i < order.length) {
+    if (stations.get(order[i])?.schematic) { i++; continue }
+    let j = i
+    while (j < order.length && !stations.get(order[j])?.schematic) j++
+    const prev = i > 0 ? stations.get(order[i - 1]) : null
+    const next = j < order.length ? stations.get(order[j]) : null
+    if (prev?.schematic && next?.schematic) {
+      const seq = [prev, ...order.slice(i, j).map((id) => stations.get(id)), next]
+      const seg = []
+      let total = 0
+      for (let k = 1; k < seq.length; k++) { const d = dist(seq[k - 1].geo, seq[k].geo) || 1; seg.push(d); total += d }
+      let acc = 0
+      for (let k = 0; k < j - i; k++) {
+        acc += seg[k]
+        const f = acc / total
+        const st = stations.get(order[i + k])
+        st.schematic = {
+          x: round1(prev.schematic.x + (next.schematic.x - prev.schematic.x) * f),
+          y: round1(prev.schematic.y + (next.schematic.y - prev.schematic.y) * f),
+        }
+      }
+    }
+    i = j
+  }
+}
+
+// 2) ajuste afim geo -> esquemático para o que sobrou (pontas sem âncora dos dois lados)
 const cp = handList.map((s) => ({ lng: s.geo.lng, lat: s.geo.lat, x: s.schematic.x, y: s.schematic.y }))
 const fitX = fit(cp, 'x')
 const fitY = fit(cp, 'y')
