@@ -3,7 +3,17 @@
 // geo (lat/lng reais). A renderização hoje usa schematic; geo serve aos
 // deep-links de mapa e a uma futura visão geográfica — sem mudar o schema.
 
-export type LineStatus = 'operacao' | 'construcao' | 'expansao' | 'planejamento'
+// Maturidade do projeto, da mais consolidada à mais preliminar:
+// operação → expansão (linha opera, trecho novo em obras) → construção →
+// contratação (licitação/contrato) → elaboração (projeto básico, estações já
+// esboçadas) → estudo (estudo funcional/preliminar, traçado indicativo).
+export type LineStatus =
+  | 'operacao'
+  | 'expansao'
+  | 'construcao'
+  | 'contratacao'
+  | 'elaboracao'
+  | 'estudo'
 
 export type Operator =
   | 'metro'

@@ -2,9 +2,11 @@ import {
   TransformWrapper,
   TransformComponent,
 } from 'react-zoom-pan-pinch'
-import { network, drawnLines, drawnStations } from '@/lib/network'
+import { drawnLines, drawnStations } from '@/lib/network'
+import { viewBoxFor } from '@/lib/coords'
 import { useZoom } from '@/hooks/useZoomLevel'
 import { useSelection } from '@/hooks/useSelection'
+import { useViewMode } from '@/hooks/useViewMode'
 import { LinePath } from './LinePath'
 import { StationNode } from './StationNode'
 import { StationLabel } from './StationLabel'
@@ -13,12 +15,14 @@ import { MapControls } from './MapControls'
 export function NetworkMap() {
   const setScale = useZoom((s) => s.setScale)
   const clear = useSelection((s) => s.clear)
+  const mode = useViewMode((s) => s.mode)
   const lines = drawnLines()
   const stations = drawnStations()
-  const { width, height } = network.viewBox
+  const { width, height } = viewBoxFor(mode)
 
   return (
     <TransformWrapper
+      key={mode}
       minScale={0.5}
       maxScale={6}
       initialScale={1}

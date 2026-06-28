@@ -315,12 +315,12 @@
       "textColor": "#1a1a1a",
       "operator": "metro",
       "kind": "metro",
-      "status": "planejamento",
+      "status": "contratacao",
       "drawn": false,
-      "newsQuery": "Linha 19-Celeste Metrô SP planejamento",
+      "newsQuery": "Linha 19-Celeste Metrô SP",
       "stationOrder": [],
       "updates": [
-        { "date": "2026-04-15", "text": "Em planejamento, ligará Campo Belo (SP) ao Bosque Maia (Guarulhos), cruzando a região central." }
+        { "date": "2026-04-15", "text": "Em contratação: ligará Campo Belo (SP) ao Bosque Maia (Guarulhos), cruzando a região central." }
       ]
     },
     {
@@ -331,28 +331,76 @@
       "color": "#e6699f",
       "operator": "metro",
       "kind": "metro",
-      "status": "planejamento",
+      "status": "elaboracao",
       "drawn": false,
-      "newsQuery": "Linha 20-Rosa Metrô SP planejamento",
+      "newsQuery": "Linha 20-Rosa Metrô SP",
       "stationOrder": [],
       "updates": [
-        { "date": "2026-04-15", "text": "Em planejamento, prevista para ligar a Lapa (SP) a Santo André (ABC), atravessando a cidade." }
+        { "date": "2026-04-15", "text": "Em elaboração (projeto básico): prevista para ligar a Lapa (SP) a Santo André (ABC), atravessando a cidade." }
       ]
     },
     {
       "id": "22",
       "number": "22",
-      "name": "Bordô",
-      "fullName": "Linha 22–Bordô",
-      "color": "#7b2233",
+      "name": "Marrom",
+      "fullName": "Linha 22–Marrom",
+      "color": "#7a4a2e",
       "operator": "metro",
       "kind": "metro",
-      "status": "planejamento",
+      "status": "elaboracao",
       "drawn": false,
-      "newsQuery": "Linha 22-Bordô Metrô SP planejamento",
+      "newsQuery": "Linha 22-Marrom Metrô SP",
       "stationOrder": [],
       "updates": [
-        { "date": "2026-04-15", "text": "Em planejamento, prevista para conectar Cotia/Taboão da Serra à região oeste da capital." }
+        { "date": "2026-04-15", "text": "Em elaboração (projeto básico): prevista para conectar Cotia/Taboão da Serra à região oeste da capital." }
+      ]
+    },
+    {
+      "id": "16",
+      "number": "16",
+      "name": "(cor a definir)",
+      "fullName": "Linha 16",
+      "color": "#6f7a8a",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "elaboracao",
+      "drawn": false,
+      "newsQuery": "Linha 16 Metrô SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-04-15", "text": "Em elaboração (projeto básico). Cor e traçado definitivo ainda não oficializados." }
+      ]
+    },
+    {
+      "id": "24",
+      "number": "24",
+      "name": "(em estudo)",
+      "fullName": "Linha 24",
+      "color": "#9aa0a6",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "estudo",
+      "drawn": false,
+      "newsQuery": "Linha 24 Metrô SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-04-15", "text": "Em estudo funcional (preliminar). Traçado e estações ainda não definidos." }
+      ]
+    },
+    {
+      "id": "25",
+      "number": "25",
+      "name": "(em estudo)",
+      "fullName": "Linha 25",
+      "color": "#b0b6bc",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "estudo",
+      "drawn": false,
+      "newsQuery": "Linha 25 Metrô SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-04-15", "text": "Em estudo funcional (preliminar). Traçado e estações ainda não definidos." }
       ]
     }
   ],

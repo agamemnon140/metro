@@ -2,6 +2,7 @@ import type { Station } from '@/types/network'
 import { getLine } from '@/lib/network'
 import { pointFor } from '@/lib/coords'
 import { useSelection } from '@/hooks/useSelection'
+import { useViewMode } from '@/hooks/useViewMode'
 
 interface Props {
   station: Station
@@ -10,7 +11,8 @@ interface Props {
 export function StationNode({ station }: Props) {
   const selectStation = useSelection((s) => s.selectStation)
   const selection = useSelection((s) => s.selection)
-  const p = pointFor(station)
+  const mode = useViewMode((s) => s.mode)
+  const p = pointFor(station, mode)
 
   const isSelected =
     selection?.kind === 'station' && selection.id === station.id

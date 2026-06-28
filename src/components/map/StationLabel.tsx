@@ -1,6 +1,7 @@
 import type { SchematicPoint, Station } from '@/types/network'
 import { pointFor } from '@/lib/coords'
 import { tierForScale, useZoom } from '@/hooks/useZoomLevel'
+import { useViewMode } from '@/hooks/useViewMode'
 
 interface Props {
   station: Station
@@ -15,10 +16,11 @@ function defaultOffset(anchor: 'start' | 'middle' | 'end'): SchematicPoint {
 export function StationLabel({ station }: Props) {
   const scale = useZoom((s) => s.scale)
   const currentTier = tierForScale(scale)
+  const mode = useViewMode((s) => s.mode)
 
   if (station.labelTier > currentTier) return null
 
-  const p = pointFor(station)
+  const p = pointFor(station, mode)
   const anchor = station.labelAnchor ?? 'start'
   const off = station.labelOffset ?? defaultOffset(anchor)
   const x = p.x + off.x
