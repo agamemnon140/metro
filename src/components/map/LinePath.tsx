@@ -10,49 +10,34 @@ interface Props {
   line: Line
 }
 
-// traço por bloco (operando = sólido)
-const DASH: Record<string, string | undefined> = {
-  operando: undefined,
-  construcao: '8 7',
-  estudo: '2 8',
-  especulacao: '1 9',
-}
-
 export function LinePath({ line }: Props) {
   const selectLine = useSelection((s) => s.selectLine)
   const selection = useSelection((s) => s.selection)
   const mode = useViewMode((s) => s.mode)
   const layers = useLayers()
 
-  // Quebra a linha em trechos contínuos visíveis; cada trecho herda o traço do
-  // bloco "menos pronto" das suas pontas. Trechos com estação oculta somem.
+  // Trechos contínuos de estações visíveis (uma polyline por trecho). Estações
+  // ocultas (bloco desligado) quebram o traço; o resto fica sólido e único.
   const runs = useMemo(() => {
     const sts = stationsForLine(line, mode)
     const pt = (s: Station) => {
       const p = pointFor(s, mode)
       return `${p.x},${p.y}`
     }
-    const rank = { operando: 0, construcao: 1, estudo: 2, especulacao: 3 } as const
-    const out: { pts: string[]; dash: string | undefined }[] = []
-    let cur: { pts: string[]; dash: string | undefined } | null = null
-    for (let i = 0; i < sts.length - 1; i++) {
-      const a = sts[i]
-      const b = sts[i + 1]
-      if (!isPhaseVisible(a, layers) || !isPhaseVisible(b, layers)) {
+    const out: string[][] = []
+    let cur: string[] | null = null
+    for (const s of sts) {
+      if (!isPhaseVisible(s, layers)) {
         cur = null
         continue
       }
-      const pa = a.phase ?? 'operando'
-      const pb = b.phase ?? 'operando'
-      const worst = rank[pa] >= rank[pb] ? pa : pb
-      const dash = line.intercity ? '3 9' : DASH[worst]
-      if (cur && cur.dash === dash) cur.pts.push(pt(b))
-      else {
-        cur = { pts: [pt(a), pt(b)], dash }
+      if (!cur) {
+        cur = []
         out.push(cur)
       }
+      cur.push(pt(s))
     }
-    return out.map((r) => ({ points: r.pts.join(' '), dash: r.dash }))
+    return out.filter((r) => r.length >= 2).map((r) => r.join(' '))
   }, [line, mode, layers])
 
   if (!runs.length) return null
@@ -80,10 +65,10 @@ export function LinePath({ line }: Props) {
         }
       }}
     >
-      {runs.map((r, i) => (
+      {runs.map((pts, i) => (
         <polyline
           key={`hit-${i}`}
-          points={r.points}
+          points={pts}
           fill="none"
           stroke="transparent"
           strokeWidth={18}
@@ -91,16 +76,15 @@ export function LinePath({ line }: Props) {
           strokeLinejoin="round"
         />
       ))}
-      {runs.map((r, i) => (
+      {runs.map((pts, i) => (
         <polyline
           key={`l-${i}`}
-          points={r.points}
+          points={pts}
           fill="none"
           stroke={line.color}
           strokeWidth={width}
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeDasharray={r.dash}
           opacity={isSelected ? 1 : 0.95}
         />
       ))}
