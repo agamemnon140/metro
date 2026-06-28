@@ -19,7 +19,12 @@ export function appleMapsUrl(station: Station): string {
   return `https://maps.apple.com/?q=${q}&ll=${lat},${lng}`
 }
 
-/** Busca de notícias recentes sobre uma linha (Google News, pt-BR). */
+/** Página da linha no metrôCPTM — fonte principal de notícias. */
+export function metroCptmLineUrl(number: string): string {
+  return `https://www.metrocptm.com.br/linha-${number}/`
+}
+
+/** Busca de notícias recentes sobre uma linha (Google News, pt-BR) — secundária. */
 export function googleNewsUrl(query: string): string {
   const q = encodeURIComponent(query)
   return `https://news.google.com/search?q=${q}&hl=pt-BR&gl=BR&ceid=BR:pt-419`
