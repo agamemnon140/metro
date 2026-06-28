@@ -1,0 +1,374 @@
+{
+  "version": "0.1.0",
+  "updatedAt": "2026-06-27",
+  "viewBox": { "width": 1200, "height": 960 },
+  "lines": [
+    {
+      "id": "1",
+      "number": "1",
+      "name": "Azul",
+      "fullName": "Linha 1–Azul",
+      "color": "#0455a1",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "operacao",
+      "drawn": true,
+      "newsQuery": "Linha 1-Azul Metrô SP",
+      "stationOrder": [
+        "tucuruvi", "parada-inglesa", "jardim-sao-paulo", "santana", "carandiru",
+        "portuguesa-tiete", "armenia", "tiradentes", "luz", "sao-bento", "se",
+        "liberdade", "sao-joaquim", "vergueiro", "paraiso", "ana-rosa",
+        "vila-mariana", "santa-cruz", "praca-da-arvore", "saude", "sao-judas",
+        "conceicao", "jabaquara"
+      ],
+      "updates": [
+        { "date": "2026-04-10", "text": "Linha totalmente operacional, da Tucuruvi (Zona Norte) ao Jabaquara (Zona Sul), com integração à CPTM na Luz e às Linhas 2, 3 e 4." }
+      ]
+    },
+    {
+      "id": "2",
+      "number": "2",
+      "name": "Verde",
+      "fullName": "Linha 2–Verde",
+      "color": "#007a33",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "expansao",
+      "drawn": true,
+      "newsQuery": "Linha 2-Verde Metrô SP expansão",
+      "stationOrder": [
+        "vila-madalena", "sumare", "clinicas", "consolacao", "trianon-masp",
+        "brigadeiro", "paraiso", "ana-rosa", "chacara-klabin", "santos-imigrantes",
+        "alto-do-ipiranga", "sacoma", "tamanduatei", "vila-prudente"
+      ],
+      "updates": [
+        { "date": "2026-05-20", "text": "Expansão da Vila Prudente até a Penha (integração com a Linha 3-Vermelha) em obras, com novas estações na Zona Leste." },
+        { "date": "2026-02-12", "text": "Trecho atual opera de Vila Madalena a Vila Prudente, com baldeação para as Linhas 1 e 4." }
+      ]
+    },
+    {
+      "id": "3",
+      "number": "3",
+      "name": "Vermelha",
+      "fullName": "Linha 3–Vermelha",
+      "color": "#ee372f",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "operacao",
+      "drawn": true,
+      "newsQuery": "Linha 3-Vermelha Metrô SP",
+      "stationOrder": [
+        "palmeiras-barra-funda", "marechal-deodoro", "santa-cecilia", "republica",
+        "anhangabau", "se", "pedro-ii", "bras", "bresser-mooca", "belem",
+        "tatuape", "carrao", "penha", "vila-matilde", "guilhermina-esperanca",
+        "patriarca", "artur-alvim", "corinthians-itaquera"
+      ],
+      "updates": [
+        { "date": "2026-03-05", "text": "Eixo Leste-Oeste da rede, de Palmeiras-Barra Funda a Corinthians-Itaquera, com grandes baldeações na Sé, Brás e Tatuapé." }
+      ]
+    },
+    {
+      "id": "4",
+      "number": "4",
+      "name": "Amarela",
+      "fullName": "Linha 4–Amarela",
+      "color": "#ffce00",
+      "textColor": "#1a1a1a",
+      "operator": "viaquatro",
+      "kind": "metro",
+      "status": "operacao",
+      "drawn": false,
+      "newsQuery": "Linha 4-Amarela Metrô SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-01-30", "text": "Operada pela ViaQuatro, liga Vila Sônia à Luz, totalmente automática (sem condutor)." }
+      ]
+    },
+    {
+      "id": "5",
+      "number": "5",
+      "name": "Lilás",
+      "fullName": "Linha 5–Lilás",
+      "color": "#944199",
+      "operator": "viamobilidade",
+      "kind": "metro",
+      "status": "operacao",
+      "drawn": false,
+      "newsQuery": "Linha 5-Lilás Metrô SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-01-30", "text": "Operada pela ViaMobilidade, liga Capão Redondo à Chácara Klabin, com integração às Linhas 1 e 2." }
+      ]
+    },
+    {
+      "id": "6",
+      "number": "6",
+      "name": "Laranja",
+      "fullName": "Linha 6–Laranja",
+      "color": "#ef7d00",
+      "operator": "outro",
+      "kind": "metro",
+      "status": "construcao",
+      "drawn": false,
+      "newsQuery": "Linha 6-Laranja Metrô SP obras",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-06-01", "text": "Em construção pela concessionária Linha Uni, ligará Brasilândia (Zona Norte) à Praça da Sé, com 15 estações previstas." },
+        { "date": "2026-03-18", "text": "Tunelamento com tuneladoras (tatuzões) em andamento; primeira fase de operação estimada para os próximos anos." }
+      ]
+    },
+    {
+      "id": "7",
+      "number": "7",
+      "name": "Rubi",
+      "fullName": "Linha 7–Rubi",
+      "color": "#c80d35",
+      "operator": "cptm",
+      "kind": "trem",
+      "status": "operacao",
+      "drawn": false,
+      "newsQuery": "Linha 7-Rubi CPTM SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-01-30", "text": "Linha da CPTM ligando a Luz a Francisco Morato e Jundiaí." }
+      ]
+    },
+    {
+      "id": "8",
+      "number": "8",
+      "name": "Diamante",
+      "fullName": "Linha 8–Diamante",
+      "color": "#7d8083",
+      "operator": "viamobilidade",
+      "kind": "trem",
+      "status": "operacao",
+      "drawn": false,
+      "newsQuery": "Linha 8-Diamante CPTM SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-01-30", "text": "Operada pela ViaMobilidade, liga Júlio Prestes a Itapevi/Amador Bueno." }
+      ]
+    },
+    {
+      "id": "9",
+      "number": "9",
+      "name": "Esmeralda",
+      "fullName": "Linha 9–Esmeralda",
+      "color": "#00a08a",
+      "operator": "viamobilidade",
+      "kind": "trem",
+      "status": "operacao",
+      "drawn": false,
+      "newsQuery": "Linha 9-Esmeralda CPTM SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-01-30", "text": "Operada pela ViaMobilidade ao longo da Marginal Pinheiros, de Osasco a Bruno Covas/Mendes-Vila Natal." }
+      ]
+    },
+    {
+      "id": "10",
+      "number": "10",
+      "name": "Turquesa",
+      "fullName": "Linha 10–Turquesa",
+      "color": "#00a4b7",
+      "operator": "cptm",
+      "kind": "trem",
+      "status": "operacao",
+      "drawn": false,
+      "newsQuery": "Linha 10-Turquesa CPTM SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-01-30", "text": "Linha da CPTM ligando o Brás a Rio Grande da Serra, no ABC paulista." }
+      ]
+    },
+    {
+      "id": "11",
+      "number": "11",
+      "name": "Coral",
+      "fullName": "Linha 11–Coral",
+      "color": "#f04e37",
+      "operator": "cptm",
+      "kind": "trem",
+      "status": "operacao",
+      "drawn": false,
+      "newsQuery": "Linha 11-Coral CPTM SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-01-30", "text": "Linha da CPTM (Expresso Leste) ligando a Luz a Estudantes, em Mogi das Cruzes." }
+      ]
+    },
+    {
+      "id": "12",
+      "number": "12",
+      "name": "Safira",
+      "fullName": "Linha 12–Safira",
+      "color": "#133c8d",
+      "operator": "cptm",
+      "kind": "trem",
+      "status": "operacao",
+      "drawn": false,
+      "newsQuery": "Linha 12-Safira CPTM SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-01-30", "text": "Linha da CPTM ligando o Brás a Calmon Viana, em Poá." }
+      ]
+    },
+    {
+      "id": "13",
+      "number": "13",
+      "name": "Jade",
+      "fullName": "Linha 13–Jade",
+      "color": "#00a94f",
+      "operator": "cptm",
+      "kind": "trem",
+      "status": "operacao",
+      "drawn": false,
+      "newsQuery": "Linha 13-Jade CPTM aeroporto Guarulhos",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-01-30", "text": "Linha da CPTM que conecta Engenheiro Goulart ao Aeroporto de Guarulhos (Aeroporto-Guarulhos)." }
+      ]
+    },
+    {
+      "id": "15",
+      "number": "15",
+      "name": "Prata",
+      "fullName": "Linha 15–Prata",
+      "color": "#9b9b9b",
+      "textColor": "#1a1a1a",
+      "operator": "metro",
+      "kind": "monotrilho",
+      "status": "expansao",
+      "drawn": false,
+      "newsQuery": "Linha 15-Prata monotrilho Metrô SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-05-02", "text": "Monotrilho em expansão na Zona Leste, com extensão prevista até Jacu-Pêssego." },
+        { "date": "2026-02-01", "text": "Trecho atual opera de Vila Prudente a Jardim Colonial." }
+      ]
+    },
+    {
+      "id": "17",
+      "number": "17",
+      "name": "Ouro",
+      "fullName": "Linha 17–Ouro",
+      "color": "#c9a227",
+      "textColor": "#1a1a1a",
+      "operator": "metro",
+      "kind": "monotrilho",
+      "status": "construcao",
+      "drawn": false,
+      "newsQuery": "Linha 17-Ouro monotrilho Congonhas obras",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-06-10", "text": "Monotrilho em obras ligando a região de Congonhas/Aeroporto à Linha 5-Lilás e à Linha 9-Esmeralda." },
+        { "date": "2026-03-22", "text": "Trecho prioritário em fase final de construção, com testes previstos para os próximos meses." }
+      ]
+    },
+    {
+      "id": "19",
+      "number": "19",
+      "name": "Celeste",
+      "fullName": "Linha 19–Celeste",
+      "color": "#7fc9e6",
+      "textColor": "#1a1a1a",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "planejamento",
+      "drawn": false,
+      "newsQuery": "Linha 19-Celeste Metrô SP planejamento",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-04-15", "text": "Em planejamento, ligará Campo Belo (SP) ao Bosque Maia (Guarulhos), cruzando a região central." }
+      ]
+    },
+    {
+      "id": "20",
+      "number": "20",
+      "name": "Rosa",
+      "fullName": "Linha 20–Rosa",
+      "color": "#e6699f",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "planejamento",
+      "drawn": false,
+      "newsQuery": "Linha 20-Rosa Metrô SP planejamento",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-04-15", "text": "Em planejamento, prevista para ligar a Lapa (SP) a Santo André (ABC), atravessando a cidade." }
+      ]
+    },
+    {
+      "id": "22",
+      "number": "22",
+      "name": "Bordô",
+      "fullName": "Linha 22–Bordô",
+      "color": "#7b2233",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "planejamento",
+      "drawn": false,
+      "newsQuery": "Linha 22-Bordô Metrô SP planejamento",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-04-15", "text": "Em planejamento, prevista para conectar Cotia/Taboão da Serra à região oeste da capital." }
+      ]
+    }
+  ],
+  "stations": [
+    { "id": "tucuruvi", "name": "Tucuruvi", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 40 }, "geo": { "lat": -23.4800, "lng": -46.6020 }, "labelTier": 1 },
+    { "id": "parada-inglesa", "name": "Parada Inglesa", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 78 }, "geo": { "lat": -23.4870, "lng": -46.6030 }, "labelTier": 3 },
+    { "id": "jardim-sao-paulo", "name": "Jardim São Paulo–Ayrton Senna", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 116 }, "geo": { "lat": -23.4920, "lng": -46.6060 }, "labelTier": 3 },
+    { "id": "santana", "name": "Santana", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 154 }, "geo": { "lat": -23.5023, "lng": -46.6286 }, "labelTier": 2 },
+    { "id": "carandiru", "name": "Carandiru", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 192 }, "geo": { "lat": -23.5090, "lng": -46.6250 }, "labelTier": 3 },
+    { "id": "portuguesa-tiete", "name": "Portuguesa–Tietê", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 230 }, "geo": { "lat": -23.5160, "lng": -46.6250 }, "labelTier": 2 },
+    { "id": "armenia", "name": "Armênia", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 268 }, "geo": { "lat": -23.5260, "lng": -46.6330 }, "labelTier": 3 },
+    { "id": "tiradentes", "name": "Tiradentes", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 306 }, "geo": { "lat": -23.5310, "lng": -46.6350 }, "labelTier": 3 },
+    { "id": "luz", "name": "Luz", "lineIds": ["1", "4", "7", "11"], "interchange": true, "schematic": { "x": 500, "y": 344 }, "geo": { "lat": -23.5345, "lng": -46.6350 }, "labelTier": 1, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
+    { "id": "sao-bento", "name": "São Bento", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 382 }, "geo": { "lat": -23.5435, "lng": -46.6335 }, "labelTier": 3 },
+    { "id": "se", "name": "Sé", "lineIds": ["1", "3"], "interchange": true, "schematic": { "x": 500, "y": 420 }, "geo": { "lat": -23.5505, "lng": -46.6340 }, "labelTier": 1, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 6 } },
+    { "id": "liberdade", "name": "Liberdade", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 458 }, "geo": { "lat": -23.5585, "lng": -46.6345 }, "labelTier": 2 },
+    { "id": "sao-joaquim", "name": "São Joaquim", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 496 }, "geo": { "lat": -23.5670, "lng": -46.6390 }, "labelTier": 3 },
+    { "id": "vergueiro", "name": "Vergueiro", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 534 }, "geo": { "lat": -23.5730, "lng": -46.6390 }, "labelTier": 3 },
+    { "id": "paraiso", "name": "Paraíso", "lineIds": ["1", "2"], "interchange": true, "schematic": { "x": 500, "y": 572 }, "geo": { "lat": -23.5765, "lng": -46.6400 }, "labelTier": 1, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
+    { "id": "ana-rosa", "name": "Ana Rosa", "lineIds": ["1", "2"], "interchange": true, "schematic": { "x": 500, "y": 610 }, "geo": { "lat": -23.5815, "lng": -46.6385 }, "labelTier": 1, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
+    { "id": "vila-mariana", "name": "Vila Mariana", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 648 }, "geo": { "lat": -23.5890, "lng": -46.6345 }, "labelTier": 2 },
+    { "id": "santa-cruz", "name": "Santa Cruz", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 686 }, "geo": { "lat": -23.5990, "lng": -46.6385 }, "labelTier": 3 },
+    { "id": "praca-da-arvore", "name": "Praça da Árvore", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 724 }, "geo": { "lat": -23.6090, "lng": -46.6390 }, "labelTier": 3 },
+    { "id": "saude", "name": "Saúde", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 762 }, "geo": { "lat": -23.6185, "lng": -46.6390 }, "labelTier": 3 },
+    { "id": "sao-judas", "name": "São Judas", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 800 }, "geo": { "lat": -23.6260, "lng": -46.6410 }, "labelTier": 3 },
+    { "id": "conceicao", "name": "Conceição", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 838 }, "geo": { "lat": -23.6360, "lng": -46.6420 }, "labelTier": 3 },
+    { "id": "jabaquara", "name": "Jabaquara", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 876 }, "geo": { "lat": -23.6460, "lng": -46.6420 }, "labelTier": 1 },
+
+    { "id": "palmeiras-barra-funda", "name": "Palmeiras–Barra Funda", "lineIds": ["3", "7", "8"], "interchange": true, "schematic": { "x": 290, "y": 420 }, "geo": { "lat": -23.5270, "lng": -46.6655 }, "labelTier": 1, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -16 } },
+    { "id": "marechal-deodoro", "name": "Marechal Deodoro", "lineIds": ["3"], "interchange": false, "schematic": { "x": 332, "y": 420 }, "geo": { "lat": -23.5300, "lng": -46.6580 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -14 } },
+    { "id": "santa-cecilia", "name": "Santa Cecília", "lineIds": ["3"], "interchange": false, "schematic": { "x": 374, "y": 420 }, "geo": { "lat": -23.5350, "lng": -46.6510 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -14 } },
+    { "id": "republica", "name": "República", "lineIds": ["3", "4"], "interchange": true, "schematic": { "x": 416, "y": 420 }, "geo": { "lat": -23.5435, "lng": -46.6420 }, "labelTier": 1, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -16 } },
+    { "id": "anhangabau", "name": "Anhangabaú", "lineIds": ["3"], "interchange": false, "schematic": { "x": 458, "y": 420 }, "geo": { "lat": -23.5470, "lng": -46.6375 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -14 } },
+    { "id": "pedro-ii", "name": "Pedro II", "lineIds": ["3"], "interchange": false, "schematic": { "x": 542, "y": 420 }, "geo": { "lat": -23.5490, "lng": -46.6270 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+    { "id": "bras", "name": "Brás", "lineIds": ["3", "10", "11", "12"], "interchange": true, "schematic": { "x": 584, "y": 420 }, "geo": { "lat": -23.5480, "lng": -46.6160 }, "labelTier": 1, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+    { "id": "bresser-mooca", "name": "Bresser–Mooca", "lineIds": ["3"], "interchange": false, "schematic": { "x": 626, "y": 420 }, "geo": { "lat": -23.5490, "lng": -46.6020 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -14 } },
+    { "id": "belem", "name": "Belém", "lineIds": ["3"], "interchange": false, "schematic": { "x": 668, "y": 420 }, "geo": { "lat": -23.5440, "lng": -46.5910 }, "labelTier": 2, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -14 } },
+    { "id": "tatuape", "name": "Tatuapé", "lineIds": ["3", "11", "12"], "interchange": true, "schematic": { "x": 710, "y": 420 }, "geo": { "lat": -23.5400, "lng": -46.5765 }, "labelTier": 1, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -16 } },
+    { "id": "carrao", "name": "Carrão", "lineIds": ["3"], "interchange": false, "schematic": { "x": 752, "y": 420 }, "geo": { "lat": -23.5400, "lng": -46.5640 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+    { "id": "penha", "name": "Penha", "lineIds": ["3"], "interchange": false, "schematic": { "x": 794, "y": 420 }, "geo": { "lat": -23.5340, "lng": -46.5430 }, "labelTier": 2, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -14 } },
+    { "id": "vila-matilde", "name": "Vila Matilde", "lineIds": ["3"], "interchange": false, "schematic": { "x": 836, "y": 420 }, "geo": { "lat": -23.5340, "lng": -46.5300 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+    { "id": "guilhermina-esperanca", "name": "Guilhermina–Esperança", "lineIds": ["3"], "interchange": false, "schematic": { "x": 878, "y": 420 }, "geo": { "lat": -23.5340, "lng": -46.5210 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -14 } },
+    { "id": "patriarca", "name": "Patriarca", "lineIds": ["3"], "interchange": false, "schematic": { "x": 920, "y": 420 }, "geo": { "lat": -23.5360, "lng": -46.5110 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+    { "id": "artur-alvim", "name": "Artur Alvim", "lineIds": ["3"], "interchange": false, "schematic": { "x": 962, "y": 420 }, "geo": { "lat": -23.5400, "lng": -46.5010 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -14 } },
+    { "id": "corinthians-itaquera", "name": "Corinthians–Itaquera", "lineIds": ["3"], "interchange": false, "schematic": { "x": 1004, "y": 420 }, "geo": { "lat": -23.5435, "lng": -46.4710 }, "labelTier": 1, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+
+    { "id": "vila-madalena", "name": "Vila Madalena", "lineIds": ["2"], "interchange": false, "schematic": { "x": 260, "y": 332 }, "geo": { "lat": -23.5465, "lng": -46.6905 }, "labelTier": 1, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
+    { "id": "sumare", "name": "Sumaré", "lineIds": ["2"], "interchange": false, "schematic": { "x": 300, "y": 372 }, "geo": { "lat": -23.5510, "lng": -46.6770 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
+    { "id": "clinicas", "name": "Clínicas", "lineIds": ["2"], "interchange": false, "schematic": { "x": 340, "y": 412 }, "geo": { "lat": -23.5540, "lng": -46.6700 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
+    { "id": "consolacao", "name": "Consolação", "lineIds": ["2", "4"], "interchange": true, "schematic": { "x": 380, "y": 452 }, "geo": { "lat": -23.5575, "lng": -46.6600 }, "labelTier": 1, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
+    { "id": "trianon-masp", "name": "Trianon–Masp", "lineIds": ["2"], "interchange": false, "schematic": { "x": 420, "y": 492 }, "geo": { "lat": -23.5615, "lng": -46.6555 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
+    { "id": "brigadeiro", "name": "Brigadeiro", "lineIds": ["2"], "interchange": false, "schematic": { "x": 460, "y": 532 }, "geo": { "lat": -23.5680, "lng": -46.6480 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
+    { "id": "chacara-klabin", "name": "Chácara Klabin", "lineIds": ["2", "5"], "interchange": true, "schematic": { "x": 540, "y": 650 }, "geo": { "lat": -23.5910, "lng": -46.6260 }, "labelTier": 1, "labelAnchor": "start", "labelOffset": { "x": 14, "y": 0 } },
+    { "id": "santos-imigrantes", "name": "Santos–Imigrantes", "lineIds": ["2"], "interchange": false, "schematic": { "x": 580, "y": 690 }, "geo": { "lat": -23.5985, "lng": -46.6160 }, "labelTier": 3, "labelAnchor": "start", "labelOffset": { "x": 14, "y": 0 } },
+    { "id": "alto-do-ipiranga", "name": "Alto do Ipiranga", "lineIds": ["2"], "interchange": false, "schematic": { "x": 620, "y": 730 }, "geo": { "lat": -23.6025, "lng": -46.6090 }, "labelTier": 3, "labelAnchor": "start", "labelOffset": { "x": 14, "y": 0 } },
+    { "id": "sacoma", "name": "Sacomã", "lineIds": ["2"], "interchange": false, "schematic": { "x": 660, "y": 770 }, "geo": { "lat": -23.6065, "lng": -46.6010 }, "labelTier": 3, "labelAnchor": "start", "labelOffset": { "x": 14, "y": 0 } },
+    { "id": "tamanduatei", "name": "Tamanduateí", "lineIds": ["2", "10"], "interchange": true, "schematic": { "x": 700, "y": 810 }, "geo": { "lat": -23.5910, "lng": -46.6010 }, "labelTier": 1, "labelAnchor": "start", "labelOffset": { "x": 14, "y": 0 } },
+    { "id": "vila-prudente", "name": "Vila Prudente", "lineIds": ["2", "15"], "interchange": true, "schematic": { "x": 740, "y": 850 }, "geo": { "lat": -23.5840, "lng": -46.5810 }, "labelTier": 1, "labelAnchor": "start", "labelOffset": { "x": 14, "y": 0 } }
+  ]
+}
