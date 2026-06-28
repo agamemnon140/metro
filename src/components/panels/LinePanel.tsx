@@ -7,6 +7,8 @@ import { useSelection } from '@/hooks/useSelection'
 import { Panel } from './Panel'
 import { StatusBadge } from '../StatusBadge'
 
+const INDICATIVE_STATUS = new Set(['contratacao', 'elaboracao', 'estudo'])
+
 export function LinePanel({ line }: { line: Line }) {
   const clear = useSelection((s) => s.clear)
   const selectStation = useSelection((s) => s.selectStation)
@@ -38,6 +40,13 @@ export function LinePanel({ line }: { line: Line }) {
         <StatusBadge status={line.status} />
       </div>
 
+      {INDICATIVE_STATUS.has(line.status) && (
+        <p className="mb-4 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2 text-xs text-amber-800">
+          ⚠️ Linha futura: o traçado e as estações no mapa são <b>indicativos</b> (não
+          oficiais), apenas para localização aproximada.
+        </p>
+      )}
+
       <section className="mb-5">
         <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">
           Atualizações
@@ -66,23 +75,37 @@ export function LinePanel({ line }: { line: Line }) {
         )}
       </section>
 
-      <a
-        href={metroCptmLineUrl(line.number)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold mb-2"
-        style={{ backgroundColor: line.color, color: lineTextColor(line) }}
-      >
-        Ver notícias da linha (metrôCPTM) ↗
-      </a>
-      <a
-        href={googleNewsUrl(line.newsQuery)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block text-center text-xs text-gray-500 hover:underline mb-5"
-      >
-        ou buscar no Google Notícias ↗
-      </a>
+      <section className="mb-5">
+        <div className="flex items-center justify-between mb-2">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+            Notícias (metrôCPTM)
+          </h3>
+          <a
+            href={metroCptmLineUrl(line.number)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-semibold hover:underline"
+            style={{ color: line.color }}
+          >
+            abrir ↗
+          </a>
+        </div>
+        <iframe
+          key={line.id}
+          src={metroCptmLineUrl(line.number)}
+          title={`Notícias da ${line.fullName} no metrôCPTM`}
+          loading="lazy"
+          className="w-full h-[380px] rounded-xl border border-gray-200 bg-white"
+        />
+        <a
+          href={googleNewsUrl(line.newsQuery)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block text-center text-xs text-gray-500 hover:underline mt-2"
+        >
+          ou buscar no Google Notícias ↗
+        </a>
+      </section>
 
       <section>
         <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">

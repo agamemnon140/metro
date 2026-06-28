@@ -1,16 +1,28 @@
-// Mescla o dataset curado (src/data/network.json) com os dados do OSM
-// (scratch/osm.json): mantém o diagrama esquemático e adiciona a camada
-// geográfica completa (geoOrder + estações novas só com geo).
+// Pipeline de dados: fonte curada (network.curated.json) + OSM (scratch/osm.json)
+// -> src/data/network.json (gerado).
 //
-// Uso: node scripts/build-network.mjs   (escreve src/data/network.json)
+// - Casa estações curadas <-> OSM por PROXIMIDADE geográfica (resolve nomes
+//   patrocinados do OSM, ex. "Japão-Liberdade" -> "liberdade").
+// - Preenche a posição esquemática das estações novas por transformação AFIM
+//   ajustada às estações curadas (mínimos quadrados geo -> x/y).
+// - Linhas futuras (19/20/22) recebem traçado INDICATIVO (não oficial).
+// - stationOrder passa a ser completo (todas as estações), em ambos os modos.
+//
+// Uso: node scripts/build-network.mjs
 
 import { readFileSync, writeFileSync } from 'node:fs'
 
 const osm = JSON.parse(readFileSync('scratch/osm.json', 'utf8'))
-const net = JSON.parse(readFileSync('src/data/network.json', 'utf8'))
+const net = JSON.parse(readFileSync('src/data/network.curated.json', 'utf8'))
 
-// refs do OSM -> id da linha no nosso dataset (mesmo número)
 const TARGET = new Set(['1', '2', '3', '4', '5', '7', '8', '9', '10', '11', '12', '13', '15', '17'])
+
+// traçado indicativo (NÃO oficial) das linhas em projeto/estudo: [nome, lat, lng, tier]
+const INDICATIVE = {
+  '19': [['Campo Belo', -23.616, -46.668, 1], ['Trecho central', -23.553, -46.64, 3], ['Bosque Maia (Guarulhos)', -23.452, -46.533, 1]],
+  '20': [['Lapa', -23.52, -46.7, 1], ['Trecho central', -23.55, -46.633, 3], ['Santo André', -23.654, -46.532, 1]],
+  '22': [['Cotia', -23.602, -46.919, 1], ['Taboão da Serra', -23.61, -46.79, 3], ['Zona Oeste', -23.59, -46.73, 1]],
+}
 
 const slug = (name) =>
   name
@@ -20,33 +32,53 @@ const slug = (name) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
 
-// melhor variante por ref (mais paradas)
+const round = (n) => Math.round(n * 1e5) / 1e5
+const round1 = (n) => Math.round(n * 10) / 10
+
+function dist(a, b) {
+  const R = 6371000
+  const toR = (x) => (x * Math.PI) / 180
+  const dLat = toR(b.lat - a.lat)
+  const dLng = toR(b.lng - a.lng)
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toR(a.lat)) * Math.cos(toR(b.lat)) * Math.sin(dLng / 2) ** 2
+  return 2 * R * Math.asin(Math.sqrt(h))
+}
+
+// estações (preserva curadas)
+const stations = new Map()
+for (const s of net.stations) stations.set(s.id, { ...s, lineIds: new Set(s.lineIds) })
+const handList = [...stations.values()].filter((s) => s.schematic)
+
+const THRESH = 300 // metros
+function resolveId(name, lat, lng) {
+  const id = slug(name)
+  if (stations.has(id)) return id
+  let best = null
+  let bd = THRESH
+  for (const h of handList) {
+    const d = dist({ lat, lng }, h.geo)
+    if (d < bd) { bd = d; best = h.id }
+  }
+  return best || id
+}
+
+const orderByLine = new Map()
+
+// melhor variante OSM por ref
 const bestByRef = new Map()
 for (const rel of osm) {
   if (!TARGET.has(rel.ref)) continue
-  const cur = bestByRef.get(rel.ref)
-  if (!cur || rel.count > cur.count) bestByRef.set(rel.ref, rel)
+  const c = bestByRef.get(rel.ref)
+  if (!c || rel.count > c.count) bestByRef.set(rel.ref, rel)
 }
-
-// índice das estações curadas existentes (por id)
-const existing = new Map(net.stations.map((s) => [s.id, s]))
-
-// monta o conjunto final de estações
-const stations = new Map() // id -> station
-
-// 1) começa com TODAS as estações existentes (preserva schematic/labels)
-for (const s of net.stations) {
-  stations.set(s.id, { ...s, lineIds: new Set(s.lineIds) })
-}
-
-// 2) aplica OSM: geoOrder por linha + estações novas + geo atualizado
-const geoOrderByLine = new Map()
 for (const [ref, rel] of bestByRef) {
   const order = []
   let prev = null
   for (const stop of rel.stops) {
-    const id = slug(stop.name)
-    if (id === prev) continue // dedupe consecutivo
+    const id = resolveId(stop.name, stop.lat, stop.lng)
+    if (id === prev) continue
     prev = id
     order.push(id)
     if (stations.has(id)) {
@@ -55,87 +87,112 @@ for (const [ref, rel] of bestByRef) {
       st.lineIds.add(ref)
     } else {
       stations.set(id, {
-        id,
-        name: stop.name,
-        lineIds: new Set([ref]),
-        interchange: false,
-        geo: { lat: round(stop.lat), lng: round(stop.lng) },
-        labelTier: 3,
+        id, name: stop.name, lineIds: new Set([ref]),
+        interchange: false, geo: { lat: round(stop.lat), lng: round(stop.lng) }, labelTier: 3,
       })
     }
   }
-  geoOrderByLine.set(ref, order)
+  orderByLine.set(ref, order)
 }
 
-// 3) garante que linhas não-OSM (6,16,19,20,22,...) tenham lineIds nas suas estações
-for (const line of net.lines) {
-  if (TARGET.has(line.id)) continue
-  for (const id of line.stationOrder) {
-    if (stations.has(id)) stations.get(id).lineIds.add(line.id)
+// linhas futuras indicativas
+for (const [ref, stops] of Object.entries(INDICATIVE)) {
+  const order = []
+  for (const [name, lat, lng, tier] of stops) {
+    const id = `l${ref}-${slug(name)}`
+    order.push(id)
+    if (!stations.has(id)) {
+      stations.set(id, { id, name, lineIds: new Set([ref]), interchange: false, geo: { lat, lng }, labelTier: tier })
+    } else stations.get(id).lineIds.add(ref)
   }
+  orderByLine.set(ref, order)
 }
 
-// 4) terminais e baldeações -> labelTier
+// demais linhas (6,16,...): adiciona lineIds às suas estações
+for (const line of net.lines) {
+  if (orderByLine.has(line.id)) continue
+  for (const id of line.stationOrder) if (stations.has(id)) stations.get(id).lineIds.add(line.id)
+}
+
+// terminais
 const terminals = new Set()
-for (const order of geoOrderByLine.values()) {
-  if (order.length) {
-    terminals.add(order[0])
-    terminals.add(order[order.length - 1])
-  }
-}
-for (const line of net.lines) {
-  const o = line.stationOrder
-  if (o.length) {
-    terminals.add(o[0])
-    terminals.add(o[o.length - 1])
-  }
-}
+const allOrders = [...orderByLine.values(), ...net.lines.map((l) => l.stationOrder)]
+for (const o of allOrders) if (o.length) { terminals.add(o[0]); terminals.add(o[o.length - 1]) }
+
 for (const st of stations.values()) {
   st.interchange = st.interchange || st.lineIds.size > 1
-  // só promove tier para estações novas (sem schematic curado)
-  if (!st.schematic) {
-    if (st.interchange) st.labelTier = 1
-    else if (terminals.has(st.id)) st.labelTier = 1
-    else st.labelTier = 3
+  if (!st.schematic) st.labelTier = st.interchange ? 1 : terminals.has(st.id) ? 1 : st.labelTier || 3
+}
+
+// ajuste afim geo -> esquemático (pontos de controle = estações curadas)
+const cp = handList.map((s) => ({ lng: s.geo.lng, lat: s.geo.lat, x: s.schematic.x, y: s.schematic.y }))
+const fitX = fit(cp, 'x')
+const fitY = fit(cp, 'y')
+for (const st of stations.values()) {
+  if (st.schematic) continue
+  st.schematic = {
+    x: fitX[0] * st.geo.lng + fitX[1] * st.geo.lat + fitX[2],
+    y: fitY[0] * st.geo.lng + fitY[1] * st.geo.lat + fitY[2],
   }
 }
 
-// 5) monta linhas com geoOrder
+// reposiciona tudo para caber no viewBox com padding
+let minX = 1e9, minY = 1e9, maxX = -1e9, maxY = -1e9
+for (const st of stations.values()) {
+  minX = Math.min(minX, st.schematic.x); maxX = Math.max(maxX, st.schematic.x)
+  minY = Math.min(minY, st.schematic.y); maxY = Math.max(maxY, st.schematic.y)
+}
+const PAD = 70
+for (const st of stations.values()) {
+  st.schematic = { x: round1(st.schematic.x - minX + PAD), y: round1(st.schematic.y - minY + PAD) }
+}
+const viewBox = { width: Math.ceil(maxX - minX + 2 * PAD), height: Math.ceil(maxY - minY + 2 * PAD) }
+
+// linhas
 const lines = net.lines.map((line) => {
-  const geoOrder = geoOrderByLine.get(line.id)
-  return geoOrder ? { ...line, geoOrder } : { ...line }
+  const order = orderByLine.get(line.id)
+  if (order) return { ...line, drawn: true, stationOrder: order, geoOrder: order }
+  return { ...line, geoOrder: line.stationOrder }
 })
 
-// 6) serializa estações (Set -> array, ordena lineIds numericamente)
+// serializa
 const stationsOut = [...stations.values()].map((s) => {
-  const lineIds = [...s.lineIds].sort((a, b) => Number(a) - Number(b) || a.localeCompare(b))
-  const out = { id: s.id, name: s.name, lineIds, interchange: s.interchange }
-  if (s.schematic) out.schematic = s.schematic
-  out.geo = s.geo
-  out.labelTier = s.labelTier
+  const out = {
+    id: s.id, name: s.name,
+    lineIds: [...s.lineIds].sort((a, b) => Number(a) - Number(b) || a.localeCompare(b)),
+    interchange: s.interchange, schematic: s.schematic, geo: s.geo, labelTier: s.labelTier,
+  }
   if (s.labelAnchor) out.labelAnchor = s.labelAnchor
   if (s.labelOffset) out.labelOffset = s.labelOffset
   return out
 })
 
-const result = {
-  version: '0.2.0',
-  updatedAt: net.updatedAt,
-  viewBox: net.viewBox,
-  lines,
-  stations: stationsOut,
+writeFileSync(
+  'src/data/network.json',
+  JSON.stringify({ version: '0.3.0', updatedAt: net.updatedAt, viewBox, lines, stations: stationsOut }, null, 2) + '\n',
+)
+
+console.log('Estações:', stationsOut.length, '| viewBox', viewBox.width + 'x' + viewBox.height)
+console.log('Linhas desenhadas:', lines.filter((l) => l.drawn).map((l) => l.number).join(', '))
+
+// --- mínimos quadrados 3 params ---
+function fit(points, key) {
+  let Sll = 0, Sla = 0, Sl = 0, Saa = 0, Sa = 0, N = points.length, Svl = 0, Sva = 0, Sv = 0
+  for (const p of points) {
+    const l = p.lng, a = p.lat, v = p[key]
+    Sll += l * l; Sla += l * a; Sl += l; Saa += a * a; Sa += a; Svl += v * l; Sva += v * a; Sv += v
+  }
+  return solve3([[Sll, Sla, Sl], [Sla, Saa, Sa], [Sl, Sa, N]], [Svl, Sva, Sv])
 }
-
-writeFileSync('src/data/network.json', JSON.stringify(result, null, 2) + '\n')
-
-function round(n) {
-  return Math.round(n * 1e5) / 1e5
-}
-
-// relatório
-console.log('Estações totais:', stationsOut.length)
-console.log('Com schematic:', stationsOut.filter((s) => s.schematic).length)
-console.log('Só geo (novas):', stationsOut.filter((s) => !s.schematic).length)
-for (const [ref, order] of [...geoOrderByLine].sort((a, b) => Number(a[0]) - Number(b[0]))) {
-  console.log(`  linha ${ref}: geoOrder ${order.length} estações`)
+function solve3(A, b) {
+  const m = [[...A[0], b[0]], [...A[1], b[1]], [...A[2], b[2]]]
+  for (let i = 0; i < 3; i++) {
+    let piv = i
+    for (let r = i + 1; r < 3; r++) if (Math.abs(m[r][i]) > Math.abs(m[piv][i])) piv = r
+    ;[m[i], m[piv]] = [m[piv], m[i]]
+    const d = m[i][i]
+    for (let c = i; c < 4; c++) m[i][c] /= d
+    for (let r = 0; r < 3; r++) if (r !== i) { const f = m[r][i]; for (let c = i; c < 4; c++) m[r][c] -= f * m[i][c] }
+  }
+  return [m[0][3], m[1][3], m[2][3]]
 }
