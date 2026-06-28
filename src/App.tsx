@@ -11,9 +11,9 @@ import { useLabelMode } from './hooks/useLabelMode'
 import { getStation, getLine } from './lib/network'
 
 const LABEL_BTN: Record<string, string> = {
-  normal: 'Aa',
-  small: 'ᴀ',
-  off: '⊘',
+  hubs: 'Aa hubs',
+  todos: 'Aa todos',
+  off: 'Aa off',
 }
 
 const LAYER_BTNS: { key: Layer; label: string; title: string }[] = [
@@ -53,8 +53,8 @@ export default function App() {
         <div className="shrink-0 flex items-center gap-1.5 flex-wrap justify-end">
           <button
             onClick={cycleLabels}
-            className={chip(false) + ' w-8'}
-            title="Tamanho dos nomes: normal / pequeno / oculto"
+            className={chip(labelMode !== 'off')}
+            title="Nomes das estações: só hubs / todos / nenhum"
           >
             {LABEL_BTN[labelMode]}
           </button>

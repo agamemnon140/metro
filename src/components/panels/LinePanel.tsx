@@ -75,10 +75,11 @@ export function LinePanel({ line }: { line: Line }) {
         )}
       </section>
 
-      <section className="mb-5">
-        <div className="flex items-center justify-between mb-2">
+      <details className="mb-5 group">
+        <summary className="flex items-center justify-between cursor-pointer list-none">
           <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400">
-            Notícias (metrôCPTM)
+            Notícias (metrôCPTM) <span className="text-gray-300 group-open:hidden">▸</span>
+            <span className="text-gray-300 hidden group-open:inline">▾</span>
           </h3>
           <a
             href={metroCptmLineUrl(line.number)}
@@ -86,16 +87,17 @@ export function LinePanel({ line }: { line: Line }) {
             rel="noopener noreferrer"
             className="text-xs font-semibold hover:underline"
             style={{ color: line.color }}
+            onClick={(e) => e.stopPropagation()}
           >
             abrir ↗
           </a>
-        </div>
+        </summary>
         <iframe
           key={line.id}
           src={metroCptmLineUrl(line.number)}
           title={`Notícias da ${line.fullName} no metrôCPTM`}
           loading="lazy"
-          className="w-full h-[380px] rounded-xl border border-gray-200 bg-white"
+          className="mt-2 w-full h-[240px] rounded-xl border border-gray-200 bg-white"
         />
         <a
           href={googleNewsUrl(line.newsQuery)}
@@ -105,7 +107,7 @@ export function LinePanel({ line }: { line: Line }) {
         >
           ou buscar no Google Notícias ↗
         </a>
-      </section>
+      </details>
 
       <section>
         <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">
