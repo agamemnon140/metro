@@ -120,10 +120,7 @@
       "status": "construcao",
       "drawn": true,
       "newsQuery": "Linha 6-Laranja Metrô SP obras",
-      "stationOrder": [
-        "brasilandia", "freguesia-do-o", "pompeia-6", "perdizes-6",
-        "bela-vista-6", "sao-joaquim"
-      ],
+      "stationOrder": [],
       "updates": [
         { "date": "2026-06-01", "text": "Em construção pela concessionária Linha Uni, ligará Brasilândia (Zona Norte) à Praça da Sé, com 15 estações previstas." },
         { "date": "2026-03-18", "text": "Tunelamento com tuneladoras (tatuzões) em andamento; primeira fase de operação estimada para os próximos anos." }
@@ -546,12 +543,6 @@
 
     { "id": "guarulhos-cecap", "name": "Guarulhos–CECAP", "lineIds": ["13"], "interchange": false, "schematic": { "x": 810, "y": 300 }, "geo": { "lat": -23.4560, "lng": -46.5330 }, "labelTier": 3, "labelAnchor": "start", "labelOffset": { "x": 12, "y": 0 } },
     { "id": "aeroporto-guarulhos", "name": "Aeroporto–Guarulhos", "lineIds": ["13"], "interchange": false, "schematic": { "x": 850, "y": 245 }, "geo": { "lat": -23.4360, "lng": -46.4730 }, "labelTier": 1, "labelAnchor": "start", "labelOffset": { "x": 12, "y": 0 } },
-
-    { "id": "brasilandia", "name": "Brasilândia", "lineIds": ["6"], "interchange": false, "schematic": { "x": 300, "y": 210 }, "geo": { "lat": -23.4600, "lng": -46.6900 }, "labelTier": 1, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": -16 } },
-    { "id": "freguesia-do-o", "name": "Freguesia do Ó", "lineIds": ["6"], "interchange": false, "schematic": { "x": 330, "y": 280 }, "geo": { "lat": -23.5000, "lng": -46.6920 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
-    { "id": "pompeia-6", "name": "Pompeia", "lineIds": ["6"], "interchange": false, "schematic": { "x": 370, "y": 345 }, "geo": { "lat": -23.5260, "lng": -46.6840 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
-    { "id": "perdizes-6", "name": "Perdizes", "lineIds": ["6"], "interchange": false, "schematic": { "x": 415, "y": 400 }, "geo": { "lat": -23.5350, "lng": -46.6740 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": -4 } },
-    { "id": "bela-vista-6", "name": "Bela Vista", "lineIds": ["6"], "interchange": false, "schematic": { "x": 460, "y": 455 }, "geo": { "lat": -23.5570, "lng": -46.6470 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 4 } },
 
     { "id": "chacara-santo-antonio", "name": "Chácara Santo Antônio", "lineIds": ["17"], "interchange": false, "schematic": { "x": 220, "y": 755 }, "geo": { "lat": -23.6190, "lng": -46.7020 }, "labelTier": 3, "labelAnchor": "start", "labelOffset": { "x": 12, "y": 0 } },
     { "id": "congonhas", "name": "Congonhas", "lineIds": ["17"], "interchange": false, "schematic": { "x": 290, "y": 800 }, "geo": { "lat": -23.6280, "lng": -46.6610 }, "labelTier": 2, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },

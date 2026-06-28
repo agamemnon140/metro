@@ -26,6 +26,7 @@ export function LinePath({ line }: Props) {
   if (!points) return null
 
   const isSelected = selection?.kind === 'line' && selection.id === line.id
+  const dimmed = selection?.kind === 'line' && !isSelected
   // traço fica mais "esparso" quanto menos maduro o projeto
   const dashByStatus: Record<string, string | undefined> = {
     operacao: undefined,
@@ -71,7 +72,7 @@ export function LinePath({ line }: Props) {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeDasharray={dashArray}
-        opacity={isSelected ? 1 : 0.95}
+        opacity={dimmed ? 0.2 : isSelected ? 1 : 0.95}
       />
     </g>
   )
