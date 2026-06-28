@@ -124,44 +124,55 @@ for (const st of stations.values()) {
   if (!st.schematic) st.labelTier = st.interchange ? 1 : terminals.has(st.id) ? 1 : st.labelTier || 3
 }
 
-// ajuste afim geo -> esquemático (pontos de controle = estações curadas)
+// linhas: OSM operacionais MANTÊM o esquemático curado (bonito) e ganham
+// geoOrder completo; futuras (indicativas) entram nos dois modos.
+const FUTURE = new Set(Object.keys(INDICATIVE))
+const lines = net.lines.map((line) => {
+  const order = orderByLine.get(line.id)
+  if (!order) return { ...line, geoOrder: line.stationOrder }
+  if (FUTURE.has(line.id)) return { ...line, drawn: true, stationOrder: order, geoOrder: order }
+  return { ...line, geoOrder: order } // stationOrder curado preservado
+})
+
+// estações que precisam de posição esquemática (aparecem em algum stationOrder)
+const needSchem = new Set(lines.flatMap((l) => l.stationOrder))
+
+// ajuste afim geo -> esquemático SÓ para as que faltam (ex.: futuras indicativas)
 const cp = handList.map((s) => ({ lng: s.geo.lng, lat: s.geo.lat, x: s.schematic.x, y: s.schematic.y }))
 const fitX = fit(cp, 'x')
 const fitY = fit(cp, 'y')
 for (const st of stations.values()) {
-  if (st.schematic) continue
+  if (st.schematic || !needSchem.has(st.id)) continue
   st.schematic = {
-    x: fitX[0] * st.geo.lng + fitX[1] * st.geo.lat + fitX[2],
-    y: fitY[0] * st.geo.lng + fitY[1] * st.geo.lat + fitY[2],
+    x: round1(fitX[0] * st.geo.lng + fitX[1] * st.geo.lat + fitX[2]),
+    y: round1(fitY[0] * st.geo.lng + fitY[1] * st.geo.lat + fitY[2]),
   }
 }
 
-// reposiciona tudo para caber no viewBox com padding
+// viewBox esquemático cobre as estações COM schematic
 let minX = 1e9, minY = 1e9, maxX = -1e9, maxY = -1e9
 for (const st of stations.values()) {
+  if (!st.schematic) continue
   minX = Math.min(minX, st.schematic.x); maxX = Math.max(maxX, st.schematic.x)
   minY = Math.min(minY, st.schematic.y); maxY = Math.max(maxY, st.schematic.y)
 }
-const PAD = 70
+const PAD = 60
 for (const st of stations.values()) {
+  if (!st.schematic) continue
   st.schematic = { x: round1(st.schematic.x - minX + PAD), y: round1(st.schematic.y - minY + PAD) }
 }
 const viewBox = { width: Math.ceil(maxX - minX + 2 * PAD), height: Math.ceil(maxY - minY + 2 * PAD) }
-
-// linhas
-const lines = net.lines.map((line) => {
-  const order = orderByLine.get(line.id)
-  if (order) return { ...line, drawn: true, stationOrder: order, geoOrder: order }
-  return { ...line, geoOrder: line.stationOrder }
-})
 
 // serializa
 const stationsOut = [...stations.values()].map((s) => {
   const out = {
     id: s.id, name: s.name,
     lineIds: [...s.lineIds].sort((a, b) => Number(a) - Number(b) || a.localeCompare(b)),
-    interchange: s.interchange, schematic: s.schematic, geo: s.geo, labelTier: s.labelTier,
+    interchange: s.interchange,
   }
+  if (s.schematic) out.schematic = s.schematic
+  out.geo = s.geo
+  out.labelTier = s.labelTier
   if (s.labelAnchor) out.labelAnchor = s.labelAnchor
   if (s.labelOffset) out.labelOffset = s.labelOffset
   return out
@@ -172,7 +183,7 @@ writeFileSync(
   JSON.stringify({ version: '0.3.0', updatedAt: net.updatedAt, viewBox, lines, stations: stationsOut }, null, 2) + '\n',
 )
 
-console.log('Estações:', stationsOut.length, '| viewBox', viewBox.width + 'x' + viewBox.height)
+console.log('Estações:', stationsOut.length, '| com schematic:', stationsOut.filter((s) => s.schematic).length, '| viewBox', viewBox.width + 'x' + viewBox.height)
 console.log('Linhas desenhadas:', lines.filter((l) => l.drawn).map((l) => l.number).join(', '))
 
 // --- mínimos quadrados 3 params ---

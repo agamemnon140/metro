@@ -19,6 +19,8 @@ export function StationLabel({ station }: Props) {
   const currentTier = tierForScale(scale, mode)
 
   if (station.labelTier > currentTier) return null
+  // no geográfico (denso), no zoom mais aberto só rotula baldeações
+  if (mode === 'geographic' && currentTier === 1 && !station.interchange) return null
 
   const p = pointFor(station, mode)
   const anchor = station.labelAnchor ?? 'start'
