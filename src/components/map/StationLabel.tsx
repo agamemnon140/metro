@@ -49,13 +49,13 @@ export function StationLabel({ station }: Props) {
       y={y}
       textAnchor={anchor}
       dominantBaseline={anchor === 'middle' ? 'auto' : 'middle'}
-      fontSize={(station.interchange ? 12 : 10.5) * sizeMul}
+      fontSize={(station.interchange ? 8.5 : 7) * sizeMul}
       fontWeight={station.interchange ? 700 : 500}
       fill="#1a1a1a"
       pointerEvents="none"
       style={{ paintOrder: 'stroke' }}
       stroke="#ffffff"
-      strokeWidth={3}
+      strokeWidth={2}
       strokeLinejoin="round"
     >
       {station.name}
