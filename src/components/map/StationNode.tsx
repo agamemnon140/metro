@@ -17,6 +17,10 @@ export function StationNode({ station }: Props) {
   const isSelected =
     selection?.kind === 'station' && selection.id === station.id
 
+  // foco em linha: esmaece estações que não pertencem a ela
+  const focusLine = selection?.kind === 'line' ? selection.id : null
+  const dimmed = focusLine !== null && !station.lineIds.includes(focusLine)
+
   const firstLine = getLine(station.lineIds[0])
   const fill = station.interchange ? '#ffffff' : firstLine?.color ?? '#444'
   const stroke = station.interchange ? '#1a1a1a' : '#ffffff'
@@ -28,6 +32,7 @@ export function StationNode({ station }: Props) {
       aria-label={`Estação ${station.name}`}
       tabIndex={0}
       className="cursor-pointer focus:outline-none"
+      opacity={dimmed ? 0.12 : 1}
       onClick={(e) => {
         e.stopPropagation()
         selectStation(station.id)

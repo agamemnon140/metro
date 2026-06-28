@@ -72,7 +72,7 @@ export function LinePath({ line }: Props) {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeDasharray={dashArray}
-        opacity={dimmed ? 0.2 : isSelected ? 1 : 0.95}
+        opacity={dimmed ? 0.1 : isSelected ? 1 : 0.95}
       />
     </g>
   )

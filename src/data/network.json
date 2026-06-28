@@ -2,7 +2,7 @@
   "version": "0.3.0",
   "updatedAt": "2026-06-27",
   "viewBox": {
-    "width": 1560,
+    "width": 1561,
     "height": 1275
   },
   "lines": [
@@ -485,7 +485,6 @@
         "cidade-jardim",
         "vila-olimpia",
         "berrini",
-        "morumbi",
         "granja-julieta",
         "joao-dias",
         "santo-amaro",
@@ -726,10 +725,23 @@
       "newsQuery": "Linha 17-Ouro monotrilho Congonhas obras",
       "stationOrder": [
         "sao-paulo-morumbi",
-        "chacara-santo-antonio",
-        "congonhas",
-        "vereador-jose-diniz",
-        "campo-belo"
+        "l17-estadio-morumbi",
+        "l17-americo-maurano",
+        "l17-paraisopolis",
+        "l17-panamby",
+        "l17-morumbi",
+        "l17-chucri-zaidan",
+        "l17-vila-cordeiro",
+        "campo-belo",
+        "l17-vereador-jose-diniz",
+        "l17-brooklin-paulista",
+        "l17-aeroporto-de-congonhas",
+        "l17-washington-luis",
+        "l17-vila-paulista",
+        "l17-vila-babilonia",
+        "l17-cidade-leonor",
+        "l17-hospital-saboia",
+        "l17-jabaquara-cpb"
       ],
       "updates": [
         {
@@ -742,13 +754,24 @@
         }
       ],
       "geoOrder": [
-        "congonhas",
-        "brooklin-paulista",
-        "vereador-jose-diniz",
+        "sao-paulo-morumbi",
+        "l17-estadio-morumbi",
+        "l17-americo-maurano",
+        "l17-paraisopolis",
+        "l17-panamby",
+        "l17-morumbi",
+        "l17-chucri-zaidan",
+        "l17-vila-cordeiro",
         "campo-belo",
-        "vila-cordeiro",
-        "chucri-zaidan",
-        "morumbi"
+        "l17-vereador-jose-diniz",
+        "l17-brooklin-paulista",
+        "l17-aeroporto-de-congonhas",
+        "l17-washington-luis",
+        "l17-vila-paulista",
+        "l17-vila-babilonia",
+        "l17-cidade-leonor",
+        "l17-hospital-saboia",
+        "l17-jabaquara-cpb"
       ]
     },
     {
@@ -764,12 +787,21 @@
       "drawn": true,
       "newsQuery": "Linha 19-Celeste Metrô SP",
       "stationOrder": [
-        "l19-centro-sp",
-        "l19-tiete",
-        "l19-ponte-da-dutra",
-        "l19-vila-augusta",
+        "anhangabau",
+        "sao-bento",
+        "l19-cerealistas",
+        "l19-silva-teles",
+        "l19-catumbi",
+        "l19-vila-maria",
+        "l19-santo-eduardo",
         "l19-cerejeiras",
-        "l19-bosque-maia-guarulhos"
+        "l19-vila-sabrina",
+        "l19-jardim-julieta",
+        "l19-itapegica",
+        "l19-dutra",
+        "l19-vila-augusta",
+        "l19-guarulhos-centro",
+        "l19-bosque-maia"
       ],
       "updates": [
         {
@@ -778,12 +810,21 @@
         }
       ],
       "geoOrder": [
-        "l19-centro-sp",
-        "l19-tiete",
-        "l19-ponte-da-dutra",
-        "l19-vila-augusta",
+        "anhangabau",
+        "sao-bento",
+        "l19-cerealistas",
+        "l19-silva-teles",
+        "l19-catumbi",
+        "l19-vila-maria",
+        "l19-santo-eduardo",
         "l19-cerejeiras",
-        "l19-bosque-maia-guarulhos"
+        "l19-vila-sabrina",
+        "l19-jardim-julieta",
+        "l19-itapegica",
+        "l19-dutra",
+        "l19-vila-augusta",
+        "l19-guarulhos-centro",
+        "l19-bosque-maia"
       ]
     },
     {
@@ -798,10 +839,29 @@
       "drawn": true,
       "newsQuery": "Linha 20-Rosa Metrô SP",
       "stationOrder": [
+        "l6-santa-marina",
         "lapa",
-        "l20-bom-retiro",
-        "l20-mooca",
-        "l20-sao-caetano",
+        "l20-vila-romana",
+        "l20-cerro-cora",
+        "l20-girassol",
+        "l20-teodoro-sampaio",
+        "fradique-coutinho",
+        "l20-tabapua",
+        "l20-jesuino-cardoso",
+        "l20-helio-pellegrino",
+        "moema",
+        "l20-rubem-berta",
+        "l20-indianopolis",
+        "saude",
+        "l20-abraao-de-morais",
+        "l20-cursino",
+        "l20-jardim-climax",
+        "l20-liviero",
+        "l20-taboao-pauliceia",
+        "l20-rudge-ramos",
+        "l20-afonsina",
+        "l20-principe-de-gales",
+        "l20-portugal",
         "santo-andre"
       ],
       "updates": [
@@ -811,10 +871,29 @@
         }
       ],
       "geoOrder": [
+        "l6-santa-marina",
         "lapa",
-        "l20-bom-retiro",
-        "l20-mooca",
-        "l20-sao-caetano",
+        "l20-vila-romana",
+        "l20-cerro-cora",
+        "l20-girassol",
+        "l20-teodoro-sampaio",
+        "fradique-coutinho",
+        "l20-tabapua",
+        "l20-jesuino-cardoso",
+        "l20-helio-pellegrino",
+        "moema",
+        "l20-rubem-berta",
+        "l20-indianopolis",
+        "saude",
+        "l20-abraao-de-morais",
+        "l20-cursino",
+        "l20-jardim-climax",
+        "l20-liviero",
+        "l20-taboao-pauliceia",
+        "l20-rudge-ramos",
+        "l20-afonsina",
+        "l20-principe-de-gales",
+        "l20-portugal",
         "santo-andre"
       ]
     },
@@ -920,7 +999,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 60
       },
       "geo": {
@@ -937,7 +1016,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 98
       },
       "geo": {
@@ -954,7 +1033,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 136
       },
       "geo": {
@@ -971,7 +1050,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 174
       },
       "geo": {
@@ -988,7 +1067,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 212
       },
       "geo": {
@@ -1005,7 +1084,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 250
       },
       "geo": {
@@ -1022,7 +1101,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 288
       },
       "geo": {
@@ -1039,7 +1118,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 326
       },
       "geo": {
@@ -1060,7 +1139,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 364
       },
       "geo": {
@@ -1078,11 +1157,12 @@
       "id": "sao-bento",
       "name": "São Bento",
       "lineIds": [
-        "1"
+        "1",
+        "19"
       ],
-      "interchange": false,
+      "interchange": true,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 402
       },
       "geo": {
@@ -1100,7 +1180,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 440
       },
       "geo": {
@@ -1122,7 +1202,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 478
       },
       "geo": {
@@ -1140,7 +1220,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 516
       },
       "geo": {
@@ -1157,7 +1237,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 554
       },
       "geo": {
@@ -1175,7 +1255,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 592
       },
       "geo": {
@@ -1198,7 +1278,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 630
       },
       "geo": {
@@ -1220,7 +1300,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 668
       },
       "geo": {
@@ -1238,7 +1318,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 706
       },
       "geo": {
@@ -1255,7 +1335,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 744
       },
       "geo": {
@@ -1268,11 +1348,12 @@
       "id": "saude",
       "name": "Saúde",
       "lineIds": [
-        "1"
+        "1",
+        "20"
       ],
-      "interchange": false,
+      "interchange": true,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 782
       },
       "geo": {
@@ -1289,7 +1370,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 820
       },
       "geo": {
@@ -1306,7 +1387,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 858
       },
       "geo": {
@@ -1323,7 +1404,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 699.5,
+        "x": 700.4,
         "y": 896
       },
       "geo": {
@@ -1344,7 +1425,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 489.5,
+        "x": 490.4,
         "y": 440
       },
       "geo": {
@@ -1366,7 +1447,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 531.5,
+        "x": 532.4,
         "y": 440
       },
       "geo": {
@@ -1388,7 +1469,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 573.5,
+        "x": 574.4,
         "y": 440
       },
       "geo": {
@@ -1411,7 +1492,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 615.5,
+        "x": 616.4,
         "y": 440
       },
       "geo": {
@@ -1429,11 +1510,12 @@
       "id": "anhangabau",
       "name": "Anhangabaú",
       "lineIds": [
-        "3"
+        "3",
+        "19"
       ],
-      "interchange": false,
+      "interchange": true,
       "schematic": {
-        "x": 657.5,
+        "x": 658.4,
         "y": 440
       },
       "geo": {
@@ -1455,7 +1537,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 741.5,
+        "x": 742.4,
         "y": 440
       },
       "geo": {
@@ -1480,7 +1562,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 783.5,
+        "x": 784.4,
         "y": 440
       },
       "geo": {
@@ -1502,7 +1584,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 825.5,
+        "x": 826.4,
         "y": 440
       },
       "geo": {
@@ -1524,7 +1606,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 867.5,
+        "x": 868.4,
         "y": 440
       },
       "geo": {
@@ -1548,7 +1630,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 909.5,
+        "x": 910.4,
         "y": 440
       },
       "geo": {
@@ -1570,7 +1652,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 951.5,
+        "x": 952.4,
         "y": 440
       },
       "geo": {
@@ -1592,7 +1674,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 993.5,
+        "x": 994.4,
         "y": 440
       },
       "geo": {
@@ -1614,7 +1696,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1035.5,
+        "x": 1036.4,
         "y": 440
       },
       "geo": {
@@ -1636,7 +1718,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1077.5,
+        "x": 1078.4,
         "y": 440
       },
       "geo": {
@@ -1658,7 +1740,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1119.5,
+        "x": 1120.4,
         "y": 440
       },
       "geo": {
@@ -1680,7 +1762,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1161.5,
+        "x": 1162.4,
         "y": 440
       },
       "geo": {
@@ -1703,7 +1785,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1203.5,
+        "x": 1204.4,
         "y": 440
       },
       "geo": {
@@ -1725,7 +1807,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 459.5,
+        "x": 460.4,
         "y": 352
       },
       "geo": {
@@ -1748,7 +1830,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 499.5,
+        "x": 500.4,
         "y": 392
       },
       "geo": {
@@ -1770,7 +1852,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 539.5,
+        "x": 540.4,
         "y": 432
       },
       "geo": {
@@ -1793,7 +1875,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 579.5,
+        "x": 580.4,
         "y": 472
       },
       "geo": {
@@ -1815,7 +1897,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 619.5,
+        "x": 620.4,
         "y": 512
       },
       "geo": {
@@ -1837,7 +1919,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 659.5,
+        "x": 660.4,
         "y": 552
       },
       "geo": {
@@ -1860,7 +1942,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 739.5,
+        "x": 740.4,
         "y": 670
       },
       "geo": {
@@ -1882,7 +1964,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 779.5,
+        "x": 780.4,
         "y": 710
       },
       "geo": {
@@ -1904,7 +1986,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 819.5,
+        "x": 820.4,
         "y": 750
       },
       "geo": {
@@ -1926,7 +2008,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 859.5,
+        "x": 860.4,
         "y": 790
       },
       "geo": {
@@ -1949,7 +2031,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 899.5,
+        "x": 900.4,
         "y": 830
       },
       "geo": {
@@ -1972,7 +2054,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 939.5,
+        "x": 940.4,
         "y": 870
       },
       "geo": {
@@ -1995,7 +2077,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 597.5,
+        "x": 598.4,
         "y": 456
       },
       "geo": {
@@ -2017,7 +2099,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 539.5,
+        "x": 540.4,
         "y": 512
       },
       "geo": {
@@ -2035,11 +2117,12 @@
       "id": "fradique-coutinho",
       "name": "Fradique Coutinho",
       "lineIds": [
-        "4"
+        "4",
+        "20"
       ],
-      "interchange": false,
+      "interchange": true,
       "schematic": {
-        "x": 499.5,
+        "x": 500.4,
         "y": 552
       },
       "geo": {
@@ -2061,7 +2144,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 459.5,
+        "x": 460.4,
         "y": 592
       },
       "geo": {
@@ -2084,7 +2167,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 419.5,
+        "x": 420.4,
         "y": 632
       },
       "geo": {
@@ -2106,7 +2189,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 379.5,
+        "x": 380.4,
         "y": 672
       },
       "geo": {
@@ -2129,7 +2212,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 339.5,
+        "x": 340.4,
         "y": 712
       },
       "geo": {
@@ -2151,7 +2234,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 299.5,
+        "x": 300.4,
         "y": 752
       },
       "geo": {
@@ -2173,7 +2256,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 319.5,
+        "x": 320.4,
         "y": 1080
       },
       "geo": {
@@ -2195,7 +2278,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 359.5,
+        "x": 360.4,
         "y": 1080
       },
       "geo": {
@@ -2217,7 +2300,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 399.5,
+        "x": 400.4,
         "y": 1080
       },
       "geo": {
@@ -2239,7 +2322,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 439.5,
+        "x": 440.4,
         "y": 1080
       },
       "geo": {
@@ -2262,7 +2345,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 479.5,
+        "x": 480.4,
         "y": 1080
       },
       "geo": {
@@ -2284,7 +2367,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 499.5,
+        "x": 500.4,
         "y": 1046
       },
       "geo": {
@@ -2306,7 +2389,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 519.5,
+        "x": 520.4,
         "y": 1012
       },
       "geo": {
@@ -2328,7 +2411,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 539.5,
+        "x": 540.4,
         "y": 978
       },
       "geo": {
@@ -2350,7 +2433,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 559.5,
+        "x": 560.4,
         "y": 944
       },
       "geo": {
@@ -2372,7 +2455,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 579.5,
+        "x": 580.4,
         "y": 910
       },
       "geo": {
@@ -2395,7 +2478,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 599.5,
+        "x": 600.4,
         "y": 876
       },
       "geo": {
@@ -2417,7 +2500,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 619.5,
+        "x": 620.4,
         "y": 842
       },
       "geo": {
@@ -2435,11 +2518,12 @@
       "id": "moema",
       "name": "Moema",
       "lineIds": [
-        "5"
+        "5",
+        "20"
       ],
-      "interchange": false,
+      "interchange": true,
       "schematic": {
-        "x": 639.5,
+        "x": 640.4,
         "y": 808
       },
       "geo": {
@@ -2461,7 +2545,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 659.5,
+        "x": 660.4,
         "y": 774
       },
       "geo": {
@@ -2483,7 +2567,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 679.5,
+        "x": 680.4,
         "y": 740
       },
       "geo": {
@@ -2505,7 +2589,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 979.5,
+        "x": 980.4,
         "y": 882
       },
       "geo": {
@@ -2527,7 +2611,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1019.5,
+        "x": 1020.4,
         "y": 894
       },
       "geo": {
@@ -2549,7 +2633,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1059.5,
+        "x": 1060.4,
         "y": 906
       },
       "geo": {
@@ -2571,7 +2655,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1099.5,
+        "x": 1100.4,
         "y": 918
       },
       "geo": {
@@ -2593,7 +2677,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1139.5,
+        "x": 1140.4,
         "y": 930
       },
       "geo": {
@@ -2615,7 +2699,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1179.5,
+        "x": 1180.4,
         "y": 930
       },
       "geo": {
@@ -2637,7 +2721,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1219.5,
+        "x": 1220.4,
         "y": 930
       },
       "geo": {
@@ -2659,7 +2743,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1259.5,
+        "x": 1260.4,
         "y": 930
       },
       "geo": {
@@ -2681,7 +2765,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1299.5,
+        "x": 1300.4,
         "y": 930
       },
       "geo": {
@@ -2703,7 +2787,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1339.5,
+        "x": 1340.4,
         "y": 930
       },
       "geo": {
@@ -2727,7 +2811,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 449.5,
+        "x": 450.4,
         "y": 380
       },
       "geo": {
@@ -2749,7 +2833,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 414.5,
+        "x": 415.4,
         "y": 340
       },
       "geo": {
@@ -2771,7 +2855,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 359.5,
+        "x": 360.4,
         "y": 275
       },
       "geo": {
@@ -2793,7 +2877,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 321.5,
+        "x": 322.4,
         "y": 218
       },
       "geo": {
@@ -2815,7 +2899,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 305.5,
+        "x": 306.4,
         "y": 192
       },
       "geo": {
@@ -2837,7 +2921,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 279.5,
+        "x": 280.4,
         "y": 146
       },
       "geo": {
@@ -2859,7 +2943,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 261.5,
+        "x": 262.4,
         "y": 110
       },
       "geo": {
@@ -2882,7 +2966,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 364.5,
+        "x": 365.4,
         "y": 470
       },
       "geo": {
@@ -2904,7 +2988,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 319.5,
+        "x": 320.4,
         "y": 510
       },
       "geo": {
@@ -2926,7 +3010,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 289.5,
+        "x": 290.4,
         "y": 540
       },
       "geo": {
@@ -2948,7 +3032,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 264.5,
+        "x": 265.4,
         "y": 565
       },
       "geo": {
@@ -2970,7 +3054,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 244.5,
+        "x": 245.4,
         "y": 585
       },
       "geo": {
@@ -2992,7 +3076,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 227.5,
+        "x": 228.4,
         "y": 605
       },
       "geo": {
@@ -3015,7 +3099,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 384.5,
+        "x": 385.4,
         "y": 520
       },
       "geo": {
@@ -3037,7 +3121,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 404.5,
+        "x": 405.4,
         "y": 578
       },
       "geo": {
@@ -3059,7 +3143,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 439.5,
+        "x": 440.4,
         "y": 685
       },
       "geo": {
@@ -3081,7 +3165,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 451.5,
+        "x": 452.4,
         "y": 735
       },
       "geo": {
@@ -3103,7 +3187,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 462.5,
+        "x": 463.4,
         "y": 795
       },
       "geo": {
@@ -3125,7 +3209,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 470.5,
+        "x": 471.4,
         "y": 855
       },
       "geo": {
@@ -3147,12 +3231,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 477.5,
+        "x": 478.4,
         "y": 978
       },
       "geo": {
-        "lat": -23.62811,
-        "lng": -46.71261
+        "lat": -23.62199,
+        "lng": -46.70204
       },
       "labelTier": 3,
       "labelAnchor": "start",
@@ -3169,7 +3253,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 479.5,
+        "x": 480.4,
         "y": 1028
       },
       "geo": {
@@ -3191,7 +3275,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 499.5,
+        "x": 500.4,
         "y": 1128
       },
       "geo": {
@@ -3213,7 +3297,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 514.5,
+        "x": 515.4,
         "y": 1170
       },
       "geo": {
@@ -3235,7 +3319,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 529.5,
+        "x": 530.4,
         "y": 1215
       },
       "geo": {
@@ -3257,7 +3341,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 824.5,
+        "x": 825.4,
         "y": 520
       },
       "geo": {
@@ -3279,7 +3363,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 864.5,
+        "x": 865.4,
         "y": 630
       },
       "geo": {
@@ -3301,7 +3385,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 959.5,
+        "x": 960.4,
         "y": 920
       },
       "geo": {
@@ -3324,7 +3408,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1019.5,
+        "x": 1020.4,
         "y": 1000
       },
       "geo": {
@@ -3346,7 +3430,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1079.5,
+        "x": 1080.4,
         "y": 1070
       },
       "geo": {
@@ -3368,7 +3452,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1139.5,
+        "x": 1140.4,
         "y": 1130
       },
       "geo": {
@@ -3390,7 +3474,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1199.5,
+        "x": 1200.4,
         "y": 1180
       },
       "geo": {
@@ -3412,7 +3496,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1259.5,
+        "x": 1260.4,
         "y": 475
       },
       "geo": {
@@ -3434,7 +3518,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1309.5,
+        "x": 1310.4,
         "y": 490
       },
       "geo": {
@@ -3456,7 +3540,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1349.5,
+        "x": 1350.4,
         "y": 505
       },
       "geo": {
@@ -3478,7 +3562,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1394.5,
+        "x": 1395.4,
         "y": 520
       },
       "geo": {
@@ -3500,7 +3584,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1449.5,
+        "x": 1450.4,
         "y": 538
       },
       "geo": {
@@ -3522,7 +3606,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1499.5,
+        "x": 1500.4,
         "y": 552
       },
       "geo": {
@@ -3545,7 +3629,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 969.5,
+        "x": 970.4,
         "y": 380
       },
       "geo": {
@@ -3567,7 +3651,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1049.5,
+        "x": 1050.4,
         "y": 355
       },
       "geo": {
@@ -3589,7 +3673,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1129.5,
+        "x": 1130.4,
         "y": 335
       },
       "geo": {
@@ -3611,7 +3695,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1209.5,
+        "x": 1210.4,
         "y": 320
       },
       "geo": {
@@ -3634,7 +3718,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1284.5,
+        "x": 1285.4,
         "y": 308
       },
       "geo": {
@@ -3656,7 +3740,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1009.5,
+        "x": 1010.4,
         "y": 320
       },
       "geo": {
@@ -3678,7 +3762,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1049.5,
+        "x": 1050.4,
         "y": 265
       },
       "geo": {
@@ -3700,7 +3784,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 419.5,
+        "x": 420.4,
         "y": 775
       },
       "geo": {
@@ -3722,12 +3806,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 489.5,
+        "x": 490.4,
         "y": 820
       },
       "geo": {
-        "lat": -23.62716,
-        "lng": -46.66201
+        "lat": -23.628,
+        "lng": -46.661
       },
       "labelTier": 2,
       "labelAnchor": "middle",
@@ -3744,12 +3828,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 549.5,
+        "x": 550.4,
         "y": 850
       },
       "geo": {
-        "lat": -23.62186,
-        "lng": -46.67899
+        "lat": -23.621,
+        "lng": -46.666
       },
       "labelTier": 3,
       "labelAnchor": "start",
@@ -3978,59 +4062,6 @@
         "lng": -46.33909
       },
       "labelTier": 3
-    },
-    {
-      "id": "brooklin-paulista",
-      "name": "Brooklin Paulista",
-      "lineIds": [
-        "17"
-      ],
-      "interchange": false,
-      "geo": {
-        "lat": -23.62937,
-        "lng": -46.67369
-      },
-      "labelTier": 3
-    },
-    {
-      "id": "vila-cordeiro",
-      "name": "Vila Cordeiro",
-      "lineIds": [
-        "17"
-      ],
-      "interchange": false,
-      "geo": {
-        "lat": -23.61546,
-        "lng": -46.68878
-      },
-      "labelTier": 3
-    },
-    {
-      "id": "chucri-zaidan",
-      "name": "Chucri Zaidan",
-      "lineIds": [
-        "17"
-      ],
-      "interchange": false,
-      "geo": {
-        "lat": -23.6139,
-        "lng": -46.69573
-      },
-      "labelTier": 3
-    },
-    {
-      "id": "morumbi",
-      "name": "Morumbi",
-      "lineIds": [
-        "9",
-        "17"
-      ],
-      "interchange": true,
-      "geo": {
-        "lat": -23.62199,
-        "lng": -46.70204
-      },
-      "labelTier": 1
     },
     {
       "id": "jardim-sao-paulo-ayrton-senna",
@@ -4469,8 +4500,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 557.2,
-        "y": 342.9
+        "x": 558,
+        "y": 343
       },
       "geo": {
         "lat": -23.46,
@@ -4486,8 +4517,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 563.2,
-        "y": 371.8
+        "x": 563.9,
+        "y": 371.9
       },
       "geo": {
         "lat": -23.47,
@@ -4503,8 +4534,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 559.8,
-        "y": 395.7
+        "x": 560.6,
+        "y": 395.8
       },
       "geo": {
         "lat": -23.478,
@@ -4520,8 +4551,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 568.1,
-        "y": 424.3
+        "x": 568.8,
+        "y": 424.5
       },
       "geo": {
         "lat": -23.488,
@@ -4537,8 +4568,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 562.8,
-        "y": 454.4
+        "x": 563.4,
+        "y": 454.5
       },
       "geo": {
         "lat": -23.498,
@@ -4550,18 +4581,19 @@
       "id": "l6-santa-marina",
       "name": "Santa Marina",
       "lineIds": [
-        "6"
+        "6",
+        "20"
       ],
-      "interchange": false,
+      "interchange": true,
       "schematic": {
-        "x": 583.4,
-        "y": 502.4
+        "x": 584,
+        "y": 502.5
       },
       "geo": {
         "lat": -23.515,
         "lng": -46.682
       },
-      "labelTier": 3
+      "labelTier": 1
     },
     {
       "id": "l6-agua-branca",
@@ -4571,8 +4603,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 593.7,
-        "y": 527.8
+        "x": 594.3,
+        "y": 528
       },
       "geo": {
         "lat": -23.524,
@@ -4588,8 +4620,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 603.2,
-        "y": 535.7
+        "x": 603.8,
+        "y": 535.8
       },
       "geo": {
         "lat": -23.527,
@@ -4605,8 +4637,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 608.9,
-        "y": 558.7
+        "x": 609.5,
+        "y": 558.8
       },
       "geo": {
         "lat": -23.535,
@@ -4622,8 +4654,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 621.4,
-        "y": 581
+        "x": 621.9,
+        "y": 581.1
       },
       "geo": {
         "lat": -23.543,
@@ -4639,8 +4671,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 633.3,
-        "y": 591.5
+        "x": 633.8,
+        "y": 591.7
       },
       "geo": {
         "lat": -23.547,
@@ -4656,8 +4688,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 673.3,
-        "y": 616.8
+        "x": 653.8,
+        "y": 488.6
       },
       "geo": {
         "lat": -23.557,
@@ -4673,8 +4705,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 680.8,
-        "y": 630.8
+        "x": 683.9,
+        "y": 506.3
       },
       "geo": {
         "lat": -23.562,
@@ -4683,70 +4715,359 @@
       "labelTier": 3
     },
     {
-      "id": "l19-centro-sp",
-      "name": "Centro (SP)",
+      "id": "l17-estadio-morumbi",
+      "name": "Estádio Morumbi",
       "lineIds": [
-        "19"
+        "17"
       ],
       "interchange": false,
       "schematic": {
-        "x": 684.3,
-        "y": 587.7
+        "x": 380.3,
+        "y": 737.1
       },
       "geo": {
-        "lat": -23.5475,
-        "lng": -46.6395
+        "lat": -23.595,
+        "lng": -46.715
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-americo-maurano",
+      "name": "Américo Maurano",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 412,
+        "y": 757.1
+      },
+      "geo": {
+        "lat": -23.602,
+        "lng": -46.722
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-paraisopolis",
+      "name": "Paraisópolis",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 434,
+        "y": 771.1
+      },
+      "geo": {
+        "lat": -23.608,
+        "lng": -46.725
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-panamby",
+      "name": "Panamby",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 459.1,
+        "y": 786.9
+      },
+      "geo": {
+        "lat": -23.615,
+        "lng": -46.722
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-morumbi",
+      "name": "Morumbi",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 495.3,
+        "y": 809.7
+      },
+      "geo": {
+        "lat": -23.622,
+        "lng": -46.713
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-chucri-zaidan",
+      "name": "Chucri Zaidan",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 541.4,
+        "y": 838.8
+      },
+      "geo": {
+        "lat": -23.615,
+        "lng": -46.7
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-vila-cordeiro",
+      "name": "Vila Cordeiro",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 576.3,
+        "y": 860.8
+      },
+      "geo": {
+        "lat": -23.62,
+        "lng": -46.69
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-vereador-jose-diniz",
+      "name": "Vereador José Diniz",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 648.8,
+        "y": 805.4
+      },
+      "geo": {
+        "lat": -23.62,
+        "lng": -46.66
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-brooklin-paulista",
+      "name": "Brooklin Paulista",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 660.8,
+        "y": 818.9
+      },
+      "geo": {
+        "lat": -23.625,
+        "lng": -46.655
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-aeroporto-de-congonhas",
+      "name": "Aeroporto de Congonhas",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 672.4,
+        "y": 823.6
+      },
+      "geo": {
+        "lat": -23.627,
+        "lng": -46.65
       },
       "labelTier": 1
     },
     {
-      "id": "l19-tiete",
-      "name": "Tietê",
+      "id": "l17-washington-luis",
+      "name": "Washington Luís",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 684.2,
+        "y": 831.2
+      },
+      "geo": {
+        "lat": -23.63,
+        "lng": -46.645
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-vila-paulista",
+      "name": "Vila Paulista",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 691.7,
+        "y": 845.1
+      },
+      "geo": {
+        "lat": -23.635,
+        "lng": -46.642
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-vila-babilonia",
+      "name": "Vila Babilônia",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 701.5,
+        "y": 858.9
+      },
+      "geo": {
+        "lat": -23.64,
+        "lng": -46.638
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-cidade-leonor",
+      "name": "Cidade Leonor",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 715.5,
+        "y": 866.3
+      },
+      "geo": {
+        "lat": -23.643,
+        "lng": -46.632
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-hospital-saboia",
+      "name": "Hospital Sabóia",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 725,
+        "y": 874.1
+      },
+      "geo": {
+        "lat": -23.646,
+        "lng": -46.628
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l17-jabaquara-cpb",
+      "name": "Jabaquara-CPB",
+      "lineIds": [
+        "17"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 743.1,
+        "y": 872.2
+      },
+      "geo": {
+        "lat": -23.646,
+        "lng": -46.62
+      },
+      "labelTier": 1
+    },
+    {
+      "id": "l19-cerealistas",
+      "name": "Cerealistas",
       "lineIds": [
         "19"
       ],
       "interchange": false,
       "schematic": {
-        "x": 712.1,
-        "y": 483.1
+        "x": 700.5,
+        "y": 558.2
       },
       "geo": {
-        "lat": -23.513,
+        "lat": -23.538,
+        "lng": -46.632
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l19-silva-teles",
+      "name": "Silva Teles",
+      "lineIds": [
+        "19"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 704.6,
+        "y": 548.9
+      },
+      "geo": {
+        "lat": -23.535,
+        "lng": -46.63
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l19-catumbi",
+      "name": "Catumbi",
+      "lineIds": [
+        "19"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 708.4,
+        "y": 533.8
+      },
+      "geo": {
+        "lat": -23.53,
+        "lng": -46.628
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l19-vila-maria",
+      "name": "Vila Maria",
+      "lineIds": [
+        "19"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 713.5,
+        "y": 497.9
+      },
+      "geo": {
+        "lat": -23.518,
         "lng": -46.625
       },
       "labelTier": 3
     },
     {
-      "id": "l19-ponte-da-dutra",
-      "name": "Ponte da Dutra",
+      "id": "l19-santo-eduardo",
+      "name": "Santo Eduardo",
       "lineIds": [
         "19"
       ],
       "interchange": false,
       "schematic": {
-        "x": 821.1,
-        "y": 389.2
+        "x": 733.8,
+        "y": 495.8
       },
       "geo": {
-        "lat": -23.485,
-        "lng": -46.575
-      },
-      "labelTier": 3
-    },
-    {
-      "id": "l19-vila-augusta",
-      "name": "Vila Augusta",
-      "lineIds": [
-        "19"
-      ],
-      "interchange": false,
-      "schematic": {
-        "x": 886.5,
-        "y": 332.3
-      },
-      "geo": {
-        "lat": -23.468,
-        "lng": -46.545
+        "lat": -23.518,
+        "lng": -46.616
       },
       "labelTier": 3
     },
@@ -4758,25 +5079,127 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 900.9,
-        "y": 301.3
+        "x": 751.2,
+        "y": 479.2
       },
       "geo": {
-        "lat": -23.458,
-        "lng": -46.538
+        "lat": -23.513,
+        "lng": -46.608
       },
       "labelTier": 3
     },
     {
-      "id": "l19-bosque-maia-guarulhos",
-      "name": "Bosque Maia (Guarulhos)",
+      "id": "l19-vila-sabrina",
+      "name": "Vila Sabrina",
       "lineIds": [
         "19"
       ],
       "interchange": false,
       "schematic": {
-        "x": 911.4,
-        "y": 282.5
+        "x": 768.6,
+        "y": 462.7
+      },
+      "geo": {
+        "lat": -23.508,
+        "lng": -46.6
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l19-jardim-julieta",
+      "name": "Jardim Julieta",
+      "lineIds": [
+        "19"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 794.4,
+        "y": 430.5
+      },
+      "geo": {
+        "lat": -23.498,
+        "lng": -46.588
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l19-itapegica",
+      "name": "Itapegica",
+      "lineIds": [
+        "19"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 829.2,
+        "y": 397.4
+      },
+      "geo": {
+        "lat": -23.488,
+        "lng": -46.572
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l19-dutra",
+      "name": "Dutra",
+      "lineIds": [
+        "19"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 864.6,
+        "y": 376
+      },
+      "geo": {
+        "lat": -23.482,
+        "lng": -46.556
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l19-vila-augusta",
+      "name": "Vila Augusta",
+      "lineIds": [
+        "19"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 887.5,
+        "y": 332.4
+      },
+      "geo": {
+        "lat": -23.468,
+        "lng": -46.545
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l19-guarulhos-centro",
+      "name": "Guarulhos Centro",
+      "lineIds": [
+        "19"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 911.5,
+        "y": 312.2
+      },
+      "geo": {
+        "lat": -23.462,
+        "lng": -46.534
+      },
+      "labelTier": 1
+    },
+    {
+      "id": "l19-bosque-maia",
+      "name": "Bosque Maia",
+      "lineIds": [
+        "19"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 912.3,
+        "y": 282.6
       },
       "geo": {
         "lat": -23.452,
@@ -4785,53 +5208,308 @@
       "labelTier": 1
     },
     {
-      "id": "l20-bom-retiro",
-      "name": "Bom Retiro",
+      "id": "l20-vila-romana",
+      "name": "Vila Romana",
       "lineIds": [
         "20"
       ],
       "interchange": false,
       "schematic": {
-        "x": 679.9,
-        "y": 521.8
+        "x": 457.5,
+        "y": 404.5
       },
       "geo": {
         "lat": -23.525,
+        "lng": -46.695
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-cerro-cora",
+      "name": "Cerro Corá",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 468,
+        "y": 440.6
+      },
+      "geo": {
+        "lat": -23.535,
+        "lng": -46.692
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-girassol",
+      "name": "Girassol",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 478.3,
+        "y": 475.9
+      },
+      "geo": {
+        "lat": -23.545,
+        "lng": -46.69
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-teodoro-sampaio",
+      "name": "Teodoro Sampaio",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 488.5,
+        "y": 511.2
+      },
+      "geo": {
+        "lat": -23.555,
+        "lng": -46.688
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-tabapua",
+      "name": "Tabapuã",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 567.4,
+        "y": 674.5
+      },
+      "geo": {
+        "lat": -23.585,
+        "lng": -46.675
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-jesuino-cardoso",
+      "name": "Jesuíno Cardoso",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 603.2,
+        "y": 740
+      },
+      "geo": {
+        "lat": -23.595,
+        "lng": -46.67
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-helio-pellegrino",
+      "name": "Hélio Pellegrino",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 625.3,
+        "y": 780.4
+      },
+      "geo": {
+        "lat": -23.6,
+        "lng": -46.665
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-rubem-berta",
+      "name": "Rubem Berta",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 674.5,
+        "y": 793.2
+      },
+      "geo": {
+        "lat": -23.608,
+        "lng": -46.645
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-indianopolis",
+      "name": "Indianópolis",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 687.3,
+        "y": 787.7
+      },
+      "geo": {
+        "lat": -23.612,
         "lng": -46.64
       },
       "labelTier": 3
     },
     {
-      "id": "l20-mooca",
-      "name": "Mooca",
+      "id": "l20-abraao-de-morais",
+      "name": "Abraão de Morais",
       "lineIds": [
         "20"
       ],
       "interchange": false,
       "schematic": {
-        "x": 779.6,
-        "y": 605.8
+        "x": 721.6,
+        "y": 796.4
       },
       "geo": {
-        "lat": -23.557,
-        "lng": -46.598
+        "lat": -23.625,
+        "lng": -46.635
       },
       "labelTier": 3
     },
     {
-      "id": "l20-sao-caetano",
-      "name": "São Caetano",
+      "id": "l20-cursino",
+      "name": "Cursino",
       "lineIds": [
         "20"
       ],
       "interchange": false,
       "schematic": {
-        "x": 884.4,
-        "y": 789.5
+        "x": 749.9,
+        "y": 815.7
       },
       "geo": {
-        "lat": -23.623,
-        "lng": -46.556
+        "lat": -23.63,
+        "lng": -46.625
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-jardim-climax",
+      "name": "Jardim Clímax",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 782.9,
+        "y": 838.2
+      },
+      "geo": {
+        "lat": -23.638,
+        "lng": -46.615
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-liviero",
+      "name": "Liviero",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 824.8,
+        "y": 866.8
+      },
+      "geo": {
+        "lat": -23.645,
+        "lng": -46.6
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-taboao-pauliceia",
+      "name": "Taboão-Paulicéia",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 889.1,
+        "y": 910.6
+      },
+      "geo": {
+        "lat": -23.66,
+        "lng": -46.58
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-rudge-ramos",
+      "name": "Rudge Ramos",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 928.8,
+        "y": 937.6
+      },
+      "geo": {
+        "lat": -23.665,
+        "lng": -46.565
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-afonsina",
+      "name": "Afonsina",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 966.1,
+        "y": 963
+      },
+      "geo": {
+        "lat": -23.665,
+        "lng": -46.55
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-principe-de-gales",
+      "name": "Príncipe de Gales",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 994.5,
+        "y": 982.3
+      },
+      "geo": {
+        "lat": -23.66,
+        "lng": -46.54
+      },
+      "labelTier": 3
+    },
+    {
+      "id": "l20-portugal",
+      "name": "Portugal",
+      "lineIds": [
+        "20"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1009.4,
+        "y": 992.5
+      },
+      "geo": {
+        "lat": -23.657,
+        "lng": -46.535
       },
       "labelTier": 3
     },
@@ -4844,7 +5522,7 @@
       "interchange": false,
       "schematic": {
         "x": 60,
-        "y": 819.2
+        "y": 819.4
       },
       "geo": {
         "lat": -23.604,
@@ -4860,8 +5538,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 236,
-        "y": 744.9
+        "x": 236.2,
+        "y": 745.1
       },
       "geo": {
         "lat": -23.585,
@@ -4877,8 +5555,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 449.3,
-        "y": 687.3
+        "x": 449.6,
+        "y": 687.5
       },
       "geo": {
         "lat": -23.573,
@@ -4894,8 +5572,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 482.2,
-        "y": 663.2
+        "x": 482.6,
+        "y": 663.4
       },
       "geo": {
         "lat": -23.566,
