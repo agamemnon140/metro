@@ -7,7 +7,7 @@ import { viewBoxFor } from '@/lib/coords'
 import { useZoom } from '@/hooks/useZoomLevel'
 import { useSelection } from '@/hooks/useSelection'
 import { useViewMode } from '@/hooks/useViewMode'
-import { useShowFuture } from '@/hooks/useShowFuture'
+import { useLayers } from '@/hooks/useLayers'
 import { LinePath } from './LinePath'
 import { StationNode } from './StationNode'
 import { StationLabel } from './StationLabel'
@@ -17,9 +17,9 @@ export function NetworkMap() {
   const setScale = useZoom((s) => s.setScale)
   const clear = useSelection((s) => s.clear)
   const mode = useViewMode((s) => s.mode)
-  const showFuture = useShowFuture((s) => s.show)
-  const lines = drawnLines(showFuture)
-  const stations = drawnStations(mode, showFuture)
+  const layers = useLayers()
+  const lines = drawnLines(layers)
+  const stations = drawnStations(mode, layers)
   const { width, height } = viewBoxFor(mode)
 
   return (

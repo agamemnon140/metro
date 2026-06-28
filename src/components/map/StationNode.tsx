@@ -22,9 +22,13 @@ export function StationNode({ station }: Props) {
   const dimmed = focusLine !== null && !station.lineIds.includes(focusLine)
 
   const firstLine = getLine(station.lineIds[0])
-  const fill = station.interchange ? '#ffffff' : firstLine?.color ?? '#444'
-  const stroke = station.interchange ? '#1a1a1a' : '#ffffff'
-  const r = station.interchange ? 9 : 5.5
+  const color = firstLine?.color ?? '#444'
+  const future = Boolean(station.phase && station.phase !== 'operando')
+  // não-operando/baldeação = oca (fundo branco); comum = preenchida na cor
+  const hollow = station.interchange || future
+  const fill = hollow ? '#ffffff' : color
+  const stroke = station.interchange ? '#1a1a1a' : future ? color : '#ffffff'
+  const r = station.interchange ? 5.5 : 3.5
 
   return (
     <g
@@ -45,7 +49,7 @@ export function StationNode({ station }: Props) {
       }}
     >
       {isSelected && (
-        <circle cx={p.x} cy={p.y} r={r + 6} fill="none" stroke="#1a1a1a" strokeWidth={2} />
+        <circle cx={p.x} cy={p.y} r={r + 5} fill="none" stroke="#1a1a1a" strokeWidth={1.5} />
       )}
       <circle
         cx={p.x}
@@ -53,7 +57,7 @@ export function StationNode({ station }: Props) {
         r={r}
         fill={fill}
         stroke={stroke}
-        strokeWidth={station.interchange ? 3 : 2}
+        strokeWidth={station.interchange ? 2 : 1.5}
       />
     </g>
   )

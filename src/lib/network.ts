@@ -16,13 +16,30 @@ export function getLine(id: string): Line | undefined {
   return lineById.get(id)
 }
 
-const FUTURE_STATUS = new Set(['contratacao', 'elaboracao', 'estudo'])
+export interface Layers {
+  construction: boolean
+  study: boolean
+  speculation: boolean
+  intercity: boolean
+}
 
-/** Linhas desenhadas; `showFuture` inclui as em projeto/estudo (traçado indicativo). */
-export function drawnLines(showFuture = false): Line[] {
-  return network.lines.filter(
-    (l) => l.drawn && (showFuture || !FUTURE_STATUS.has(l.status)),
-  )
+/** Uma estação é visível segundo seu bloco e as camadas ligadas. */
+export function isPhaseVisible(s: Station, layers: Layers): boolean {
+  switch (s.phase ?? 'operando') {
+    case 'construcao':
+      return layers.construction
+    case 'estudo':
+      return layers.study
+    case 'especulacao':
+      return layers.speculation
+    default:
+      return true
+  }
+}
+
+/** Linhas desenhadas. Intercidades só com a camada `intercity`. */
+export function drawnLines(layers: Layers): Line[] {
+  return network.lines.filter((l) => l.drawn && (l.intercity ? layers.intercity : true))
 }
 
 type Mode = 'schematic' | 'geographic'
@@ -31,10 +48,12 @@ function orderFor(line: Line, mode: Mode): string[] {
   return mode === 'geographic' ? line.geoOrder ?? line.stationOrder : line.stationOrder
 }
 
-/** Estações que aparecem em alguma linha desenhada, conforme o modo. */
-export function drawnStations(mode: Mode = 'schematic', showFuture = false): Station[] {
-  const drawnIds = new Set(drawnLines(showFuture).flatMap((l) => orderFor(l, mode)))
-  return network.stations.filter((s) => drawnIds.has(s.id))
+/** Estações visíveis conforme o modo e as camadas. */
+export function drawnStations(mode: Mode, layers: Layers): Station[] {
+  const drawnIds = new Set(drawnLines(layers).flatMap((l) => orderFor(l, mode)))
+  return network.stations.filter(
+    (s) => drawnIds.has(s.id) && isPhaseVisible(s, layers),
+  )
 }
 
 /** Linhas que servem uma estação, na ordem do dataset. */

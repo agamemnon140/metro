@@ -6,11 +6,18 @@ import { useSelection } from '@/hooks/useSelection'
 import { Panel } from './Panel'
 import { LineChip } from '../LineChip'
 
+const PHASE_META: Record<string, { label: string; color: string }> = {
+  construcao: { label: 'Em construção', color: '#e08a00' },
+  estudo: { label: 'Em estudo', color: '#7a52b3' },
+  especulacao: { label: 'Especulação', color: '#8a8f98' },
+}
+
 export function StationPanel({ station }: { station: Station }) {
   const clear = useSelection((s) => s.clear)
   const selectLine = useSelection((s) => s.selectLine)
   const lines = linesForStation(station)
   const platform = detectPlatform()
+  const phase = station.phase && station.phase !== 'operando' ? PHASE_META[station.phase] : null
 
   const primary =
     'flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold text-white'
@@ -54,6 +61,22 @@ export function StationPanel({ station }: { station: Station }) {
         </div>
       }
     >
+      {phase && (
+        <div className="mb-4 flex items-center gap-2">
+          <span
+            className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold text-white"
+            style={{ backgroundColor: phase.color }}
+          >
+            {phase.label}
+          </span>
+          {station.eta && (
+            <span className="text-xs text-gray-500">
+              Previsão de inauguração: <b>{station.eta}</b>
+            </span>
+          )}
+        </div>
+      )}
+
       <section className="mb-5">
         <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">
           {lines.length > 1 ? 'Linhas (baldeação)' : 'Linha'}

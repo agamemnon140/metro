@@ -291,7 +291,7 @@
       "textColor": "#1a1a1a",
       "operator": "metro",
       "kind": "monotrilho",
-      "status": "construcao",
+      "status": "operacao",
       "drawn": true,
       "newsQuery": "Linha 17-Ouro monotrilho Congonhas obras",
       "stationOrder": [
@@ -355,9 +355,9 @@
     {
       "id": "16",
       "number": "16",
-      "name": "(cor a definir)",
-      "fullName": "Linha 16",
-      "color": "#6f7a8a",
+      "name": "Violeta",
+      "fullName": "Linha 16–Violeta",
+      "color": "#7b2d8e",
       "operator": "metro",
       "kind": "metro",
       "status": "elaboracao",
@@ -398,6 +398,22 @@
       "stationOrder": [],
       "updates": [
         { "date": "2026-04-15", "text": "Em estudo funcional (preliminar). Traçado e estações ainda não definidos." }
+      ]
+    },
+    {
+      "id": "26",
+      "number": "26",
+      "name": "(em estudo)",
+      "fullName": "Linha 26",
+      "color": "#c2c7cc",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "estudo",
+      "drawn": false,
+      "newsQuery": "Linha 26 Metrô SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-04-15", "text": "Em estudo preliminar (especulativo). Traçado e estações ainda não definidos." }
       ]
     }
   ],

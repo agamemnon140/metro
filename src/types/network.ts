@@ -51,6 +51,10 @@ export interface Station {
   geo: GeoPoint
   /** 1 = nome sempre visível; 2 = zoom médio; 3 = só zoom alto */
   labelTier: 1 | 2 | 3
+  /** bloco da estação (default: operando). Uma linha pode misturar blocos. */
+  phase?: 'operando' | 'construcao' | 'estudo' | 'especulacao'
+  /** previsão de inauguração (estações em construção) */
+  eta?: string
   /** ancoragem do texto do rótulo (default: start) */
   labelAnchor?: 'start' | 'middle' | 'end'
   /** deslocamento do rótulo em unidades do canvas */
@@ -93,6 +97,8 @@ export interface Line {
   newsQuery: string
   /** se a geometria já está desenhada no diagrama (flag do MVP) */
   drawn: boolean
+  /** trem intercidades (gated por toggle próprio) */
+  intercity?: boolean
 }
 
 export interface NetworkData {
