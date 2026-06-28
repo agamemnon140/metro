@@ -16,9 +16,13 @@ export function getLine(id: string): Line | undefined {
   return lineById.get(id)
 }
 
-/** Linhas com geometria desenhada no diagrama (MVP). */
-export function drawnLines(): Line[] {
-  return network.lines.filter((l) => l.drawn)
+const FUTURE_STATUS = new Set(['contratacao', 'elaboracao', 'estudo'])
+
+/** Linhas desenhadas; `showFuture` inclui as em projeto/estudo (traçado indicativo). */
+export function drawnLines(showFuture = false): Line[] {
+  return network.lines.filter(
+    (l) => l.drawn && (showFuture || !FUTURE_STATUS.has(l.status)),
+  )
 }
 
 type Mode = 'schematic' | 'geographic'
@@ -28,8 +32,8 @@ function orderFor(line: Line, mode: Mode): string[] {
 }
 
 /** Estações que aparecem em alguma linha desenhada, conforme o modo. */
-export function drawnStations(mode: Mode = 'schematic'): Station[] {
-  const drawnIds = new Set(drawnLines().flatMap((l) => orderFor(l, mode)))
+export function drawnStations(mode: Mode = 'schematic', showFuture = false): Station[] {
+  const drawnIds = new Set(drawnLines(showFuture).flatMap((l) => orderFor(l, mode)))
   return network.stations.filter((s) => drawnIds.has(s.id))
 }
 

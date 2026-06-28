@@ -15,8 +15,8 @@ function defaultOffset(anchor: 'start' | 'middle' | 'end'): SchematicPoint {
 
 export function StationLabel({ station }: Props) {
   const scale = useZoom((s) => s.scale)
-  const currentTier = tierForScale(scale)
   const mode = useViewMode((s) => s.mode)
+  const currentTier = tierForScale(scale, mode)
 
   if (station.labelTier > currentTier) return null
 

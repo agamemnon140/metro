@@ -5,12 +5,15 @@ import { StationPanel } from './components/panels/StationPanel'
 import { LinePanel } from './components/panels/LinePanel'
 import { useSelection } from './hooks/useSelection'
 import { useViewMode } from './hooks/useViewMode'
+import { useShowFuture } from './hooks/useShowFuture'
 import { getStation, getLine } from './lib/network'
 
 export default function App() {
   const selection = useSelection((s) => s.selection)
   const mode = useViewMode((s) => s.mode)
   const toggleMode = useViewMode((s) => s.toggle)
+  const showFuture = useShowFuture((s) => s.show)
+  const toggleFuture = useShowFuture((s) => s.toggle)
 
   const station =
     selection?.kind === 'station' ? getStation(selection.id) : undefined
@@ -27,14 +30,27 @@ export default function App() {
             Toque numa estação para abrir no mapa · numa linha para ver status e notícias
           </p>
         </div>
-        <button
-          onClick={toggleMode}
-          className="shrink-0 rounded-lg bg-white/15 hover:bg-white/25 px-3 py-1.5 text-xs font-semibold transition"
-          title="Alternar entre diagrama esquemático e mapa geográfico"
-          aria-label="Alternar visão do mapa"
-        >
-          {mode === 'schematic' ? '🗺️ Geográfico' : '📐 Esquemático'}
-        </button>
+        <div className="shrink-0 flex items-center gap-2">
+          <button
+            onClick={toggleFuture}
+            className={
+              'rounded-lg px-3 py-1.5 text-xs font-semibold transition ' +
+              (showFuture ? 'bg-white text-[#0455a1]' : 'bg-white/15 hover:bg-white/25')
+            }
+            title="Mostrar/ocultar linhas em projeto e estudo"
+            aria-pressed={showFuture}
+          >
+            {showFuture ? '✓ Projetos' : 'Projetos'}
+          </button>
+          <button
+            onClick={toggleMode}
+            className="rounded-lg bg-white/15 hover:bg-white/25 px-3 py-1.5 text-xs font-semibold transition"
+            title="Alternar entre diagrama esquemático e mapa geográfico"
+            aria-label="Alternar visão do mapa"
+          >
+            {mode === 'schematic' ? '🗺️ Geográfico' : '📐 Esquemático'}
+          </button>
+        </div>
       </header>
 
       <main className="flex-1 relative overflow-hidden touch-none">
