@@ -28,7 +28,9 @@ export function StationNode({ station }: Props) {
   const hollow = station.interchange || future
   const fill = hollow ? '#ffffff' : color
   const stroke = station.interchange ? '#1a1a1a' : future ? color : '#ffffff'
-  const r = station.interchange ? 5.5 : 3.5
+  // geográfico é mais denso -> ícones menores
+  const mul = mode === 'geographic' ? 0.65 : 1
+  const r = (station.interchange ? 5.5 : 3.5) * mul
 
   return (
     <g
@@ -49,7 +51,7 @@ export function StationNode({ station }: Props) {
       }}
     >
       {isSelected && (
-        <circle cx={p.x} cy={p.y} r={r + 5} fill="none" stroke="#1a1a1a" strokeWidth={1.5} />
+        <circle cx={p.x} cy={p.y} r={r + 4 * mul} fill="none" stroke="#1a1a1a" strokeWidth={1.5 * mul} />
       )}
       <circle
         cx={p.x}
@@ -57,7 +59,7 @@ export function StationNode({ station }: Props) {
         r={r}
         fill={fill}
         stroke={stroke}
-        strokeWidth={station.interchange ? 2 : 1.5}
+        strokeWidth={(station.interchange ? 2 : 1.5) * mul}
       />
     </g>
   )

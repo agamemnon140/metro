@@ -415,6 +415,38 @@
       "updates": [
         { "date": "2026-04-15", "text": "Em estudo preliminar (especulativo). Traçado e estações ainda não definidos." }
       ]
+    },
+    {
+      "id": "21",
+      "number": "21",
+      "name": "Vinho",
+      "fullName": "Linha 21–Vinho",
+      "color": "#6e2639",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "estudo",
+      "drawn": true,
+      "newsQuery": "Linha 21-Vinho Metrô SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-04-15", "text": "Novo eixo em estudo (Diadema ↔ Aricanduva), perimetral leste. Estações aproximadas." }
+      ]
+    },
+    {
+      "id": "23",
+      "number": "23",
+      "name": "Limão",
+      "fullName": "Linha 23–Limão",
+      "color": "#9fc131",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "estudo",
+      "drawn": true,
+      "newsQuery": "Linha 23-Limão Metrô SP",
+      "stationOrder": [],
+      "updates": [
+        { "date": "2026-04-15", "text": "Em estudo (Cohab Raposo ↔ Osasco ↔ Tatuapé). Estações aproximadas." }
+      ]
     }
   ],
   "stations": [
