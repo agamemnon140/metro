@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "updatedAt": "2026-06-27",
-  "viewBox": { "width": 1200, "height": 960 },
+  "viewBox": { "width": 1300, "height": 1100 },
   "lines": [
     {
       "id": "1",
@@ -77,9 +77,13 @@
       "operator": "viaquatro",
       "kind": "metro",
       "status": "operacao",
-      "drawn": false,
+      "drawn": true,
       "newsQuery": "Linha 4-Amarela Metrô SP",
-      "stationOrder": [],
+      "stationOrder": [
+        "luz", "republica", "higienopolis-mackenzie", "consolacao", "oscar-freire",
+        "fradique-coutinho", "faria-lima", "pinheiros", "butanta",
+        "sao-paulo-morumbi", "vila-sonia"
+      ],
       "updates": [
         { "date": "2026-01-30", "text": "Operada pela ViaQuatro, liga Vila Sônia à Luz, totalmente automática (sem condutor)." }
       ]
@@ -93,9 +97,14 @@
       "operator": "viamobilidade",
       "kind": "metro",
       "status": "operacao",
-      "drawn": false,
+      "drawn": true,
       "newsQuery": "Linha 5-Lilás Metrô SP",
-      "stationOrder": [],
+      "stationOrder": [
+        "capao-redondo", "campo-limpo", "vila-das-belezas", "giovanni-gronchi",
+        "santo-amaro", "largo-treze", "adolfo-pinheiro", "alto-da-boa-vista",
+        "borba-gato", "brooklin", "campo-belo", "eucaliptos", "moema",
+        "aacd-servidor", "hospital-sao-paulo", "santa-cruz", "chacara-klabin"
+      ],
       "updates": [
         { "date": "2026-01-30", "text": "Operada pela ViaMobilidade, liga Capão Redondo à Chácara Klabin, com integração às Linhas 1 e 2." }
       ]
@@ -239,9 +248,13 @@
       "operator": "metro",
       "kind": "monotrilho",
       "status": "expansao",
-      "drawn": false,
+      "drawn": true,
       "newsQuery": "Linha 15-Prata monotrilho Metrô SP",
-      "stationOrder": [],
+      "stationOrder": [
+        "vila-prudente", "oratorio", "sao-lucas", "camilo-haddad", "vila-tolstoi",
+        "vila-uniao", "jardim-planalto", "sapopemba", "fazenda-da-juta",
+        "sao-mateus", "jardim-colonial"
+      ],
       "updates": [
         { "date": "2026-05-02", "text": "Monotrilho em expansão na Zona Leste, com extensão prevista até Jacu-Pêssego." },
         { "date": "2026-02-01", "text": "Trecho atual opera de Vila Prudente a Jardim Colonial." }
@@ -333,7 +346,7 @@
     { "id": "paraiso", "name": "Paraíso", "lineIds": ["1", "2"], "interchange": true, "schematic": { "x": 500, "y": 572 }, "geo": { "lat": -23.5765, "lng": -46.6400 }, "labelTier": 1, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
     { "id": "ana-rosa", "name": "Ana Rosa", "lineIds": ["1", "2"], "interchange": true, "schematic": { "x": 500, "y": 610 }, "geo": { "lat": -23.5815, "lng": -46.6385 }, "labelTier": 1, "labelAnchor": "end", "labelOffset": { "x": -14, "y": 0 } },
     { "id": "vila-mariana", "name": "Vila Mariana", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 648 }, "geo": { "lat": -23.5890, "lng": -46.6345 }, "labelTier": 2 },
-    { "id": "santa-cruz", "name": "Santa Cruz", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 686 }, "geo": { "lat": -23.5990, "lng": -46.6385 }, "labelTier": 3 },
+    { "id": "santa-cruz", "name": "Santa Cruz", "lineIds": ["1", "5"], "interchange": true, "schematic": { "x": 500, "y": 686 }, "geo": { "lat": -23.5990, "lng": -46.6385 }, "labelTier": 1 },
     { "id": "praca-da-arvore", "name": "Praça da Árvore", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 724 }, "geo": { "lat": -23.6090, "lng": -46.6390 }, "labelTier": 3 },
     { "id": "saude", "name": "Saúde", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 762 }, "geo": { "lat": -23.6185, "lng": -46.6390 }, "labelTier": 3 },
     { "id": "sao-judas", "name": "São Judas", "lineIds": ["1"], "interchange": false, "schematic": { "x": 500, "y": 800 }, "geo": { "lat": -23.6260, "lng": -46.6410 }, "labelTier": 3 },
@@ -369,6 +382,42 @@
     { "id": "alto-do-ipiranga", "name": "Alto do Ipiranga", "lineIds": ["2"], "interchange": false, "schematic": { "x": 620, "y": 730 }, "geo": { "lat": -23.6025, "lng": -46.6090 }, "labelTier": 3, "labelAnchor": "start", "labelOffset": { "x": 14, "y": 0 } },
     { "id": "sacoma", "name": "Sacomã", "lineIds": ["2"], "interchange": false, "schematic": { "x": 660, "y": 770 }, "geo": { "lat": -23.6065, "lng": -46.6010 }, "labelTier": 3, "labelAnchor": "start", "labelOffset": { "x": 14, "y": 0 } },
     { "id": "tamanduatei", "name": "Tamanduateí", "lineIds": ["2", "10"], "interchange": true, "schematic": { "x": 700, "y": 810 }, "geo": { "lat": -23.5910, "lng": -46.6010 }, "labelTier": 1, "labelAnchor": "start", "labelOffset": { "x": 14, "y": 0 } },
-    { "id": "vila-prudente", "name": "Vila Prudente", "lineIds": ["2", "15"], "interchange": true, "schematic": { "x": 740, "y": 850 }, "geo": { "lat": -23.5840, "lng": -46.5810 }, "labelTier": 1, "labelAnchor": "start", "labelOffset": { "x": 14, "y": 0 } }
+    { "id": "vila-prudente", "name": "Vila Prudente", "lineIds": ["2", "15"], "interchange": true, "schematic": { "x": 740, "y": 850 }, "geo": { "lat": -23.5840, "lng": -46.5810 }, "labelTier": 1, "labelAnchor": "start", "labelOffset": { "x": 14, "y": -6 } },
+
+    { "id": "higienopolis-mackenzie", "name": "Higienópolis–Mackenzie", "lineIds": ["4"], "interchange": false, "schematic": { "x": 398, "y": 436 }, "geo": { "lat": -23.5475, "lng": -46.6520 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": -2 } },
+    { "id": "oscar-freire", "name": "Oscar Freire", "lineIds": ["4"], "interchange": false, "schematic": { "x": 340, "y": 492 }, "geo": { "lat": -23.5560, "lng": -46.6720 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "fradique-coutinho", "name": "Fradique Coutinho", "lineIds": ["4"], "interchange": false, "schematic": { "x": 300, "y": 532 }, "geo": { "lat": -23.5660, "lng": -46.6850 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "faria-lima", "name": "Faria Lima", "lineIds": ["4"], "interchange": false, "schematic": { "x": 260, "y": 572 }, "geo": { "lat": -23.5675, "lng": -46.6935 }, "labelTier": 2, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "pinheiros", "name": "Pinheiros", "lineIds": ["4", "9"], "interchange": true, "schematic": { "x": 220, "y": 612 }, "geo": { "lat": -23.5670, "lng": -46.7020 }, "labelTier": 1, "labelAnchor": "end", "labelOffset": { "x": -12, "y": 0 } },
+    { "id": "butanta", "name": "Butantã", "lineIds": ["4"], "interchange": false, "schematic": { "x": 180, "y": 652 }, "geo": { "lat": -23.5715, "lng": -46.7080 }, "labelTier": 2, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "sao-paulo-morumbi", "name": "São Paulo–Morumbi", "lineIds": ["4"], "interchange": false, "schematic": { "x": 140, "y": 692 }, "geo": { "lat": -23.5860, "lng": -46.7220 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "vila-sonia", "name": "Vila Sônia", "lineIds": ["4"], "interchange": false, "schematic": { "x": 100, "y": 732 }, "geo": { "lat": -23.5980, "lng": -46.7330 }, "labelTier": 1, "labelAnchor": "end", "labelOffset": { "x": -12, "y": 0 } },
+
+    { "id": "capao-redondo", "name": "Capão Redondo", "lineIds": ["5"], "interchange": false, "schematic": { "x": 120, "y": 1060 }, "geo": { "lat": -23.6690, "lng": -46.7800 }, "labelTier": 1, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+    { "id": "campo-limpo", "name": "Campo Limpo", "lineIds": ["5"], "interchange": false, "schematic": { "x": 160, "y": 1060 }, "geo": { "lat": -23.6480, "lng": -46.7570 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+    { "id": "vila-das-belezas", "name": "Vila das Belezas", "lineIds": ["5"], "interchange": false, "schematic": { "x": 200, "y": 1060 }, "geo": { "lat": -23.6420, "lng": -46.7470 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+    { "id": "giovanni-gronchi", "name": "Giovanni Gronchi", "lineIds": ["5"], "interchange": false, "schematic": { "x": 240, "y": 1060 }, "geo": { "lat": -23.6310, "lng": -46.7340 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+    { "id": "santo-amaro", "name": "Santo Amaro", "lineIds": ["5", "9"], "interchange": true, "schematic": { "x": 280, "y": 1060 }, "geo": { "lat": -23.6545, "lng": -46.7100 }, "labelTier": 1, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 22 } },
+    { "id": "largo-treze", "name": "Largo Treze", "lineIds": ["5"], "interchange": false, "schematic": { "x": 300, "y": 1026 }, "geo": { "lat": -23.6480, "lng": -46.7060 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "adolfo-pinheiro", "name": "Adolfo Pinheiro", "lineIds": ["5"], "interchange": false, "schematic": { "x": 320, "y": 992 }, "geo": { "lat": -23.6420, "lng": -46.7010 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "alto-da-boa-vista", "name": "Alto da Boa Vista", "lineIds": ["5"], "interchange": false, "schematic": { "x": 340, "y": 958 }, "geo": { "lat": -23.6350, "lng": -46.6940 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "borba-gato", "name": "Borba Gato", "lineIds": ["5"], "interchange": false, "schematic": { "x": 360, "y": 924 }, "geo": { "lat": -23.6280, "lng": -46.6870 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "brooklin", "name": "Brooklin", "lineIds": ["5"], "interchange": false, "schematic": { "x": 380, "y": 890 }, "geo": { "lat": -23.6190, "lng": -46.6830 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "campo-belo", "name": "Campo Belo", "lineIds": ["5"], "interchange": false, "schematic": { "x": 400, "y": 856 }, "geo": { "lat": -23.6160, "lng": -46.6680 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "eucaliptos", "name": "Eucaliptos", "lineIds": ["5"], "interchange": false, "schematic": { "x": 420, "y": 822 }, "geo": { "lat": -23.6080, "lng": -46.6620 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "moema", "name": "Moema", "lineIds": ["5"], "interchange": false, "schematic": { "x": 440, "y": 788 }, "geo": { "lat": -23.6010, "lng": -46.6620 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "aacd-servidor", "name": "AACD–Servidor", "lineIds": ["5"], "interchange": false, "schematic": { "x": 460, "y": 754 }, "geo": { "lat": -23.5980, "lng": -46.6450 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+    { "id": "hospital-sao-paulo", "name": "Hospital São Paulo", "lineIds": ["5"], "interchange": false, "schematic": { "x": 480, "y": 720 }, "geo": { "lat": -23.5990, "lng": -46.6440 }, "labelTier": 3, "labelAnchor": "end", "labelOffset": { "x": -10, "y": 0 } },
+
+    { "id": "oratorio", "name": "Oratório", "lineIds": ["15"], "interchange": false, "schematic": { "x": 780, "y": 862 }, "geo": { "lat": -23.5870, "lng": -46.5710 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 20 } },
+    { "id": "sao-lucas", "name": "São Lucas", "lineIds": ["15"], "interchange": false, "schematic": { "x": 820, "y": 874 }, "geo": { "lat": -23.5900, "lng": -46.5610 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 20 } },
+    { "id": "camilo-haddad", "name": "Camilo Haddad", "lineIds": ["15"], "interchange": false, "schematic": { "x": 860, "y": 886 }, "geo": { "lat": -23.5930, "lng": -46.5560 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 20 } },
+    { "id": "vila-tolstoi", "name": "Vila Tolstói", "lineIds": ["15"], "interchange": false, "schematic": { "x": 900, "y": 898 }, "geo": { "lat": -23.5950, "lng": -46.5500 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 20 } },
+    { "id": "vila-uniao", "name": "Vila União", "lineIds": ["15"], "interchange": false, "schematic": { "x": 940, "y": 910 }, "geo": { "lat": -23.5980, "lng": -46.5440 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 20 } },
+    { "id": "jardim-planalto", "name": "Jardim Planalto", "lineIds": ["15"], "interchange": false, "schematic": { "x": 980, "y": 910 }, "geo": { "lat": -23.6000, "lng": -46.5380 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 20 } },
+    { "id": "sapopemba", "name": "Sapopemba", "lineIds": ["15"], "interchange": false, "schematic": { "x": 1020, "y": 910 }, "geo": { "lat": -23.6030, "lng": -46.5320 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 20 } },
+    { "id": "fazenda-da-juta", "name": "Fazenda da Juta", "lineIds": ["15"], "interchange": false, "schematic": { "x": 1060, "y": 910 }, "geo": { "lat": -23.6050, "lng": -46.5260 }, "labelTier": 3, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 20 } },
+    { "id": "sao-mateus", "name": "São Mateus", "lineIds": ["15"], "interchange": false, "schematic": { "x": 1100, "y": 910 }, "geo": { "lat": -23.6080, "lng": -46.5180 }, "labelTier": 2, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 20 } },
+    { "id": "jardim-colonial", "name": "Jardim Colonial", "lineIds": ["15"], "interchange": false, "schematic": { "x": 1140, "y": 910 }, "geo": { "lat": -23.6120, "lng": -46.5100 }, "labelTier": 1, "labelAnchor": "middle", "labelOffset": { "x": 0, "y": 20 } }
   ]
 }
