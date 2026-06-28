@@ -1,7 +1,7 @@
 import type { Line } from '@/types/network'
 import { stationsForLine } from '@/lib/network'
 import { lineTextColor } from '@/lib/colors'
-import { googleNewsUrl } from '@/lib/deeplinks'
+import { metroCptmLineUrl, googleNewsUrl } from '@/lib/deeplinks'
 import { formatDate } from '@/constants/statusLabels'
 import { useSelection } from '@/hooks/useSelection'
 import { Panel } from './Panel'
@@ -66,13 +66,21 @@ export function LinePanel({ line }: { line: Line }) {
       </section>
 
       <a
+        href={metroCptmLineUrl(line.number)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold mb-2"
+        style={{ backgroundColor: line.color, color: lineTextColor(line) }}
+      >
+        Ver notícias da linha (metrôCPTM) ↗
+      </a>
+      <a
         href={googleNewsUrl(line.newsQuery)}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold text-white mb-5"
-        style={{ backgroundColor: line.color, color: lineTextColor(line) }}
+        className="block text-center text-xs text-gray-500 hover:underline mb-5"
       >
-        Ver últimas notícias ↗
+        ou buscar no Google Notícias ↗
       </a>
 
       <section>

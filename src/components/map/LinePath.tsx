@@ -24,6 +24,7 @@ export function LinePath({ line }: Props) {
   if (!points) return null
 
   const isSelected = selection?.kind === 'line' && selection.id === line.id
+  const dashed = line.status === 'construcao' || line.status === 'planejamento'
 
   return (
     <g
@@ -58,6 +59,7 @@ export function LinePath({ line }: Props) {
         strokeWidth={isSelected ? 9 : 6}
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeDasharray={dashed ? '2 12' : undefined}
         opacity={isSelected ? 1 : 0.95}
       />
     </g>
