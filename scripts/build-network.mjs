@@ -143,8 +143,8 @@ const LINE_PHASE = {
   '20': { phase: 'estudo' },
   '22': { phase: 'estudo' },
   '15': { phase: 'construcao', eta: '2027' },
-  '21': { phase: 'estudo' },
-  '23': { phase: 'estudo' },
+  '21': { phase: 'especulacao' },
+  '23': { phase: 'especulacao' },
 }
 const EXT_PHASE = {
   '2': { phase: 'construcao', eta: '2025–2028' },

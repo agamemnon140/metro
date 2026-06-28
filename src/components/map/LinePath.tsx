@@ -59,7 +59,8 @@ export function LinePath({ line }: Props) {
 
   const isSelected = selection?.kind === 'line' && selection.id === line.id
   const dimmed = selection?.kind === 'line' && !isSelected
-  const width = isSelected ? 9 : 6
+  const base = mode === 'geographic' ? 4 : 4.5
+  const width = isSelected ? base + 3 : base
 
   return (
     <g
