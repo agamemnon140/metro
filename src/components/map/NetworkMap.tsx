@@ -25,13 +25,14 @@ export function NetworkMap() {
   return (
     <TransformWrapper
       key={mode}
-      minScale={0.5}
-      maxScale={6}
+      minScale={0.4}
+      maxScale={16}
       initialScale={1}
       centerOnInit
       limitToBounds={false}
-      doubleClick={{ mode: 'zoomIn', step: 0.7 }}
-      wheel={{ step: 0.12 }}
+      doubleClick={{ mode: 'zoomIn', step: 0.9 }}
+      wheel={{ step: 0.18 }}
+      pinch={{ step: 5 }}
       onTransformed={(_ref, state) => setScale(state.scale)}
     >
       {({ zoomIn, zoomOut, resetTransform }) => (
