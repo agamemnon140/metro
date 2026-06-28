@@ -35,7 +35,8 @@ function geoToPoint(lat: number, lng: number): SchematicPoint {
 
 export function pointFor(station: Station, mode: ViewMode = 'schematic'): SchematicPoint {
   if (mode === 'geographic') return geoToPoint(station.geo.lat, station.geo.lng)
-  return station.schematic
+  // estação sem posição esquemática cai na projeção geográfica (segurança)
+  return station.schematic ?? geoToPoint(station.geo.lat, station.geo.lng)
 }
 
 export function viewBoxFor(mode: ViewMode) {

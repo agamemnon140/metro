@@ -15,7 +15,7 @@ export function LinePath({ line }: Props) {
   const mode = useViewMode((s) => s.mode)
 
   const points = useMemo(() => {
-    return stationsForLine(line)
+    return stationsForLine(line, mode)
       .map((s) => {
         const p = pointFor(s, mode)
         return `${p.x},${p.y}`

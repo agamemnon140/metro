@@ -17,7 +17,7 @@ export function NetworkMap() {
   const clear = useSelection((s) => s.clear)
   const mode = useViewMode((s) => s.mode)
   const lines = drawnLines()
-  const stations = drawnStations()
+  const stations = drawnStations(mode)
   const { width, height } = viewBoxFor(mode)
 
   return (
