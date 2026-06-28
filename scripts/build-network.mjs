@@ -17,11 +17,35 @@ const net = JSON.parse(readFileSync('src/data/network.curated.json', 'utf8'))
 
 const TARGET = new Set(['1', '2', '3', '4', '5', '7', '8', '9', '10', '11', '12', '13', '15', '17'])
 
-// traçado indicativo (NÃO oficial) das linhas em projeto/estudo: [nome, lat, lng, tier]
+// traçado INDICATIVO (não oficial) das linhas em projeto/estudo.
+// {ref} reaproveita uma estação real existente (conexão confirmada pelo metrôCPTM);
+// senão {name,lat,lng,tier} cria um nó indicativo.
 const INDICATIVE = {
-  '19': [['Campo Belo', -23.616, -46.668, 1], ['Trecho central', -23.553, -46.64, 3], ['Bosque Maia (Guarulhos)', -23.452, -46.533, 1]],
-  '20': [['Lapa', -23.52, -46.7, 1], ['Trecho central', -23.55, -46.633, 3], ['Santo André', -23.654, -46.532, 1]],
-  '22': [['Cotia', -23.602, -46.919, 1], ['Taboão da Serra', -23.61, -46.79, 3], ['Zona Oeste', -23.59, -46.73, 1]],
+  // 19-Celeste: Centro de SP <-> Bosque Maia (Guarulhos)
+  '19': [
+    { name: 'Centro (SP)', lat: -23.5475, lng: -46.6395, tier: 1 },
+    { name: 'Tietê', lat: -23.513, lng: -46.625, tier: 3 },
+    { name: 'Ponte da Dutra', lat: -23.485, lng: -46.575, tier: 3 },
+    { name: 'Vila Augusta', lat: -23.468, lng: -46.545, tier: 3 },
+    { name: 'Cerejeiras', lat: -23.458, lng: -46.538, tier: 3 },
+    { name: 'Bosque Maia (Guarulhos)', lat: -23.452, lng: -46.533, tier: 1 },
+  ],
+  // 20-Rosa: Lapa <-> Santo André (conecta em estações reais)
+  '20': [
+    { ref: 'lapa' },
+    { name: 'Bom Retiro', lat: -23.525, lng: -46.64, tier: 3 },
+    { name: 'Mooca', lat: -23.557, lng: -46.598, tier: 3 },
+    { name: 'São Caetano', lat: -23.623, lng: -46.556, tier: 3 },
+    { ref: 'santo-andre' },
+  ],
+  // 22-Marrom: Cotia/Granja Viana <-> Sumaré (Linha 2-Verde)
+  '22': [
+    { name: 'Cotia', lat: -23.604, lng: -46.919, tier: 1 },
+    { name: 'Granja Viana', lat: -23.585, lng: -46.84, tier: 3 },
+    { name: 'Raposo Tavares', lat: -23.573, lng: -46.745, tier: 3 },
+    { name: 'Rio Pequeno', lat: -23.566, lng: -46.73, tier: 3 },
+    { ref: 'sumare' },
+  ],
 }
 
 const slug = (name) =>
@@ -98,12 +122,21 @@ for (const [ref, rel] of bestByRef) {
 // linhas futuras indicativas
 for (const [ref, stops] of Object.entries(INDICATIVE)) {
   const order = []
-  for (const [name, lat, lng, tier] of stops) {
-    const id = `l${ref}-${slug(name)}`
+  for (const stop of stops) {
+    let id
+    if (stop.ref) {
+      id = stop.ref
+      if (stations.has(id)) stations.get(id).lineIds.add(ref)
+    } else {
+      id = `l${ref}-${slug(stop.name)}`
+      if (!stations.has(id)) {
+        stations.set(id, {
+          id, name: stop.name, lineIds: new Set([ref]),
+          interchange: false, geo: { lat: stop.lat, lng: stop.lng }, labelTier: stop.tier,
+        })
+      } else stations.get(id).lineIds.add(ref)
+    }
     order.push(id)
-    if (!stations.has(id)) {
-      stations.set(id, { id, name, lineIds: new Set([ref]), interchange: false, geo: { lat, lng }, labelTier: tier })
-    } else stations.get(id).lineIds.add(ref)
   }
   orderByLine.set(ref, order)
 }
