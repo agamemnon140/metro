@@ -8,7 +8,7 @@ interface ViewModeState {
 }
 
 export const useViewMode = create<ViewModeState>((set) => ({
-  mode: 'schematic',
+  mode: 'geographic',
   toggle: () =>
     set((s) => ({ mode: s.mode === 'schematic' ? 'geographic' : 'schematic' })),
   set: (mode) => set({ mode }),

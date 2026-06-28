@@ -41,7 +41,8 @@ export function StationLabel({ station }: Props) {
   const off = station.labelOffset ?? defaultOffset(anchor)
   const x = p.x + off.x
   const y = p.y + off.y
-  const sizeMul = !focusLine && labelMode === 'small' ? 0.8 : 1
+  const geoMul = mode === 'geographic' ? 0.7 : 1
+  const sizeMul = (!focusLine && labelMode === 'small' ? 0.8 : 1) * geoMul
 
   return (
     <text

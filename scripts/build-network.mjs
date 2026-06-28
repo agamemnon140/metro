@@ -12,12 +12,13 @@ import { readFileSync, writeFileSync } from 'node:fs'
 const osm = JSON.parse(readFileSync('scratch/osm.json', 'utf8'))
 const net = JSON.parse(readFileSync('src/data/network.curated.json', 'utf8'))
 
-const TARGET = new Set(['1', '2', '3', '4', '5', '7', '8', '9', '10', '11', '12', '13', '15'])
+const TARGET = new Set(['1', '2', '3', '4', '5', '7', '8', '9', '10', '11', '12', '13'])
 
 // helper p/ stop: r=reúsa estação existente; o=operacional (não futura)
 const S = (name, lat, lng, tier = 3, o = false) => ({ name, lat, lng, tier, op: o })
 const R = (ref) => ({ ref })
 const E = (name, lat, lng, tier = 3) => ({ name, lat, lng, tier, phase: 'especulacao' }) // especulação
+const U = (name, lat, lng, tier = 3) => ({ name, lat, lng, tier, phase: 'estudo' }) // estudo
 
 // Linhas definidas à mão (substituem stationOrder). Estações não-ref e sem op
 // viram futuras, EXCETO quando a linha é majoritariamente operacional (17).
@@ -81,6 +82,25 @@ const MANUAL = {
     S('Mesopotâmia', -23.595, -46.86), S('Estrada de Embu', -23.6, -46.875), S('Parque Alexandra', -23.605, -46.89),
     S('Sabiá', -23.608, -46.905), S('Santo Antônio', -23.61, -46.918), S('Cotia (Centro)', -23.604, -46.92, 1),
   ],
+  // 15-Prata: Ipiranga (obras) + operação + expansão Jacu-Pêssego/Cidade Tiradentes
+  '15': [
+    R('ipiranga'), R('vila-prudente'), R('oratorio'), R('sao-lucas'), R('camilo-haddad'), R('vila-tolstoi'),
+    R('vila-uniao'), R('jardim-planalto'), R('sapopemba'), R('fazenda-da-juta'), R('sao-mateus'), R('jardim-colonial'),
+    S('Boa Esperança', -23.6, -46.46), S('Jacu-Pêssego', -23.605, -46.455),
+    U('Jardim Marília', -23.595, -46.44), U('Jardim Pedra Branca', -23.585, -46.43),
+    U('Cidade Tiradentes (L15)', -23.58, -46.42), U('Hospital Cidade Tiradentes', -23.575, -46.41, 1),
+  ],
+  // 21-Vinho (estudo): Diadema -> Aricanduva (perimetral leste)
+  '21': [
+    S('Diadema', -23.686, -46.62, 1), S('Taboão-Paulicéia', -23.66, -46.58), S('Estrada das Lágrimas', -23.64, -46.56),
+    S('São Caetano do Sul', -23.625, -46.555), S('São Lucas (L21)', -23.59, -46.575), S('Cipriano Rodrigues (L21)', -23.575, -46.535),
+    S('Aricanduva/Parque do Carmo', -23.555, -46.52, 1),
+  ],
+  // 23-Limão (estudo): Cohab Raposo -> Osasco -> Tatuapé
+  '23': [
+    S('Cohab Raposo', -23.585, -46.78, 1), S('Osasco (L23)', -23.532, -46.792), S('Presidente Altino (L23)', -23.536, -46.766),
+    S('Lapa (L23)', -23.52, -46.7), S('Barra Funda (L23)', -23.527, -46.665), S('Pari', -23.528, -46.61), S('Tatuapé (L23)', -23.54, -46.576, 1),
+  ],
 }
 
 // Estações de expansão (futuras) anexadas a linhas operacionais.
@@ -122,6 +142,9 @@ const LINE_PHASE = {
   '19': { phase: 'estudo' },
   '20': { phase: 'estudo' },
   '22': { phase: 'estudo' },
+  '15': { phase: 'construcao', eta: '2027' },
+  '21': { phase: 'estudo' },
+  '23': { phase: 'estudo' },
 }
 const EXT_PHASE = {
   '2': { phase: 'construcao', eta: '2025–2028' },

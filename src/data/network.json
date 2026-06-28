@@ -2,7 +2,7 @@
   "version": "0.4.0",
   "updatedAt": "2026-06-27",
   "viewBox": {
-    "width": 1678,
+    "width": 1738,
     "height": 1275
   },
   "lines": [
@@ -695,6 +695,7 @@
       "drawn": true,
       "newsQuery": "Linha 15-Prata monotrilho Metrô SP",
       "stationOrder": [
+        "ipiranga",
         "vila-prudente",
         "oratorio",
         "sao-lucas",
@@ -705,7 +706,13 @@
         "sapopemba",
         "fazenda-da-juta",
         "sao-mateus",
-        "jardim-colonial"
+        "jardim-colonial",
+        "l15-boa-esperanca",
+        "l15-jacu-pessego",
+        "l15-jardim-marilia",
+        "l15-jardim-pedra-branca",
+        "l15-cidade-tiradentes-l15",
+        "l15-hospital-cidade-tiradentes"
       ],
       "updates": [
         {
@@ -718,17 +725,24 @@
         }
       ],
       "geoOrder": [
-        "jardim-colonial",
-        "sao-mateus",
-        "fazenda-da-juta",
-        "sapopemba",
-        "jardim-planalto",
-        "vila-uniao",
-        "vila-tolstoi",
-        "camilo-haddad",
-        "sao-lucas",
+        "ipiranga",
+        "vila-prudente",
         "oratorio",
-        "vila-prudente"
+        "sao-lucas",
+        "camilo-haddad",
+        "vila-tolstoi",
+        "vila-uniao",
+        "jardim-planalto",
+        "sapopemba",
+        "fazenda-da-juta",
+        "sao-mateus",
+        "jardim-colonial",
+        "l15-boa-esperanca",
+        "l15-jacu-pessego",
+        "l15-jardim-marilia",
+        "l15-jardim-pedra-branca",
+        "l15-cidade-tiradentes-l15",
+        "l15-hospital-cidade-tiradentes"
       ]
     },
     {
@@ -1128,6 +1142,78 @@
       "geoOrder": []
     },
     {
+      "id": "21",
+      "number": "21",
+      "name": "Vinho",
+      "fullName": "Linha 21–Vinho",
+      "color": "#6e2639",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "estudo",
+      "drawn": true,
+      "newsQuery": "Linha 21-Vinho Metrô SP",
+      "stationOrder": [
+        "l21-diadema",
+        "l21-taboao-pauliceia",
+        "l21-estrada-das-lagrimas",
+        "l21-sao-caetano-do-sul",
+        "l21-sao-lucas-l21",
+        "l21-cipriano-rodrigues-l21",
+        "l21-aricanduva-parque-do-carmo"
+      ],
+      "updates": [
+        {
+          "date": "2026-04-15",
+          "text": "Novo eixo em estudo (Diadema ↔ Aricanduva), perimetral leste. Estações aproximadas."
+        }
+      ],
+      "geoOrder": [
+        "l21-diadema",
+        "l21-taboao-pauliceia",
+        "l21-estrada-das-lagrimas",
+        "l21-sao-caetano-do-sul",
+        "l21-sao-lucas-l21",
+        "l21-cipriano-rodrigues-l21",
+        "l21-aricanduva-parque-do-carmo"
+      ]
+    },
+    {
+      "id": "23",
+      "number": "23",
+      "name": "Limão",
+      "fullName": "Linha 23–Limão",
+      "color": "#9fc131",
+      "operator": "metro",
+      "kind": "metro",
+      "status": "estudo",
+      "drawn": true,
+      "newsQuery": "Linha 23-Limão Metrô SP",
+      "stationOrder": [
+        "l23-cohab-raposo",
+        "l23-osasco-l23",
+        "l23-presidente-altino-l23",
+        "l23-lapa-l23",
+        "l23-barra-funda-l23",
+        "l23-pari",
+        "l23-tatuape-l23"
+      ],
+      "updates": [
+        {
+          "date": "2026-04-15",
+          "text": "Em estudo (Cohab Raposo ↔ Osasco ↔ Tatuapé). Estações aproximadas."
+        }
+      ],
+      "geoOrder": [
+        "l23-cohab-raposo",
+        "l23-osasco-l23",
+        "l23-presidente-altino-l23",
+        "l23-lapa-l23",
+        "l23-barra-funda-l23",
+        "l23-pari",
+        "l23-tatuape-l23"
+      ]
+    },
+    {
       "id": "tic-norte",
       "number": "N",
       "name": "TIC Norte",
@@ -1232,7 +1318,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 60
       },
       "geo": {
@@ -1249,7 +1335,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 98
       },
       "geo": {
@@ -1266,7 +1352,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 136
       },
       "geo": {
@@ -1283,7 +1369,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 174
       },
       "geo": {
@@ -1300,7 +1386,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 212
       },
       "geo": {
@@ -1317,7 +1403,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 250
       },
       "geo": {
@@ -1334,7 +1420,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 288
       },
       "geo": {
@@ -1351,7 +1437,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 326
       },
       "geo": {
@@ -1372,7 +1458,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 364
       },
       "geo": {
@@ -1395,7 +1481,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 402
       },
       "geo": {
@@ -1413,7 +1499,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 440
       },
       "geo": {
@@ -1435,7 +1521,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 478
       },
       "geo": {
@@ -1453,7 +1539,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 516
       },
       "geo": {
@@ -1470,7 +1556,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 554
       },
       "geo": {
@@ -1488,7 +1574,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 592
       },
       "geo": {
@@ -1512,7 +1598,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 630
       },
       "geo": {
@@ -1534,7 +1620,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 668
       },
       "geo": {
@@ -1552,7 +1638,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 706
       },
       "geo": {
@@ -1569,7 +1655,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 744
       },
       "geo": {
@@ -1587,7 +1673,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 782
       },
       "geo": {
@@ -1604,7 +1690,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 820
       },
       "geo": {
@@ -1621,7 +1707,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 858
       },
       "geo": {
@@ -1638,7 +1724,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 817.9,
+        "x": 817.2,
         "y": 896
       },
       "geo": {
@@ -1661,7 +1747,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 607.9,
+        "x": 607.2,
         "y": 440
       },
       "geo": {
@@ -1683,7 +1769,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 649.9,
+        "x": 649.2,
         "y": 440
       },
       "geo": {
@@ -1705,7 +1791,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 691.9,
+        "x": 691.2,
         "y": 440
       },
       "geo": {
@@ -1728,7 +1814,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 733.9,
+        "x": 733.2,
         "y": 440
       },
       "geo": {
@@ -1751,7 +1837,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 775.9,
+        "x": 775.2,
         "y": 440
       },
       "geo": {
@@ -1773,7 +1859,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 859.9,
+        "x": 859.2,
         "y": 440
       },
       "geo": {
@@ -1798,7 +1884,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 901.9,
+        "x": 901.2,
         "y": 440
       },
       "geo": {
@@ -1820,7 +1906,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 943.9,
+        "x": 943.2,
         "y": 440
       },
       "geo": {
@@ -1842,7 +1928,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 985.9,
+        "x": 985.2,
         "y": 440
       },
       "geo": {
@@ -1866,7 +1952,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1027.9,
+        "x": 1027.2,
         "y": 440
       },
       "geo": {
@@ -1888,7 +1974,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1069.9,
+        "x": 1069.2,
         "y": 440
       },
       "geo": {
@@ -1911,7 +1997,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1111.9,
+        "x": 1111.2,
         "y": 440
       },
       "geo": {
@@ -1933,7 +2019,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1153.9,
+        "x": 1153.2,
         "y": 440
       },
       "geo": {
@@ -1955,7 +2041,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1195.9,
+        "x": 1195.2,
         "y": 440
       },
       "geo": {
@@ -1977,7 +2063,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1237.9,
+        "x": 1237.2,
         "y": 440
       },
       "geo": {
@@ -1999,7 +2085,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1279.9,
+        "x": 1279.2,
         "y": 440
       },
       "geo": {
@@ -2022,7 +2108,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1321.9,
+        "x": 1321.2,
         "y": 440
       },
       "geo": {
@@ -2044,7 +2130,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 577.9,
+        "x": 577.2,
         "y": 352
       },
       "geo": {
@@ -2067,7 +2153,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 617.9,
+        "x": 617.2,
         "y": 392
       },
       "geo": {
@@ -2089,7 +2175,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 657.9,
+        "x": 657.2,
         "y": 432
       },
       "geo": {
@@ -2112,7 +2198,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 697.9,
+        "x": 697.2,
         "y": 472
       },
       "geo": {
@@ -2134,7 +2220,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 737.9,
+        "x": 737.2,
         "y": 512
       },
       "geo": {
@@ -2157,7 +2243,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 777.9,
+        "x": 777.2,
         "y": 552
       },
       "geo": {
@@ -2180,7 +2266,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 857.9,
+        "x": 857.2,
         "y": 670
       },
       "geo": {
@@ -2202,7 +2288,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 897.9,
+        "x": 897.2,
         "y": 710
       },
       "geo": {
@@ -2224,7 +2310,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 937.9,
+        "x": 937.2,
         "y": 750
       },
       "geo": {
@@ -2246,7 +2332,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 977.9,
+        "x": 977.2,
         "y": 790
       },
       "geo": {
@@ -2269,7 +2355,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1017.9,
+        "x": 1017.2,
         "y": 830
       },
       "geo": {
@@ -2292,7 +2378,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1057.9,
+        "x": 1057.2,
         "y": 870
       },
       "geo": {
@@ -2315,7 +2401,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 715.9,
+        "x": 715.2,
         "y": 456
       },
       "geo": {
@@ -2338,7 +2424,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 657.9,
+        "x": 657.2,
         "y": 512
       },
       "geo": {
@@ -2361,7 +2447,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 617.9,
+        "x": 617.2,
         "y": 552
       },
       "geo": {
@@ -2384,7 +2470,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 577.9,
+        "x": 577.2,
         "y": 592
       },
       "geo": {
@@ -2407,7 +2493,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 537.9,
+        "x": 537.2,
         "y": 632
       },
       "geo": {
@@ -2429,7 +2515,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 497.9,
+        "x": 497.2,
         "y": 672
       },
       "geo": {
@@ -2452,7 +2538,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 457.9,
+        "x": 457.2,
         "y": 712
       },
       "geo": {
@@ -2474,7 +2560,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 417.9,
+        "x": 417.2,
         "y": 752
       },
       "geo": {
@@ -2496,7 +2582,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 437.9,
+        "x": 437.2,
         "y": 1080
       },
       "geo": {
@@ -2518,7 +2604,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 477.9,
+        "x": 477.2,
         "y": 1080
       },
       "geo": {
@@ -2540,7 +2626,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 517.9,
+        "x": 517.2,
         "y": 1080
       },
       "geo": {
@@ -2562,7 +2648,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 557.9,
+        "x": 557.2,
         "y": 1080
       },
       "geo": {
@@ -2585,7 +2671,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 597.9,
+        "x": 597.2,
         "y": 1080
       },
       "geo": {
@@ -2607,7 +2693,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 617.9,
+        "x": 617.2,
         "y": 1046
       },
       "geo": {
@@ -2629,7 +2715,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 637.9,
+        "x": 637.2,
         "y": 1012
       },
       "geo": {
@@ -2651,7 +2737,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 657.9,
+        "x": 657.2,
         "y": 978
       },
       "geo": {
@@ -2673,7 +2759,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 677.9,
+        "x": 677.2,
         "y": 944
       },
       "geo": {
@@ -2695,7 +2781,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 697.9,
+        "x": 697.2,
         "y": 910
       },
       "geo": {
@@ -2719,7 +2805,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 717.9,
+        "x": 717.2,
         "y": 876
       },
       "geo": {
@@ -2741,7 +2827,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 737.9,
+        "x": 737.2,
         "y": 842
       },
       "geo": {
@@ -2764,7 +2850,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 757.9,
+        "x": 757.2,
         "y": 808
       },
       "geo": {
@@ -2786,7 +2872,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 777.9,
+        "x": 777.2,
         "y": 774
       },
       "geo": {
@@ -2808,7 +2894,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 797.9,
+        "x": 797.2,
         "y": 740
       },
       "geo": {
@@ -2830,12 +2916,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1097.9,
+        "x": 1097.2,
         "y": 882
       },
       "geo": {
-        "lat": -23.5821,
-        "lng": -46.56186
+        "lat": -23.587,
+        "lng": -46.571
       },
       "labelTier": 3,
       "labelAnchor": "middle",
@@ -2852,12 +2938,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1137.9,
+        "x": 1137.2,
         "y": 894
       },
       "geo": {
-        "lat": -23.58891,
-        "lng": -46.54459
+        "lat": -23.59,
+        "lng": -46.561
       },
       "labelTier": 3,
       "labelAnchor": "middle",
@@ -2874,12 +2960,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1177.9,
+        "x": 1177.2,
         "y": 906
       },
       "geo": {
-        "lat": -23.59543,
-        "lng": -46.53758
+        "lat": -23.593,
+        "lng": -46.556
       },
       "labelTier": 3,
       "labelAnchor": "middle",
@@ -2896,12 +2982,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1217.9,
+        "x": 1217.2,
         "y": 918
       },
       "geo": {
-        "lat": -23.60067,
-        "lng": -46.52734
+        "lat": -23.595,
+        "lng": -46.55
       },
       "labelTier": 3,
       "labelAnchor": "middle",
@@ -2918,12 +3004,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1257.9,
+        "x": 1257.2,
         "y": 930
       },
       "geo": {
-        "lat": -23.60287,
-        "lng": -46.51592
+        "lat": -23.598,
+        "lng": -46.544
       },
       "labelTier": 3,
       "labelAnchor": "middle",
@@ -2940,12 +3026,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1297.9,
+        "x": 1297.2,
         "y": 930
       },
       "geo": {
-        "lat": -23.60616,
-        "lng": -46.50785
+        "lat": -23.6,
+        "lng": -46.538
       },
       "labelTier": 3,
       "labelAnchor": "middle",
@@ -2962,12 +3048,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1337.9,
+        "x": 1337.2,
         "y": 930
       },
       "geo": {
-        "lat": -23.61472,
-        "lng": -46.5013
+        "lat": -23.603,
+        "lng": -46.532
       },
       "labelTier": 3,
       "labelAnchor": "middle",
@@ -2984,12 +3070,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1377.9,
+        "x": 1377.2,
         "y": 930
       },
       "geo": {
-        "lat": -23.61206,
-        "lng": -46.48783
+        "lat": -23.605,
+        "lng": -46.526
       },
       "labelTier": 3,
       "labelAnchor": "middle",
@@ -3006,12 +3092,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1417.9,
+        "x": 1417.2,
         "y": 930
       },
       "geo": {
-        "lat": -23.61215,
-        "lng": -46.47733
+        "lat": -23.608,
+        "lng": -46.518
       },
       "labelTier": 2,
       "labelAnchor": "middle",
@@ -3028,12 +3114,12 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1457.9,
+        "x": 1457.2,
         "y": 930
       },
       "geo": {
-        "lat": -23.59915,
-        "lng": -46.46913
+        "lat": -23.612,
+        "lng": -46.51
       },
       "labelTier": 1,
       "labelAnchor": "middle",
@@ -3052,7 +3138,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 567.9,
+        "x": 567.2,
         "y": 380
       },
       "geo": {
@@ -3074,7 +3160,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 532.9,
+        "x": 532.2,
         "y": 340
       },
       "geo": {
@@ -3096,7 +3182,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 477.9,
+        "x": 477.2,
         "y": 275
       },
       "geo": {
@@ -3118,7 +3204,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 439.9,
+        "x": 439.2,
         "y": 218
       },
       "geo": {
@@ -3140,7 +3226,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 423.9,
+        "x": 423.2,
         "y": 192
       },
       "geo": {
@@ -3162,7 +3248,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 397.9,
+        "x": 397.2,
         "y": 146
       },
       "geo": {
@@ -3186,7 +3272,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 379.9,
+        "x": 379.2,
         "y": 110
       },
       "geo": {
@@ -3209,7 +3295,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 482.9,
+        "x": 482.2,
         "y": 470
       },
       "geo": {
@@ -3232,7 +3318,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 437.9,
+        "x": 437.2,
         "y": 510
       },
       "geo": {
@@ -3254,7 +3340,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 407.9,
+        "x": 407.2,
         "y": 540
       },
       "geo": {
@@ -3276,7 +3362,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 382.9,
+        "x": 382.2,
         "y": 565
       },
       "geo": {
@@ -3298,7 +3384,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 362.9,
+        "x": 362.2,
         "y": 585
       },
       "geo": {
@@ -3321,7 +3407,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 345.9,
+        "x": 345.2,
         "y": 605
       },
       "geo": {
@@ -3344,7 +3430,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 502.9,
+        "x": 502.2,
         "y": 520
       },
       "geo": {
@@ -3366,7 +3452,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 522.9,
+        "x": 522.2,
         "y": 578
       },
       "geo": {
@@ -3389,7 +3475,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 557.9,
+        "x": 557.2,
         "y": 685
       },
       "geo": {
@@ -3411,7 +3497,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 569.9,
+        "x": 569.2,
         "y": 735
       },
       "geo": {
@@ -3433,7 +3519,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 580.9,
+        "x": 580.2,
         "y": 795
       },
       "geo": {
@@ -3455,7 +3541,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 588.9,
+        "x": 588.2,
         "y": 855
       },
       "geo": {
@@ -3477,7 +3563,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 595.9,
+        "x": 595.2,
         "y": 978
       },
       "geo": {
@@ -3499,7 +3585,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 597.9,
+        "x": 597.2,
         "y": 1028
       },
       "geo": {
@@ -3521,7 +3607,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 617.9,
+        "x": 617.2,
         "y": 1128
       },
       "geo": {
@@ -3543,7 +3629,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 632.9,
+        "x": 632.2,
         "y": 1170
       },
       "geo": {
@@ -3565,7 +3651,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 647.9,
+        "x": 647.2,
         "y": 1215
       },
       "geo": {
@@ -3587,7 +3673,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 942.9,
+        "x": 942.2,
         "y": 520
       },
       "geo": {
@@ -3605,11 +3691,12 @@
       "id": "ipiranga",
       "name": "Ipiranga",
       "lineIds": [
-        "10"
+        "10",
+        "15"
       ],
-      "interchange": false,
+      "interchange": true,
       "schematic": {
-        "x": 982.9,
+        "x": 982.2,
         "y": 630
       },
       "geo": {
@@ -3631,7 +3718,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1077.9,
+        "x": 1077.2,
         "y": 920
       },
       "geo": {
@@ -3654,7 +3741,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1137.9,
+        "x": 1137.2,
         "y": 1000
       },
       "geo": {
@@ -3676,7 +3763,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1197.9,
+        "x": 1197.2,
         "y": 1070
       },
       "geo": {
@@ -3698,7 +3785,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1257.9,
+        "x": 1257.2,
         "y": 1130
       },
       "geo": {
@@ -3720,7 +3807,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1317.9,
+        "x": 1317.2,
         "y": 1180
       },
       "geo": {
@@ -3742,7 +3829,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1377.9,
+        "x": 1377.2,
         "y": 475
       },
       "geo": {
@@ -3764,7 +3851,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1427.9,
+        "x": 1427.2,
         "y": 490
       },
       "geo": {
@@ -3786,7 +3873,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1467.9,
+        "x": 1467.2,
         "y": 505
       },
       "geo": {
@@ -3808,7 +3895,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1512.9,
+        "x": 1512.2,
         "y": 520
       },
       "geo": {
@@ -3830,7 +3917,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1567.9,
+        "x": 1567.2,
         "y": 538
       },
       "geo": {
@@ -3852,7 +3939,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1617.9,
+        "x": 1617.2,
         "y": 552
       },
       "geo": {
@@ -3875,7 +3962,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1087.9,
+        "x": 1087.2,
         "y": 380
       },
       "geo": {
@@ -3897,7 +3984,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1167.9,
+        "x": 1167.2,
         "y": 355
       },
       "geo": {
@@ -3919,7 +4006,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1247.9,
+        "x": 1247.2,
         "y": 335
       },
       "geo": {
@@ -3941,7 +4028,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1327.9,
+        "x": 1327.2,
         "y": 320
       },
       "geo": {
@@ -3964,7 +4051,7 @@
       ],
       "interchange": true,
       "schematic": {
-        "x": 1402.9,
+        "x": 1402.2,
         "y": 308
       },
       "geo": {
@@ -3986,7 +4073,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1127.9,
+        "x": 1127.2,
         "y": 320
       },
       "geo": {
@@ -4008,7 +4095,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1167.9,
+        "x": 1167.2,
         "y": 265
       },
       "geo": {
@@ -4030,7 +4117,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 537.9,
+        "x": 537.2,
         "y": 775
       },
       "geo": {
@@ -4052,7 +4139,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 607.9,
+        "x": 607.2,
         "y": 820
       },
       "geo": {
@@ -4074,7 +4161,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 667.9,
+        "x": 667.2,
         "y": 850
       },
       "geo": {
@@ -4746,8 +4833,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 617.8,
-        "y": 203.9
+        "x": 614.9,
+        "y": 205.1
       },
       "geo": {
         "lat": -23.46,
@@ -4765,8 +4852,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 623.8,
-        "y": 232.8
+        "x": 621.1,
+        "y": 233.9
       },
       "geo": {
         "lat": -23.47,
@@ -4784,8 +4871,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 620.4,
-        "y": 256.8
+        "x": 617.9,
+        "y": 257.9
       },
       "geo": {
         "lat": -23.478,
@@ -4803,8 +4890,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 628.6,
-        "y": 285.4
+        "x": 626.4,
+        "y": 286.4
       },
       "geo": {
         "lat": -23.488,
@@ -4822,8 +4909,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 623.3,
-        "y": 315.4
+        "x": 621.3,
+        "y": 316.5
       },
       "geo": {
         "lat": -23.498,
@@ -4841,8 +4928,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 643.8,
-        "y": 363.4
+        "x": 642.3,
+        "y": 364.3
       },
       "geo": {
         "lat": -23.515,
@@ -4860,8 +4947,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 654.1,
-        "y": 388.9
+        "x": 652.8,
+        "y": 389.6
       },
       "geo": {
         "lat": -23.524,
@@ -4879,8 +4966,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 663.6,
-        "y": 396.7
+        "x": 662.4,
+        "y": 397.4
       },
       "geo": {
         "lat": -23.527,
@@ -4898,8 +4985,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 669.3,
-        "y": 419.7
+        "x": 668.3,
+        "y": 420.3
       },
       "geo": {
         "lat": -23.535,
@@ -4917,8 +5004,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 681.8,
-        "y": 442
+        "x": 680.9,
+        "y": 442.4
       },
       "geo": {
         "lat": -23.543,
@@ -4936,8 +5023,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 693.7,
-        "y": 452.6
+        "x": 692.9,
+        "y": 452.9
       },
       "geo": {
         "lat": -23.547,
@@ -4955,7 +5042,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 771.3,
+        "x": 770.6,
         "y": 488.6
       },
       "geo": {
@@ -4974,7 +5061,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 801.4,
+        "x": 800.7,
         "y": 506.3
       },
       "geo": {
@@ -4986,6 +5073,116 @@
       "eta": "2026–2027"
     },
     {
+      "id": "l15-boa-esperanca",
+      "name": "Boa Esperança",
+      "lineIds": [
+        "15"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1568.4,
+        "y": 881.7
+      },
+      "geo": {
+        "lat": -23.6,
+        "lng": -46.46
+      },
+      "labelTier": 3,
+      "phase": "construcao",
+      "eta": "2027"
+    },
+    {
+      "id": "l15-jacu-pessego",
+      "name": "Jacu-Pêssego",
+      "lineIds": [
+        "15"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1580.6,
+        "y": 895.1
+      },
+      "geo": {
+        "lat": -23.605,
+        "lng": -46.455
+      },
+      "labelTier": 3,
+      "phase": "construcao",
+      "eta": "2027"
+    },
+    {
+      "id": "l15-jardim-marilia",
+      "name": "Jardim Marília",
+      "lineIds": [
+        "15"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1612.8,
+        "y": 861.8
+      },
+      "geo": {
+        "lat": -23.595,
+        "lng": -46.44
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l15-jardim-pedra-branca",
+      "name": "Jardim Pedra Branca",
+      "lineIds": [
+        "15"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1633.8,
+        "y": 829.9
+      },
+      "geo": {
+        "lat": -23.585,
+        "lng": -46.43
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l15-cidade-tiradentes-l15",
+      "name": "Cidade Tiradentes (L15)",
+      "lineIds": [
+        "15"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1655.6,
+        "y": 812.6
+      },
+      "geo": {
+        "lat": -23.58,
+        "lng": -46.42
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l15-hospital-cidade-tiradentes",
+      "name": "Hospital Cidade Tiradentes",
+      "lineIds": [
+        "15"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1677.4,
+        "y": 795.4
+      },
+      "geo": {
+        "lat": -23.575,
+        "lng": -46.41
+      },
+      "labelTier": 1,
+      "phase": "estudo"
+    },
+    {
       "id": "l16-teodoro-sampaio",
       "name": "Teodoro Sampaio",
       "lineIds": [
@@ -4993,8 +5190,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 620.8,
-        "y": 499.1
+        "x": 619.9,
+        "y": 499.5
       },
       "geo": {
         "lat": -23.555,
@@ -5011,7 +5208,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 689.9,
+        "x": 689.2,
         "y": 535.6
       },
       "geo": {
@@ -5029,7 +5226,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 712.4,
+        "x": 711.7,
         "y": 552.2
       },
       "geo": {
@@ -5047,7 +5244,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 746,
+        "x": 745.3,
         "y": 577
       },
       "geo": {
@@ -5065,7 +5262,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 780.4,
+        "x": 779.7,
         "y": 602.3
       },
       "geo": {
@@ -5083,8 +5280,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 835.9,
-        "y": 600.4
+        "x": 834.9,
+        "y": 600.2
       },
       "geo": {
         "lat": -23.572,
@@ -5101,8 +5298,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 883,
-        "y": 633.8
+        "x": 882.4,
+        "y": 633
       },
       "geo": {
         "lat": -23.585,
@@ -5119,8 +5316,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 904.9,
-        "y": 616.8
+        "x": 904.2,
+        "y": 615.8
       },
       "geo": {
         "lat": -23.58,
@@ -5137,8 +5334,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 926.2,
-        "y": 585.1
+        "x": 925.2,
+        "y": 583.8
       },
       "geo": {
         "lat": -23.57,
@@ -5155,8 +5352,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 936.9,
-        "y": 572.2
+        "x": 935.8,
+        "y": 570.8
       },
       "geo": {
         "lat": -23.566,
@@ -5173,8 +5370,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 951.9,
-        "y": 552.9
+        "x": 950.7,
+        "y": 551.4
       },
       "geo": {
         "lat": -23.56,
@@ -5191,8 +5388,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 981.3,
-        "y": 549.9
+        "x": 980.1,
+        "y": 548
       },
       "geo": {
         "lat": -23.56,
@@ -5209,8 +5406,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 989,
-        "y": 566.8
+        "x": 987.9,
+        "y": 564.8
       },
       "geo": {
         "lat": -23.566,
@@ -5227,8 +5424,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1005,
-        "y": 568
+        "x": 1003.9,
+        "y": 565.9
       },
       "geo": {
         "lat": -23.567,
@@ -5245,8 +5442,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1020.1,
-        "y": 551.7
+        "x": 1018.9,
+        "y": 549.4
       },
       "geo": {
         "lat": -23.562,
@@ -5263,8 +5460,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1037.9,
-        "y": 544
+        "x": 1036.7,
+        "y": 541.4
       },
       "geo": {
         "lat": -23.56,
@@ -5281,8 +5478,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1060.3,
-        "y": 535.8
+        "x": 1059,
+        "y": 532.9
       },
       "geo": {
         "lat": -23.558,
@@ -5299,8 +5496,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1087.5,
-        "y": 532.9
+        "x": 1086.2,
+        "y": 529.8
       },
       "geo": {
         "lat": -23.558,
@@ -5317,8 +5514,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1116.8,
-        "y": 526.9
+        "x": 1115.4,
+        "y": 523.5
       },
       "geo": {
         "lat": -23.557,
@@ -5335,8 +5532,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1150.4,
-        "y": 517.5
+        "x": 1149.1,
+        "y": 513.7
       },
       "geo": {
         "lat": -23.555,
@@ -5353,8 +5550,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1185.1,
-        "y": 528.7
+        "x": 1183.9,
+        "y": 524.4
       },
       "geo": {
         "lat": -23.56,
@@ -5371,8 +5568,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1208.5,
-        "y": 541
+        "x": 1207.3,
+        "y": 536.4
       },
       "geo": {
         "lat": -23.565,
@@ -5389,8 +5586,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1232.6,
-        "y": 568
+        "x": 1231.7,
+        "y": 563.1
       },
       "geo": {
         "lat": -23.575,
@@ -5407,7 +5604,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 497.8,
+        "x": 497.1,
         "y": 737.1
       },
       "geo": {
@@ -5424,7 +5621,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 529.5,
+        "x": 528.8,
         "y": 757.1
       },
       "geo": {
@@ -5441,7 +5638,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 551.5,
+        "x": 550.8,
         "y": 771.1
       },
       "geo": {
@@ -5458,7 +5655,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 576.6,
+        "x": 575.9,
         "y": 786.9
       },
       "geo": {
@@ -5475,7 +5672,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 612.8,
+        "x": 612.1,
         "y": 809.7
       },
       "geo": {
@@ -5492,7 +5689,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 658.9,
+        "x": 658.2,
         "y": 838.8
       },
       "geo": {
@@ -5509,7 +5706,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 693.8,
+        "x": 693.1,
         "y": 860.8
       },
       "geo": {
@@ -5526,8 +5723,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 768.5,
-        "y": 874.4
+        "x": 767.8,
+        "y": 873.8
       },
       "geo": {
         "lat": -23.62,
@@ -5544,8 +5741,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 780.5,
-        "y": 887.9
+        "x": 779.9,
+        "y": 887.2
       },
       "geo": {
         "lat": -23.625,
@@ -5562,8 +5759,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 792.1,
-        "y": 892.6
+        "x": 791.6,
+        "y": 891.7
       },
       "geo": {
         "lat": -23.627,
@@ -5580,8 +5777,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 803.9,
-        "y": 900.2
+        "x": 803.4,
+        "y": 899.2
       },
       "geo": {
         "lat": -23.63,
@@ -5598,8 +5795,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 811.4,
-        "y": 914.2
+        "x": 811.1,
+        "y": 913.1
       },
       "geo": {
         "lat": -23.635,
@@ -5616,8 +5813,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 821.1,
-        "y": 927.9
+        "x": 820.9,
+        "y": 926.7
       },
       "geo": {
         "lat": -23.64,
@@ -5634,8 +5831,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 835.1,
-        "y": 935.3
+        "x": 835,
+        "y": 933.9
       },
       "geo": {
         "lat": -23.643,
@@ -5653,7 +5850,7 @@
       "interchange": false,
       "schematic": {
         "x": 844.6,
-        "y": 943.2
+        "y": 941.7
       },
       "geo": {
         "lat": -23.646,
@@ -5671,7 +5868,7 @@
       "interchange": false,
       "schematic": {
         "x": 862.7,
-        "y": 941.3
+        "y": 939.6
       },
       "geo": {
         "lat": -23.646,
@@ -5688,7 +5885,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 729.9,
+        "x": 729.2,
         "y": 811.4
       },
       "geo": {
@@ -5706,7 +5903,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 737.2,
+        "x": 736.5,
         "y": 771.6
       },
       "geo": {
@@ -5724,7 +5921,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 741.4,
+        "x": 740.7,
         "y": 748.9
       },
       "geo": {
@@ -5742,7 +5939,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 750.2,
+        "x": 749.5,
         "y": 701.6
       },
       "geo": {
@@ -5760,7 +5957,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 763.4,
+        "x": 762.7,
         "y": 630.5
       },
       "geo": {
@@ -5778,7 +5975,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 773.1,
+        "x": 772.4,
         "y": 577.7
       },
       "geo": {
@@ -5796,7 +5993,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 777.1,
+        "x": 776.4,
         "y": 506.6
       },
       "geo": {
@@ -5814,8 +6011,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 821.9,
-        "y": 383.6
+        "x": 821.1,
+        "y": 383.5
       },
       "geo": {
         "lat": -23.538,
@@ -5832,8 +6029,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 826,
-        "y": 374.3
+        "x": 825.1,
+        "y": 374.2
       },
       "geo": {
         "lat": -23.535,
@@ -5850,8 +6047,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 829.9,
-        "y": 359.2
+        "x": 828.8,
+        "y": 359
       },
       "geo": {
         "lat": -23.53,
@@ -5868,8 +6065,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 834.9,
-        "y": 323.3
+        "x": 833.6,
+        "y": 323.1
       },
       "geo": {
         "lat": -23.518,
@@ -5886,8 +6083,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 855.3,
-        "y": 321.2
+        "x": 854,
+        "y": 320.7
       },
       "geo": {
         "lat": -23.518,
@@ -5904,8 +6101,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 872.7,
-        "y": 304.6
+        "x": 871.2,
+        "y": 304
       },
       "geo": {
         "lat": -23.513,
@@ -5922,8 +6119,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 890.1,
-        "y": 288
+        "x": 888.5,
+        "y": 287.2
       },
       "geo": {
         "lat": -23.508,
@@ -5940,8 +6137,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 915.9,
-        "y": 255.9
+        "x": 914,
+        "y": 254.8
       },
       "geo": {
         "lat": -23.498,
@@ -5958,8 +6155,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 950.7,
-        "y": 222.8
+        "x": 948.6,
+        "y": 221.3
       },
       "geo": {
         "lat": -23.488,
@@ -5976,8 +6173,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 986,
-        "y": 201.4
+        "x": 983.8,
+        "y": 199.5
       },
       "geo": {
         "lat": -23.482,
@@ -5994,8 +6191,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1008.9,
-        "y": 157.8
+        "x": 1006.3,
+        "y": 155.6
       },
       "geo": {
         "lat": -23.468,
@@ -6012,8 +6209,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1033,
-        "y": 137.6
+        "x": 1030.2,
+        "y": 135.1
       },
       "geo": {
         "lat": -23.462,
@@ -6030,8 +6227,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1033.8,
-        "y": 108
+        "x": 1030.8,
+        "y": 105.5
       },
       "geo": {
         "lat": -23.452,
@@ -6048,8 +6245,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 606.9,
-        "y": 363.8
+        "x": 606.1,
+        "y": 363.3
       },
       "geo": {
         "lat": -23.5155,
@@ -6066,7 +6263,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 575,
+        "x": 574.3,
         "y": 404.5
       },
       "geo": {
@@ -6084,7 +6281,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 585.5,
+        "x": 584.8,
         "y": 440.4
       },
       "geo": {
@@ -6102,7 +6299,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 595.7,
+        "x": 595,
         "y": 475.7
       },
       "geo": {
@@ -6120,7 +6317,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 606.4,
+        "x": 605.7,
         "y": 512.4
       },
       "geo": {
@@ -6138,7 +6335,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 684.7,
+        "x": 684,
         "y": 674.2
       },
       "geo": {
@@ -6156,7 +6353,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 720.4,
+        "x": 719.7,
         "y": 739.4
       },
       "geo": {
@@ -6174,7 +6371,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 743.2,
+        "x": 742.5,
         "y": 781.2
       },
       "geo": {
@@ -6192,7 +6389,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 792,
+        "x": 791.3,
         "y": 793.2
       },
       "geo": {
@@ -6210,7 +6407,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 804.8,
+        "x": 804.1,
         "y": 787.7
       },
       "geo": {
@@ -6228,7 +6425,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 839.1,
+        "x": 838.4,
         "y": 796.4
       },
       "geo": {
@@ -6246,7 +6443,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 867.4,
+        "x": 866.7,
         "y": 815.7
       },
       "geo": {
@@ -6264,7 +6461,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 900.4,
+        "x": 899.7,
         "y": 838.2
       },
       "geo": {
@@ -6282,7 +6479,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 942.3,
+        "x": 941.6,
         "y": 866.8
       },
       "geo": {
@@ -6300,7 +6497,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1006.6,
+        "x": 1005.9,
         "y": 910.6
       },
       "geo": {
@@ -6318,7 +6515,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1046.3,
+        "x": 1045.6,
         "y": 937.6
       },
       "geo": {
@@ -6336,7 +6533,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1083.6,
+        "x": 1082.9,
         "y": 963
       },
       "geo": {
@@ -6354,7 +6551,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1112,
+        "x": 1111.3,
         "y": 982.3
       },
       "geo": {
@@ -6372,7 +6569,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1126.9,
+        "x": 1126.2,
         "y": 992.5
       },
       "geo": {
@@ -6383,6 +6580,132 @@
       "phase": "estudo"
     },
     {
+      "id": "l21-diadema",
+      "name": "Diadema",
+      "lineIds": [
+        "21"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 873.4,
+        "y": 989.3
+      },
+      "geo": {
+        "lat": -23.686,
+        "lng": -46.62
+      },
+      "labelTier": 1,
+      "phase": "estudo"
+    },
+    {
+      "id": "l21-taboao-pauliceia",
+      "name": "Taboão-Paulicéia",
+      "lineIds": [
+        "21"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 959.6,
+        "y": 902.6
+      },
+      "geo": {
+        "lat": -23.66,
+        "lng": -46.58
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l21-estrada-das-lagrimas",
+      "name": "Estrada das Lágrimas",
+      "lineIds": [
+        "21"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1001.5,
+        "y": 838.7
+      },
+      "geo": {
+        "lat": -23.64,
+        "lng": -46.56
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l21-sao-caetano-do-sul",
+      "name": "São Caetano do Sul",
+      "lineIds": [
+        "21"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1010.3,
+        "y": 793.4
+      },
+      "geo": {
+        "lat": -23.625,
+        "lng": -46.555
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l21-sao-lucas-l21",
+      "name": "São Lucas (L21)",
+      "lineIds": [
+        "21"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 959.2,
+        "y": 696
+      },
+      "geo": {
+        "lat": -23.59,
+        "lng": -46.575
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l21-cipriano-rodrigues-l21",
+      "name": "Cipriano Rodrigues (L21)",
+      "lineIds": [
+        "21"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1047.2,
+        "y": 641.6
+      },
+      "geo": {
+        "lat": -23.575,
+        "lng": -46.535
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l21-aricanduva-parque-do-carmo",
+      "name": "Aricanduva/Parque do Carmo",
+      "lineIds": [
+        "21"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 1077.8,
+        "y": 579
+      },
+      "geo": {
+        "lat": -23.555,
+        "lng": -46.52
+      },
+      "labelTier": 1,
+      "phase": "estudo"
+    },
+    {
       "id": "l22-teodoro-sampaio",
       "name": "Teodoro Sampaio",
       "lineIds": [
@@ -6390,7 +6713,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 596.9,
+        "x": 596.2,
         "y": 497.2
       },
       "geo": {
@@ -6408,8 +6731,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 519.3,
-        "y": 677
+        "x": 518.5,
+        "y": 677.5
       },
       "geo": {
         "lat": -23.57,
@@ -6426,8 +6749,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 484.7,
-        "y": 668.8
+        "x": 483.8,
+        "y": 669.7
       },
       "geo": {
         "lat": -23.566,
@@ -6444,8 +6767,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 450.8,
-        "y": 672.4
+        "x": 449.9,
+        "y": 673.6
       },
       "geo": {
         "lat": -23.566,
@@ -6462,8 +6785,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 418.1,
-        "y": 702.3
+        "x": 417.4,
+        "y": 703.9
       },
       "geo": {
         "lat": -23.575,
@@ -6480,8 +6803,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 396.2,
-        "y": 719.3
+        "x": 395.6,
+        "y": 721.2
       },
       "geo": {
         "lat": -23.58,
@@ -6498,8 +6821,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 374.2,
-        "y": 736.3
+        "x": 373.8,
+        "y": 738.5
       },
       "geo": {
         "lat": -23.585,
@@ -6516,8 +6839,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 340.3,
-        "y": 739.9
+        "x": 339.9,
+        "y": 742.4
       },
       "geo": {
         "lat": -23.585,
@@ -6534,8 +6857,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 307,
-        "y": 758.1
+        "x": 306.7,
+        "y": 761
       },
       "geo": {
         "lat": -23.59,
@@ -6552,8 +6875,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 238.4,
-        "y": 750.5
+        "x": 238,
+        "y": 754.2
       },
       "geo": {
         "lat": -23.585,
@@ -6570,8 +6893,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 194.5,
-        "y": 784.5
+        "x": 194.4,
+        "y": 788.7
       },
       "geo": {
         "lat": -23.595,
@@ -6589,7 +6912,7 @@
       "interchange": false,
       "schematic": {
         "x": 161.3,
-        "y": 802.7
+        "y": 807.3
       },
       "geo": {
         "lat": -23.6,
@@ -6606,8 +6929,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 128,
-        "y": 820.9
+        "x": 128.1,
+        "y": 825.9
       },
       "geo": {
         "lat": -23.605,
@@ -6624,8 +6947,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 94.5,
-        "y": 833.2
+        "x": 94.7,
+        "y": 838.6
       },
       "geo": {
         "lat": -23.608,
@@ -6642,8 +6965,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 65.3,
-        "y": 842.2
+        "x": 65.6,
+        "y": 847.9
       },
       "geo": {
         "lat": -23.61,
@@ -6661,11 +6984,137 @@
       "interchange": false,
       "schematic": {
         "x": 60,
-        "y": 825
+        "y": 830.8
       },
       "geo": {
         "lat": -23.604,
         "lng": -46.92
+      },
+      "labelTier": 1,
+      "phase": "estudo"
+    },
+    {
+      "id": "l23-cohab-raposo",
+      "name": "Cohab Raposo",
+      "lineIds": [
+        "23"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 494.2,
+        "y": 735
+      },
+      "geo": {
+        "lat": -23.585,
+        "lng": -46.78
+      },
+      "labelTier": 1,
+      "phase": "estudo"
+    },
+    {
+      "id": "l23-osasco-l23",
+      "name": "Osasco (L23)",
+      "lineIds": [
+        "23"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 458.1,
+        "y": 582.8
+      },
+      "geo": {
+        "lat": -23.532,
+        "lng": -46.792
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l23-presidente-altino-l23",
+      "name": "Presidente Altino (L23)",
+      "lineIds": [
+        "23"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 517.7,
+        "y": 587.7
+      },
+      "geo": {
+        "lat": -23.536,
+        "lng": -46.766
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l23-lapa-l23",
+      "name": "Lapa (L23)",
+      "lineIds": [
+        "23"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 664.4,
+        "y": 523.5
+      },
+      "geo": {
+        "lat": -23.52,
+        "lng": -46.7
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l23-barra-funda-l23",
+      "name": "Barra Funda (L23)",
+      "lineIds": [
+        "23"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 744.8,
+        "y": 534.9
+      },
+      "geo": {
+        "lat": -23.527,
+        "lng": -46.665
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l23-pari",
+      "name": "Pari",
+      "lineIds": [
+        "23"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 869.5,
+        "y": 523.4
+      },
+      "geo": {
+        "lat": -23.528,
+        "lng": -46.61
+      },
+      "labelTier": 3,
+      "phase": "estudo"
+    },
+    {
+      "id": "l23-tatuape-l23",
+      "name": "Tatuapé (L23)",
+      "lineIds": [
+        "23"
+      ],
+      "interchange": false,
+      "schematic": {
+        "x": 948.5,
+        "y": 549.7
+      },
+      "geo": {
+        "lat": -23.54,
+        "lng": -46.576
       },
       "labelTier": 1,
       "phase": "estudo"
@@ -6678,7 +7127,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1064.5,
+        "x": 1063.8,
         "y": 817.5
       },
       "geo": {
@@ -6697,7 +7146,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1072.6,
+        "x": 1071.9,
         "y": 753
       },
       "geo": {
@@ -6716,7 +7165,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1080.2,
+        "x": 1079.5,
         "y": 692.6
       },
       "geo": {
@@ -6735,7 +7184,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1087.3,
+        "x": 1086.6,
         "y": 635.8
       },
       "geo": {
@@ -6754,7 +7203,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1095.2,
+        "x": 1094.5,
         "y": 573.2
       },
       "geo": {
@@ -6773,7 +7222,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1101.2,
+        "x": 1100.5,
         "y": 525.5
       },
       "geo": {
@@ -6792,7 +7241,7 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 1106.8,
+        "x": 1106.1,
         "y": 480.7
       },
       "geo": {
@@ -6811,8 +7260,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 391.2,
-        "y": 763.6
+        "x": 390.5,
+        "y": 763.9
       },
       "geo": {
         "lat": -23.601,
@@ -6830,8 +7279,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 358.5,
-        "y": 793.6
+        "x": 358.1,
+        "y": 794.2
       },
       "geo": {
         "lat": -23.61,
@@ -6849,8 +7298,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": -99.7,
-        "y": -694.5
+        "x": -107.6,
+        "y": -688.8
       },
       "geo": {
         "lat": -22.905,
@@ -6866,8 +7315,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 299.9,
-        "y": -199.4
+        "x": 296.5,
+        "y": -198.4
       },
       "geo": {
         "lat": -23.087,
@@ -6883,8 +7332,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 124.2,
-        "y": -349.2
+        "x": 119.4,
+        "y": -346.2
       },
       "geo": {
         "lat": -23.03,
@@ -6900,8 +7349,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 68.1,
-        "y": -520.3
+        "x": 61.8,
+        "y": -516.6
       },
       "geo": {
         "lat": -22.97,
@@ -6917,8 +7366,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": -99.7,
-        "y": -694.5
+        "x": -107.6,
+        "y": -688.8
       },
       "geo": {
         "lat": -22.905,
@@ -6934,8 +7383,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": -13.3,
-        "y": 660
+        "x": -13.8,
+        "y": 664.2
       },
       "geo": {
         "lat": -23.529,
@@ -6951,8 +7400,8 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": -748.5,
-        "y": 656.8
+        "x": -749.6,
+        "y": 669.6
       },
       "geo": {
         "lat": -23.502,
