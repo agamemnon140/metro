@@ -1,11 +1,12 @@
 import { create } from 'zustand'
 
-export type LabelMode = 'normal' | 'small' | 'off'
+// hubs = só baldeações (padrão, limpo) · todos = todas (anti-colisão) · off
+export type LabelMode = 'hubs' | 'todos' | 'off'
 
 const NEXT: Record<LabelMode, LabelMode> = {
-  normal: 'small',
-  small: 'off',
-  off: 'normal',
+  hubs: 'todos',
+  todos: 'off',
+  off: 'hubs',
 }
 
 interface LabelModeState {
@@ -13,8 +14,7 @@ interface LabelModeState {
   cycle: () => void
 }
 
-// Controla os nomes das estações: normal -> pequeno -> oculto.
 export const useLabelMode = create<LabelModeState>((set) => ({
-  mode: 'normal',
+  mode: 'hubs',
   cycle: () => set((s) => ({ mode: NEXT[s.mode] })),
 }))
