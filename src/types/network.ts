@@ -42,8 +42,11 @@ export interface Station {
   lineIds: string[]
   /** baldeação: >1 linha ou hub oficial de transferência */
   interchange: boolean
-  /** posição no diagrama esquemático */
-  schematic: SchematicPoint
+  /**
+   * posição no diagrama esquemático. Opcional: estações sem posição
+   * esquemática aparecem só na visão geográfica (dataset completo do OSM).
+   */
+  schematic?: SchematicPoint
   /** coordenada real (semeada de OSM/Wikidata) — usada nos mapas */
   geo: GeoPoint
   /** 1 = nome sempre visível; 2 = zoom médio; 3 = só zoom alto */
@@ -77,8 +80,13 @@ export interface Line {
   operator: Operator
   kind: RailKind
   status: LineStatus
-  /** ordem das estações que define a geometria do traçado */
+  /** ordem das estações no diagrama esquemático (subconjunto curado) */
   stationOrder: string[]
+  /**
+   * ordem completa das estações para a visão geográfica (todas as estações,
+   * vindas do OSM). Se ausente, usa-se stationOrder.
+   */
+  geoOrder?: string[]
   /** atualizações curadas (mais recentes primeiro) */
   updates: LineUpdate[]
   /** consulta para o deep-link de notícias, ex.: "Linha 6-Laranja Metrô SP" */

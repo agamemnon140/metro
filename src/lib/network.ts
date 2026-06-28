@@ -21,9 +21,15 @@ export function drawnLines(): Line[] {
   return network.lines.filter((l) => l.drawn)
 }
 
-/** Estações que aparecem em alguma linha desenhada. */
-export function drawnStations(): Station[] {
-  const drawnIds = new Set(drawnLines().flatMap((l) => l.stationOrder))
+type Mode = 'schematic' | 'geographic'
+
+function orderFor(line: Line, mode: Mode): string[] {
+  return mode === 'geographic' ? line.geoOrder ?? line.stationOrder : line.stationOrder
+}
+
+/** Estações que aparecem em alguma linha desenhada, conforme o modo. */
+export function drawnStations(mode: Mode = 'schematic'): Station[] {
+  const drawnIds = new Set(drawnLines().flatMap((l) => orderFor(l, mode)))
   return network.stations.filter((s) => drawnIds.has(s.id))
 }
 
@@ -34,9 +40,9 @@ export function linesForStation(station: Station): Line[] {
     .filter((l): l is Line => Boolean(l))
 }
 
-/** Estações de uma linha, na ordem do traçado. */
-export function stationsForLine(line: Line): Station[] {
-  return line.stationOrder
+/** Estações de uma linha, na ordem do traçado (esquemático ou geográfico). */
+export function stationsForLine(line: Line, mode: Mode = 'schematic'): Station[] {
+  return orderFor(line, mode)
     .map((id) => stationById.get(id))
     .filter((s): s is Station => Boolean(s))
 }

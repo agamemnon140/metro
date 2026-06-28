@@ -10,7 +10,8 @@ import { StatusBadge } from '../StatusBadge'
 export function LinePanel({ line }: { line: Line }) {
   const clear = useSelection((s) => s.clear)
   const selectStation = useSelection((s) => s.selectStation)
-  const stations = stationsForLine(line)
+  // lista completa de estações (ordem geográfica = todas)
+  const stations = stationsForLine(line, 'geographic')
 
   return (
     <Panel

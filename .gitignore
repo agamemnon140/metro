@@ -25,3 +25,6 @@ Thumbs.db
 
 # vite / pwa generated
 dev-dist
+
+# dados temporários de scripts
+scratch
