@@ -3,6 +3,7 @@ import type { Line } from '@/types/network'
 import { stationsForLine } from '@/lib/network'
 import { pointFor } from '@/lib/coords'
 import { useSelection } from '@/hooks/useSelection'
+import { useViewMode } from '@/hooks/useViewMode'
 
 interface Props {
   line: Line
@@ -11,20 +12,30 @@ interface Props {
 export function LinePath({ line }: Props) {
   const selectLine = useSelection((s) => s.selectLine)
   const selection = useSelection((s) => s.selection)
+  const mode = useViewMode((s) => s.mode)
 
   const points = useMemo(() => {
     return stationsForLine(line)
       .map((s) => {
-        const p = pointFor(s)
+        const p = pointFor(s, mode)
         return `${p.x},${p.y}`
       })
       .join(' ')
-  }, [line])
+  }, [line, mode])
 
   if (!points) return null
 
   const isSelected = selection?.kind === 'line' && selection.id === line.id
-  const dashed = line.status === 'construcao' || line.status === 'planejamento'
+  // traço fica mais "esparso" quanto menos maduro o projeto
+  const dashByStatus: Record<string, string | undefined> = {
+    operacao: undefined,
+    expansao: undefined,
+    construcao: '10 8',
+    contratacao: '6 9',
+    elaboracao: '3 10',
+    estudo: '1 12',
+  }
+  const dashArray = dashByStatus[line.status]
 
   return (
     <g
@@ -59,7 +70,7 @@ export function LinePath({ line }: Props) {
         strokeWidth={isSelected ? 9 : 6}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeDasharray={dashed ? '2 12' : undefined}
+        strokeDasharray={dashArray}
         opacity={isSelected ? 1 : 0.95}
       />
     </g>
