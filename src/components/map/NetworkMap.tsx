@@ -10,7 +10,7 @@ import { useViewMode } from '@/hooks/useViewMode'
 import { useLayers } from '@/hooks/useLayers'
 import { LinePath } from './LinePath'
 import { StationNode } from './StationNode'
-import { StationLabel } from './StationLabel'
+import { LabelsLayer } from './LabelsLayer'
 import { MapControls } from './MapControls'
 
 export function NetworkMap() {
@@ -64,11 +64,7 @@ export function NetworkMap() {
                   <StationNode key={s.id} station={s} />
                 ))}
               </g>
-              <g>
-                {stations.map((s) => (
-                  <StationLabel key={`l-${s.id}`} station={s} />
-                ))}
-              </g>
+              <LabelsLayer stations={stations} />
             </svg>
           </TransformComponent>
         </>
