@@ -21,6 +21,24 @@ const TARGET = new Set(['1', '2', '3', '4', '5', '7', '8', '9', '10', '11', '12'
 // {ref} reaproveita uma estação real existente (conexão confirmada pelo metrôCPTM);
 // senão {name,lat,lng,tier} cria um nó indicativo.
 const INDICATIVE = {
+  // 6-Laranja (em obras): Brasilândia <-> São Joaquim (estações reais)
+  '6': [
+    { name: 'Brasilândia', lat: -23.46, lng: -46.69, tier: 1 },
+    { name: 'Maristela', lat: -23.47, lng: -46.688, tier: 3 },
+    { name: 'Itaberaba', lat: -23.478, lng: -46.69, tier: 3 },
+    { name: 'João Paulo I', lat: -23.488, lng: -46.687, tier: 3 },
+    { name: 'Freguesia do Ó', lat: -23.498, lng: -46.69, tier: 2 },
+    { name: 'Santa Marina', lat: -23.515, lng: -46.682, tier: 3 },
+    { name: 'Água Branca', lat: -23.524, lng: -46.678, tier: 3 },
+    { name: 'SESC-Pompeia', lat: -23.527, lng: -46.674, tier: 3 },
+    { name: 'Perdizes', lat: -23.535, lng: -46.672, tier: 3 },
+    { name: 'PUC-Cardoso de Almeida', lat: -23.543, lng: -46.667, tier: 3 },
+    { name: 'FAAP-Pacaembu', lat: -23.547, lng: -46.662, tier: 3 },
+    { ref: 'higienopolis-mackenzie' },
+    { name: '14 Bis-Saracura', lat: -23.557, lng: -46.645, tier: 3 },
+    { name: 'Bela Vista', lat: -23.562, lng: -46.642, tier: 3 },
+    { ref: 'sao-joaquim' },
+  ],
   // 19-Celeste: Centro de SP <-> Bosque Maia (Guarulhos)
   '19': [
     { name: 'Centro (SP)', lat: -23.5475, lng: -46.6395, tier: 1 },

@@ -6,7 +6,14 @@ import { LinePanel } from './components/panels/LinePanel'
 import { useSelection } from './hooks/useSelection'
 import { useViewMode } from './hooks/useViewMode'
 import { useShowFuture } from './hooks/useShowFuture'
+import { useLabelMode } from './hooks/useLabelMode'
 import { getStation, getLine } from './lib/network'
+
+const LABEL_BTN: Record<string, string> = {
+  normal: 'Aa Nomes',
+  small: 'ᴀ Nomes-',
+  off: '⊘ Nomes',
+}
 
 export default function App() {
   const selection = useSelection((s) => s.selection)
@@ -14,6 +21,8 @@ export default function App() {
   const toggleMode = useViewMode((s) => s.toggle)
   const showFuture = useShowFuture((s) => s.show)
   const toggleFuture = useShowFuture((s) => s.toggle)
+  const labelMode = useLabelMode((s) => s.mode)
+  const cycleLabels = useLabelMode((s) => s.cycle)
 
   const station =
     selection?.kind === 'station' ? getStation(selection.id) : undefined
@@ -31,6 +40,13 @@ export default function App() {
           </p>
         </div>
         <div className="shrink-0 flex items-center gap-2">
+          <button
+            onClick={cycleLabels}
+            className="rounded-lg bg-white/15 hover:bg-white/25 px-3 py-1.5 text-xs font-semibold transition"
+            title="Tamanho dos nomes das estações: normal / pequeno / oculto"
+          >
+            {LABEL_BTN[labelMode]}
+          </button>
           <button
             onClick={toggleFuture}
             className={
