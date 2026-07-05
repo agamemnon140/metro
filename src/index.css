@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Tokens de tema do mapa: consumidos por atributos SVG inline (fill/stroke),
+   que as classes dark: do Tailwind não alcançam. --map-surface é usado pelo
+   fundo do mapa, pelo casing das linhas e pelo fill das estações "ocas" —
+   os três precisam ser sempre a mesma cor. */
+:root {
+  --map-surface: #f9fafb;
+  --map-label-bg: #ffffff;
+  --map-label-text: #1a1a1a;
+  --map-station-ring: #1a1a1a;
+  --map-river: #b8d4e8;
+  --map-dim-opacity: 0.1;
+}
+
+.dark {
+  --map-surface: #0b0e14;
+  --map-label-bg: #1b2230;
+  --map-label-text: #e5e7eb;
+  --map-station-ring: #e5e7eb;
+  --map-river: #16334d;
+  /* linhas esmaecidas somem sobre fundo escuro com 0.1 */
+  --map-dim-opacity: 0.18;
+}
+
 html,
 body,
 #root {
