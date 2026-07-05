@@ -1,6 +1,6 @@
 {
   "version": "0.4.0",
-  "updatedAt": "2026-06-27",
+  "updatedAt": "2026-07-05",
   "viewBox": {
     "width": 1738,
     "height": 1275
@@ -315,9 +315,9 @@
       "color": "#ef7d00",
       "operator": "outro",
       "kind": "metro",
-      "status": "construcao",
+      "status": "expansao",
       "drawn": true,
-      "newsQuery": "Linha 6-Laranja Metrô SP obras",
+      "newsQuery": "Linha 6-Laranja Metrô SP",
       "stationOrder": [
         "l6-brasilandia",
         "l6-maristela",
@@ -325,7 +325,7 @@
         "l6-joao-paulo-i",
         "l6-freguesia-do-o",
         "l6-santa-marina",
-        "l6-agua-branca",
+        "agua-branca",
         "l6-sesc-pompeia",
         "l6-perdizes",
         "l6-puc-cardoso-de-almeida",
@@ -336,6 +336,11 @@
         "sao-joaquim"
       ],
       "updates": [
+        {
+          "date": "2026-07-02",
+          "text": "Inaugurado o 1º trecho (João Paulo I ↔ Perdizes, 6 estações), com conexão à 7-Rubi na Água Branca. Operação assistida: dias úteis, 10h–15h, gratuita nesta fase.",
+          "sourceUrl": "https://www.agenciasp.sp.gov.br/governo-de-sp-entrega-primeiro-trecho-da-linha-6-laranja-de-metro-com-seis-estacoes-concluidas/"
+        },
         {
           "date": "2026-06-01",
           "text": "Em construção pela concessionária Linha Uni, ligará Brasilândia (Zona Norte) à Praça da Sé, com 15 estações previstas."
@@ -352,7 +357,7 @@
         "l6-joao-paulo-i",
         "l6-freguesia-do-o",
         "l6-santa-marina",
-        "l6-agua-branca",
+        "agua-branca",
         "l6-sesc-pompeia",
         "l6-perdizes",
         "l6-puc-cardoso-de-almeida",
@@ -4582,14 +4587,19 @@
       "id": "agua-branca",
       "name": "Água Branca",
       "lineIds": [
+        "6",
         "7"
       ],
-      "interchange": false,
+      "interchange": true,
       "geo": {
         "lat": -23.52131,
         "lng": -46.6883
       },
-      "labelTier": 3
+      "labelTier": 1,
+      "schematic": {
+        "x": 652.4,
+        "y": 380.9
+      }
     },
     {
       "id": "julio-prestes",
@@ -4897,9 +4907,7 @@
         "lat": -23.488,
         "lng": -46.687
       },
-      "labelTier": 3,
-      "phase": "construcao",
-      "eta": "2026–2027"
+      "labelTier": 3
     },
     {
       "id": "l6-freguesia-do-o",
@@ -4916,9 +4924,7 @@
         "lat": -23.498,
         "lng": -46.69
       },
-      "labelTier": 2,
-      "phase": "construcao",
-      "eta": "2026–2027"
+      "labelTier": 2
     },
     {
       "id": "l6-santa-marina",
@@ -4935,28 +4941,7 @@
         "lat": -23.515,
         "lng": -46.682
       },
-      "labelTier": 3,
-      "phase": "construcao",
-      "eta": "2026–2027"
-    },
-    {
-      "id": "l6-agua-branca",
-      "name": "Água Branca",
-      "lineIds": [
-        "6"
-      ],
-      "interchange": false,
-      "schematic": {
-        "x": 652.8,
-        "y": 389.6
-      },
-      "geo": {
-        "lat": -23.524,
-        "lng": -46.678
-      },
-      "labelTier": 3,
-      "phase": "construcao",
-      "eta": "2026–2027"
+      "labelTier": 3
     },
     {
       "id": "l6-sesc-pompeia",
@@ -4973,9 +4958,7 @@
         "lat": -23.527,
         "lng": -46.674
       },
-      "labelTier": 3,
-      "phase": "construcao",
-      "eta": "2026–2027"
+      "labelTier": 3
     },
     {
       "id": "l6-perdizes",
@@ -4992,9 +4975,7 @@
         "lat": -23.535,
         "lng": -46.672
       },
-      "labelTier": 3,
-      "phase": "construcao",
-      "eta": "2026–2027"
+      "labelTier": 3
     },
     {
       "id": "l6-puc-cardoso-de-almeida",
