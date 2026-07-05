@@ -9,6 +9,7 @@ import { useSelection } from '@/hooks/useSelection'
 import { useViewMode } from '@/hooks/useViewMode'
 import { useLayers } from '@/hooks/useLayers'
 import { LinePath } from './LinePath'
+import { RiversLayer } from './RiversLayer'
 import { StationNode } from './StationNode'
 import { LabelsLayer } from './LabelsLayer'
 import { MapControls } from './MapControls'
@@ -54,6 +55,7 @@ export function NetworkMap() {
               aria-label="Diagrama da rede metroferroviária de São Paulo"
               onClick={() => clear()}
             >
+              <RiversLayer mode={mode} />
               <g>
                 {lines.map((line) => (
                   <LinePath key={line.id} line={line} />

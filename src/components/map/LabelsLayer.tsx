@@ -72,7 +72,7 @@ export function LabelsLayer({ stations }: { stations: Station[] }) {
             width={w}
             height={h}
             rx={fs * 0.3}
-            fill="#ffffff"
+            fill="var(--map-label-bg)"
             opacity={0.88}
           />
           <text
@@ -82,7 +82,7 @@ export function LabelsLayer({ stations }: { stations: Station[] }) {
             textAnchor="middle"
             dominantBaseline="central"
             fontWeight={s.interchange ? 700 : 500}
-            fill="#1a1a1a"
+            fill="var(--map-label-text)"
           >
             {s.name}
           </text>
