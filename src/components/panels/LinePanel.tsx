@@ -28,10 +28,10 @@ export function LinePanel({ line }: { line: Line }) {
             {line.number}
           </span>
           <div>
-            <h2 className="text-lg font-bold text-gray-900 leading-tight">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 leading-tight">
               {line.fullName}
             </h2>
-            <p className="text-xs text-gray-400 capitalize">{line.operator}</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 capitalize">{line.operator}</p>
           </div>
         </div>
       }
@@ -41,7 +41,7 @@ export function LinePanel({ line }: { line: Line }) {
       </div>
 
       {INDICATIVE_STATUS.has(line.status) && (
-        <p className="mb-4 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2 text-xs text-amber-800">
+        <p className="mb-4 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900 px-3 py-2 text-xs text-amber-800 dark:text-amber-200">
           ⚠️ Linha futura: o traçado e as estações no mapa são <b>indicativos</b> (não
           oficiais), apenas para localização aproximada.
         </p>
@@ -52,19 +52,19 @@ export function LinePanel({ line }: { line: Line }) {
           Atualizações
         </h3>
         {line.updates.length === 0 ? (
-          <p className="text-sm text-gray-500">Sem atualizações registradas.</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Sem atualizações registradas.</p>
         ) : (
           <ul className="flex flex-col gap-3">
             {line.updates.map((u, i) => (
               <li key={i} className="border-l-2 pl-3" style={{ borderColor: line.color }}>
-                <p className="text-xs font-medium text-gray-400">{formatDate(u.date)}</p>
-                <p className="text-sm text-gray-800">{u.text}</p>
+                <p className="text-xs font-medium text-gray-400 dark:text-gray-500">{formatDate(u.date)}</p>
+                <p className="text-sm text-gray-800 dark:text-gray-200">{u.text}</p>
                 {u.sourceUrl && (
                   <a
                     href={u.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-blue-600 hover:underline"
+                    className="text-xs text-blue-600 dark:text-blue-400 hover:underline"
                   >
                     fonte ↗
                   </a>
@@ -97,13 +97,13 @@ export function LinePanel({ line }: { line: Line }) {
           src={metroCptmLineUrl(line.number)}
           title={`Notícias da ${line.fullName} no metrôCPTM`}
           loading="lazy"
-          className="mt-2 w-full h-[240px] rounded-xl border border-gray-200 bg-white"
+          className="mt-2 w-full h-[240px] rounded-xl border border-gray-200 dark:border-gray-700 bg-white"
         />
         <a
           href={googleNewsUrl(line.newsQuery)}
           target="_blank"
           rel="noopener noreferrer"
-          className="block text-center text-xs text-gray-500 hover:underline mt-2"
+          className="block text-center text-xs text-gray-500 dark:text-gray-400 hover:underline mt-2"
         >
           ou buscar no Google Notícias ↗
         </a>
@@ -114,7 +114,7 @@ export function LinePanel({ line }: { line: Line }) {
           Estações {stations.length > 0 && `(${stations.length})`}
         </h3>
         {stations.length === 0 ? (
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             Traçado ainda não desenhado no diagrama — em breve.
           </p>
         ) : (
@@ -123,18 +123,18 @@ export function LinePanel({ line }: { line: Line }) {
               <li key={s.id}>
                 <button
                   onClick={() => selectStation(s.id)}
-                  className="w-full flex items-center gap-2 py-1.5 text-left text-sm text-gray-800 hover:text-gray-950"
+                  className="w-full flex items-center gap-2 py-1.5 text-left text-sm text-gray-800 dark:text-gray-200 hover:text-gray-950 dark:hover:text-white"
                 >
                   <span
-                    className="w-2.5 h-2.5 rounded-full shrink-0"
+                    className="w-2.5 h-2.5 rounded-full shrink-0 bg-white dark:bg-gray-900"
                     style={{
-                      backgroundColor: s.interchange ? '#fff' : line.color,
+                      backgroundColor: s.interchange ? undefined : line.color,
                       border: s.interchange ? `2px solid ${line.color}` : 'none',
                     }}
                   />
                   <span className="truncate">{s.name}</span>
                   {s.interchange && (
-                    <span className="text-[10px] text-gray-400">baldeação</span>
+                    <span className="text-[10px] text-gray-400 dark:text-gray-500">baldeação</span>
                   )}
                 </button>
               </li>
