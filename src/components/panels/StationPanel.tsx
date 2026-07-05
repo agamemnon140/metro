@@ -22,7 +22,7 @@ export function StationPanel({ station }: { station: Station }) {
   const primary =
     'flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold text-white'
   const secondary =
-    'flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold border border-gray-300 text-gray-800'
+    'flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200'
 
   const googleBtn = (
     <a
@@ -51,11 +51,12 @@ export function StationPanel({ station }: { station: Station }) {
 
   return (
     <Panel
+      accent={lines[0]?.color}
       onClose={clear}
       title={
         <div>
-          <p className="text-xs uppercase tracking-wide text-gray-400">Estação</p>
-          <h2 className="text-lg font-bold text-gray-900 leading-tight">
+          <p className="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500">Estação</p>
+          <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 leading-tight">
             {station.name}
           </h2>
         </div>
@@ -70,7 +71,7 @@ export function StationPanel({ station }: { station: Station }) {
             {phase.label}
           </span>
           {station.eta && (
-            <span className="text-xs text-gray-500">
+            <span className="text-xs text-gray-500 dark:text-gray-400">
               Previsão de inauguração: <b>{station.eta}</b>
             </span>
           )}

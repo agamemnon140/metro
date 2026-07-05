@@ -6,9 +6,9 @@ interface Props {
 
 export function MapControls({ onZoomIn, onZoomOut, onReset }: Props) {
   const btn =
-    'w-10 h-10 flex items-center justify-center rounded-lg bg-white/95 shadow ' +
-    'border border-gray-200 text-gray-700 text-xl font-semibold ' +
-    'hover:bg-white active:scale-95 transition'
+    'w-10 h-10 flex items-center justify-center rounded-lg bg-white/95 dark:bg-gray-800/95 shadow ' +
+    'border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 text-xl font-semibold ' +
+    'hover:bg-white dark:hover:bg-gray-700 active:scale-95 transition'
 
   return (
     <div className="absolute bottom-4 right-4 z-10 flex flex-col gap-2">

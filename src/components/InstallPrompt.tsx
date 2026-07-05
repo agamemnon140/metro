@@ -20,8 +20,8 @@ export function InstallPrompt() {
   if (!evt || dismissed) return null
 
   return (
-    <div className="absolute bottom-4 left-3 z-10 flex items-center gap-2 rounded-xl bg-white/97 shadow-lg border border-gray-200 px-3 py-2">
-      <span className="text-sm text-gray-700">Instalar o app?</span>
+    <div className="absolute bottom-4 left-3 z-10 flex items-center gap-2 rounded-xl bg-white/97 dark:bg-gray-800/97 shadow-lg border border-gray-200 dark:border-gray-700 px-3 py-2">
+      <span className="text-sm text-gray-700 dark:text-gray-200">Instalar o app?</span>
       <button
         onClick={() => {
           evt.prompt()
