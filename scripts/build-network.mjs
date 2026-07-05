@@ -23,11 +23,12 @@ const U = (name, lat, lng, tier = 3) => ({ name, lat, lng, tier, phase: 'estudo'
 // Linhas definidas à mão (substituem stationOrder). Estações não-ref e sem op
 // viram futuras, EXCETO quando a linha é majoritariamente operacional (17).
 const MANUAL = {
-  // 6-Laranja (obras): Brasilândia -> São Joaquim
+  // 6-Laranja: trecho João Paulo I <-> Perdizes inaugurado em 02/07/2026
+  // (operação assistida); Água Branca = baldeação real com a 7-Rubi.
   '6': [
     S('Brasilândia', -23.46, -46.69, 1), S('Maristela', -23.47, -46.688), S('Itaberaba', -23.478, -46.69),
-    S('João Paulo I', -23.488, -46.687), S('Freguesia do Ó', -23.498, -46.69, 2), S('Santa Marina', -23.515, -46.682),
-    S('Água Branca', -23.524, -46.678), S('SESC-Pompeia', -23.527, -46.674), S('Perdizes', -23.535, -46.672),
+    S('João Paulo I', -23.488, -46.687, 3, true), S('Freguesia do Ó', -23.498, -46.69, 2, true), S('Santa Marina', -23.515, -46.682, 3, true),
+    R('agua-branca'), S('SESC-Pompeia', -23.527, -46.674, 3, true), S('Perdizes', -23.535, -46.672, 3, true),
     S('PUC-Cardoso de Almeida', -23.543, -46.667), S('FAAP-Pacaembu', -23.547, -46.662), R('higienopolis-mackenzie'),
     S('14 Bis-Saracura', -23.557, -46.645), S('Bela Vista', -23.562, -46.642), R('sao-joaquim'),
   ],
