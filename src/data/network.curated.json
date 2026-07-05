@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "updatedAt": "2026-06-27",
+  "updatedAt": "2026-07-05",
   "viewBox": { "width": 1450, "height": 1300 },
   "lines": [
     {
@@ -117,11 +117,12 @@
       "color": "#ef7d00",
       "operator": "outro",
       "kind": "metro",
-      "status": "construcao",
+      "status": "expansao",
       "drawn": true,
-      "newsQuery": "Linha 6-Laranja Metrô SP obras",
+      "newsQuery": "Linha 6-Laranja Metrô SP",
       "stationOrder": [],
       "updates": [
+        { "date": "2026-07-02", "text": "Inaugurado o 1º trecho (João Paulo I ↔ Perdizes, 6 estações), com conexão à 7-Rubi na Água Branca. Operação assistida: dias úteis, 10h–15h, gratuita nesta fase.", "sourceUrl": "https://www.agenciasp.sp.gov.br/governo-de-sp-entrega-primeiro-trecho-da-linha-6-laranja-de-metro-com-seis-estacoes-concluidas/" },
         { "date": "2026-06-01", "text": "Em construção pela concessionária Linha Uni, ligará Brasilândia (Zona Norte) à Praça da Sé, com 15 estações previstas." },
         { "date": "2026-03-18", "text": "Tunelamento com tuneladoras (tatuzões) em andamento; primeira fase de operação estimada para os próximos anos." }
       ]
