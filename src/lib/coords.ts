@@ -26,7 +26,7 @@ const geoHeight = Math.round((latMax - latMin) * k + 2 * PAD)
 export const schematicViewBox = network.viewBox
 export const geoViewBox = { width: TARGET_W, height: geoHeight }
 
-function geoToPoint(lat: number, lng: number): SchematicPoint {
+export function geoToPoint(lat: number, lng: number): SchematicPoint {
   return {
     x: PAD + (lng - lngMin) * cosLat * k,
     y: PAD + (latMax - lat) * k,
