@@ -1,7 +1,9 @@
 import { useMemo } from 'react'
-import type { Line, Station } from '@/types/network'
+import type { Line } from '@/types/network'
 import { stationsForLine, isPhaseVisible } from '@/lib/network'
 import { pointFor } from '@/lib/coords'
+import { roundedPath } from '@/lib/geometry'
+import type { Pt } from '@/lib/geometry'
 import { useSelection } from '@/hooks/useSelection'
 import { useViewMode } from '@/hooks/useViewMode'
 import { useLayers } from '@/hooks/useLayers'
@@ -16,16 +18,13 @@ export function LinePath({ line }: Props) {
   const mode = useViewMode((s) => s.mode)
   const layers = useLayers()
 
-  // Trechos contínuos de estações visíveis (uma polyline por trecho). Estações
-  // ocultas (bloco desligado) quebram o traço; o resto fica sólido e único.
+  // Trechos contínuos de estações visíveis (um path por trecho). Estações
+  // ocultas (bloco desligado) quebram o traço; cada trecho ganha cantos
+  // arredondados (fillet) — os pontos das estações não mudam.
   const runs = useMemo(() => {
     const sts = stationsForLine(line, mode)
-    const pt = (s: Station) => {
-      const p = pointFor(s, mode)
-      return `${p.x},${p.y}`
-    }
-    const out: string[][] = []
-    let cur: string[] | null = null
+    const out: Pt[][] = []
+    let cur: Pt[] | null = null
     for (const s of sts) {
       if (!isPhaseVisible(s, layers)) {
         cur = null
@@ -35,9 +34,10 @@ export function LinePath({ line }: Props) {
         cur = []
         out.push(cur)
       }
-      cur.push(pt(s))
+      cur.push(pointFor(s, mode))
     }
-    return out.filter((r) => r.length >= 2).map((r) => r.join(' '))
+    const radius = mode === 'geographic' ? 5 : 9
+    return out.filter((r) => r.length >= 2).map((r) => roundedPath(r, radius))
   }, [line, mode, layers])
 
   if (!runs.length) return null
@@ -53,7 +53,7 @@ export function LinePath({ line }: Props) {
       aria-label={`Linha ${line.fullName}`}
       tabIndex={0}
       className="cursor-pointer focus:outline-none"
-      opacity={dimmed ? 0.1 : 1}
+      style={{ opacity: dimmed ? 'var(--map-dim-opacity)' : 1 }}
       onClick={(e) => {
         e.stopPropagation()
         selectLine(line.id)
@@ -65,10 +65,11 @@ export function LinePath({ line }: Props) {
         }
       }}
     >
-      {runs.map((pts, i) => (
-        <polyline
+      {/* hit-area invisível com o MESMO d do traço visível */}
+      {runs.map((d, i) => (
+        <path
           key={`hit-${i}`}
-          points={pts}
+          d={d}
           fill="none"
           stroke="transparent"
           strokeWidth={18}
@@ -76,10 +77,24 @@ export function LinePath({ line }: Props) {
           strokeLinejoin="round"
         />
       ))}
-      {runs.map((pts, i) => (
-        <polyline
+      {/* casing na cor do fundo, POR LINHA (logo antes do traço colorido):
+          é o que faz a linha desenhada depois "cortar" a anterior com um
+          respiro nos cruzamentos — não mover para um layer global */}
+      {runs.map((d, i) => (
+        <path
+          key={`c-${i}`}
+          d={d}
+          fill="none"
+          stroke="var(--map-surface)"
+          strokeWidth={width + 3.5}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      ))}
+      {runs.map((d, i) => (
+        <path
           key={`l-${i}`}
-          points={pts}
+          d={d}
           fill="none"
           stroke={line.color}
           strokeWidth={width}
