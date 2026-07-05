@@ -24,13 +24,23 @@ export function StationNode({ station }: Props) {
   const firstLine = getLine(station.lineIds[0])
   const color = firstLine?.color ?? '#444'
   const future = Boolean(station.phase && station.phase !== 'operando')
-  // não-operando/baldeação = oca (fundo branco); comum = preenchida na cor
+  // não-operando/baldeação = oca (cor do fundo); comum = preenchida na cor
   const hollow = station.interchange || future
-  const fill = hollow ? '#ffffff' : color
-  const stroke = station.interchange ? '#1a1a1a' : future ? color : '#ffffff'
+  const fill = hollow ? 'var(--map-surface)' : color
+  const stroke = station.interchange
+    ? 'var(--map-station-ring)'
+    : future
+      ? color
+      : 'var(--map-surface)'
   // geográfico é mais denso -> ícones menores
   const mul = mode === 'geographic' ? 0.65 : 1
-  const r = (station.interchange ? 5.5 : 3.5) * mul
+  // hubs crescem com o nº de linhas; cápsula orientada fica como evolução
+  // futura (o dataset tem um ponto único por estação, sem orientação)
+  const n = station.lineIds.length
+  const r =
+    (station.interchange ? 5.5 + Math.min(Math.max(n - 2, 0), 3) * 1.1 : 3.5) *
+    mul
+  const bigHub = station.interchange && n >= 3
 
   return (
     <g
@@ -38,7 +48,7 @@ export function StationNode({ station }: Props) {
       aria-label={`Estação ${station.name}`}
       tabIndex={0}
       className="cursor-pointer focus:outline-none"
-      opacity={dimmed ? 0.12 : 1}
+      style={{ opacity: dimmed ? 'var(--map-dim-opacity)' : 1 }}
       onClick={(e) => {
         e.stopPropagation()
         selectStation(station.id)
@@ -51,7 +61,17 @@ export function StationNode({ station }: Props) {
       }}
     >
       {isSelected && (
-        <circle cx={p.x} cy={p.y} r={r + 4 * mul} fill="none" stroke="#1a1a1a" strokeWidth={1.5 * mul} />
+        <>
+          <circle cx={p.x} cy={p.y} r={r + 5 * mul} fill={color} opacity={0.25} />
+          <circle
+            cx={p.x}
+            cy={p.y}
+            r={r + 3 * mul}
+            fill="none"
+            stroke={color}
+            strokeWidth={1.5 * mul}
+          />
+        </>
       )}
       <circle
         cx={p.x}
@@ -61,6 +81,16 @@ export function StationNode({ station }: Props) {
         stroke={stroke}
         strokeWidth={(station.interchange ? 2 : 1.5) * mul}
       />
+      {bigHub && (
+        <circle
+          cx={p.x}
+          cy={p.y}
+          r={r * 0.45}
+          fill="none"
+          stroke="var(--map-station-ring)"
+          strokeWidth={1 * mul}
+        />
+      )}
     </g>
   )
 }

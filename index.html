@@ -8,6 +8,18 @@
     <meta name="theme-color" content="#0455a1" />
     <meta name="description" content="Visualizador da rede metroferroviária integrada de São Paulo" />
     <title>Rede Metroferroviária SP</title>
+    <script>
+      // anti-FOUC: aplica o tema antes do primeiro paint
+      try {
+        var t = JSON.parse(localStorage.getItem('metro:theme') || 'null')
+        var dark = t && t.state ? t.state.theme === 'dark'
+          : matchMedia('(prefers-color-scheme: dark)').matches
+        if (dark) {
+          document.documentElement.classList.add('dark')
+          document.querySelector('meta[name="theme-color"]').content = '#0b0e14'
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
