@@ -5,6 +5,8 @@ import { useZoom } from '@/hooks/useZoomLevel'
 import { useViewMode } from '@/hooks/useViewMode'
 import { useSelection } from '@/hooks/useSelection'
 import { useLabelMode } from '@/hooks/useLabelMode'
+import { getLine, isStationVisibleOnLine } from '@/lib/network'
+import { useLayers } from '@/hooks/useLayers'
 
 interface Box {
   x1: number
@@ -23,6 +25,7 @@ export function LabelsLayer({ stations, viewportScale }: { stations: Station[]; 
   const mode = useViewMode((s) => s.mode)
   const selection = useSelection((s) => s.selection)
   const labelMode = useLabelMode((s) => s.mode)
+  const layers = useLayers()
   const focusLine = selection?.kind === 'line' ? selection.id : null
   const focusStation = selection?.kind === 'station' ? selection.id : null
 
@@ -35,7 +38,7 @@ export function LabelsLayer({ stations, viewportScale }: { stations: Station[]; 
 
     let cands: Station[]
     if (labelMode === 'off') cands = []
-    else if (focusLine) cands = stations.filter((s) => s.lineIds.includes(focusLine))
+    else if (focusLine) cands = stations.filter((s) => isStationVisibleOnLine(s, getLine(focusLine)!, layers))
     else if (labelMode === 'hubs') cands = stations.filter((s) => s.interchange || s.id === focusStation)
     else cands = stations
 
@@ -63,7 +66,7 @@ export function LabelsLayer({ stations, viewportScale }: { stations: Station[]; 
       }
     }
     return { items: out, fs }
-  }, [stations, scale, viewportScale, mode, focusLine, focusStation, labelMode])
+  }, [stations, scale, viewportScale, mode, focusLine, focusStation, labelMode, layers])
 
   const { items, fs } = result
 

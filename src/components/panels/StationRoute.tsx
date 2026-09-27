@@ -1,5 +1,5 @@
 ﻿import type { Line, Station } from '@/types/network'
-import { linesForStation } from '@/lib/network'
+import { linesForStation, isOperatingConnection, phaseForLine } from '@/lib/network'
 import { lineTextColor } from '@/lib/colors'
 import { useSelection } from '@/hooks/useSelection'
 
@@ -19,12 +19,12 @@ export function StationRoute({ line, stations }: { line: Line; stations: Station
         <ol className="flex flex-col">
           {stations.map((station, index) => {
             const connections = linesForStation(station).filter((l) => l.id !== line.id)
-            const planned = (connection: Line) => !['operacao', 'expansao'].includes(connection.status)
+            const planned = (connection: Line) => !isOperatingConnection(station, connection)
             const connectionGroups = [
               { label: 'Conexões', lines: connections.filter((connection) => !planned(connection)) },
               { label: 'Previstas', lines: connections.filter(planned) },
             ]
-            const phaseLabel = PHASE_LABEL[station.phase ?? 'operando']
+            const phaseLabel = PHASE_LABEL[phaseForLine(station, line)]
             return (
               <li key={station.id} className="relative pl-7">
                 {index > 0 && <span aria-hidden="true" className="absolute left-[9px] top-0 h-6 w-0 border-l-[3px]" style={{ borderColor: line.color }} />}

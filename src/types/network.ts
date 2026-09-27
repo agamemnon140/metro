@@ -53,6 +53,8 @@ export interface Station {
   labelTier: 1 | 2 | 3
   /** bloco da estação (default: operando). Uma linha pode misturar blocos. */
   phase?: 'operando' | 'construcao' | 'estudo' | 'especulacao'
+  /** Fase da ligação por linha, para integrações futuras em estações existentes. */
+  linePhases?: Record<string, NonNullable<Station['phase']>>
   /** previsão de inauguração (estações em construção) */
   eta?: string
   /** ancoragem do texto do rótulo (default: start) */
@@ -91,6 +93,9 @@ export interface Line {
    * vindas do OSM). Se ausente, usa-se stationOrder.
    */
   geoOrder?: string[]
+  /** Trechos independentes: não conectar automaticamente o fim de um ao próximo. */
+  routes?: { name: string; phase: NonNullable<Station['phase']>; stationIds: string[] }[]
+  serviceSummary?: string
   /** atualizações curadas (mais recentes primeiro) */
   updates: LineUpdate[]
   /** consulta para o deep-link de notícias, ex.: "Linha 6-Laranja Metrô SP" */

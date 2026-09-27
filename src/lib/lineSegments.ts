@@ -19,7 +19,18 @@ function stationStyle(station: Station): TrackStyle {
 }
 
 /** Split at phase changes, keeping the boundary station in both adjoining runs. */
-export function lineSegments(line: Line, stations: Station[], layers: Layers) {
+export function lineSegments(line: Line, stations: Station[], layers: Layers): { style: TrackStyle; stations: Station[] }[] {
+  if (line.routes) {
+    const byId = new Map(stations.map((station) => [station.id, station]))
+    return line.routes.flatMap((route) => {
+      const ordered = route.stationIds.map((id) => {
+        const station = byId.get(id)
+        if (!station) throw new Error(`Estação ausente no trecho ${route.name}: ${id}`)
+        return { ...station, phase: route.phase }
+      })
+      return lineSegments({ ...line, routes: undefined }, ordered, layers)
+    })
+  }
   const baseline: TrackStyle = line.status === 'construcao' ? 'construction'
     : ['contratacao', 'elaboracao', 'estudo'].includes(line.status) ? 'project' : 'operating'
 

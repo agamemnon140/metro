@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.4.1",
   "updatedAt": "2026-07-05",
   "viewBox": {
     "width": 1738,
@@ -486,6 +486,7 @@
         "cidade-jardim",
         "vila-olimpia",
         "berrini",
+        "l17-morumbi",
         "granja-julieta",
         "joao-dias",
         "santo-amaro",
@@ -510,6 +511,7 @@
         "cidade-jardim",
         "vila-olimpia",
         "berrini",
+        "l17-morumbi",
         "granja-julieta",
         "joao-dias",
         "santo-amaro",
@@ -763,11 +765,6 @@
       "drawn": true,
       "newsQuery": "Linha 17-Ouro monotrilho Congonhas obras",
       "stationOrder": [
-        "sao-paulo-morumbi",
-        "l17-estadio-morumbi",
-        "l17-americo-maurano",
-        "l17-paraisopolis",
-        "l17-panamby",
         "l17-morumbi",
         "l17-chucri-zaidan",
         "l17-vila-cordeiro",
@@ -776,28 +773,25 @@
         "l17-brooklin-paulista",
         "l17-aeroporto-de-congonhas",
         "l17-washington-luis",
+        "sao-paulo-morumbi",
+        "l17-estadio-morumbi",
+        "l17-americo-maurano",
+        "l17-paraisopolis",
+        "l17-panamby",
         "l17-vila-paulista",
         "l17-vila-babilonia",
         "l17-cidade-leonor",
         "l17-hospital-saboia",
-        "l17-jabaquara-cpb"
+        "jabaquara"
       ],
       "updates": [
         {
-          "date": "2026-06-10",
-          "text": "Monotrilho em obras ligando a região de Congonhas/Aeroporto à Linha 5-Lilás e à Linha 9-Esmeralda."
-        },
-        {
-          "date": "2026-03-22",
-          "text": "Trecho prioritário em fase final de construção, com testes previstos para os próximos meses."
+          "date": "2026-06-30",
+          "text": "Oito estações em operação na primeira fase. A linha se divide em Brooklin Paulista, com destinos Aeroporto de Congonhas e Washington Luís. Integrações com a Linha 9 em Morumbi e a Linha 5 em Campo Belo. As extensões permanecem futuras.",
+          "sourceUrl": "https://prefeitura.sp.gov.br/w/primeira-fase-da-linha-17-ouro-%C3%A9-conclu%C3%ADda-com-inaugura%C3%A7%C3%A3o-da-esta%C3%A7%C3%A3o-washington-lu%C3%ADs-na-zona-sul"
         }
       ],
       "geoOrder": [
-        "sao-paulo-morumbi",
-        "l17-estadio-morumbi",
-        "l17-americo-maurano",
-        "l17-paraisopolis",
-        "l17-panamby",
         "l17-morumbi",
         "l17-chucri-zaidan",
         "l17-vila-cordeiro",
@@ -806,12 +800,72 @@
         "l17-brooklin-paulista",
         "l17-aeroporto-de-congonhas",
         "l17-washington-luis",
+        "sao-paulo-morumbi",
+        "l17-estadio-morumbi",
+        "l17-americo-maurano",
+        "l17-paraisopolis",
+        "l17-panamby",
         "l17-vila-paulista",
         "l17-vila-babilonia",
         "l17-cidade-leonor",
         "l17-hospital-saboia",
-        "l17-jabaquara-cpb"
-      ]
+        "jabaquara"
+      ],
+      "routes": [
+        {
+          "name": "Trecho comum · Morumbi a Brooklin Paulista",
+          "phase": "operando",
+          "stationIds": [
+            "l17-morumbi",
+            "l17-chucri-zaidan",
+            "l17-vila-cordeiro",
+            "campo-belo",
+            "l17-vereador-jose-diniz",
+            "l17-brooklin-paulista"
+          ]
+        },
+        {
+          "name": "Ramal Aeroporto de Congonhas",
+          "phase": "operando",
+          "stationIds": [
+            "l17-brooklin-paulista",
+            "l17-aeroporto-de-congonhas"
+          ]
+        },
+        {
+          "name": "Ramal Washington Luís",
+          "phase": "operando",
+          "stationIds": [
+            "l17-brooklin-paulista",
+            "l17-washington-luis"
+          ]
+        },
+        {
+          "name": "Extensão prevista · São Paulo–Morumbi",
+          "phase": "estudo",
+          "stationIds": [
+            "sao-paulo-morumbi",
+            "l17-estadio-morumbi",
+            "l17-americo-maurano",
+            "l17-paraisopolis",
+            "l17-panamby",
+            "l17-morumbi"
+          ]
+        },
+        {
+          "name": "Extensão prevista · Jabaquara",
+          "phase": "estudo",
+          "stationIds": [
+            "l17-washington-luis",
+            "l17-vila-paulista",
+            "l17-vila-babilonia",
+            "l17-cidade-leonor",
+            "l17-hospital-saboia",
+            "jabaquara"
+          ]
+        }
+      ],
+      "serviceSummary": "Morumbi ↔ Aeroporto de Congonhas / Washington Luís"
     },
     {
       "id": "19",
@@ -1725,9 +1779,10 @@
       "id": "jabaquara",
       "name": "Jabaquara",
       "lineIds": [
-        "1"
+        "1",
+        "17"
       ],
-      "interchange": false,
+      "interchange": true,
       "schematic": {
         "x": 817.2,
         "y": 896
@@ -1736,7 +1791,10 @@
         "lat": -23.64634,
         "lng": -46.64106
       },
-      "labelTier": 1
+      "labelTier": 1,
+      "linePhases": {
+        "17": "estudo"
+      }
     },
     {
       "id": "palmeiras-barra-funda",
@@ -2555,6 +2613,9 @@
       "labelOffset": {
         "x": -10,
         "y": 0
+      },
+      "linePhases": {
+        "17": "estudo"
       }
     },
     {
@@ -2822,6 +2883,9 @@
       "labelOffset": {
         "x": -10,
         "y": 0
+      },
+      "linePhases": {
+        "17": "operando"
       }
     },
     {
@@ -3572,8 +3636,8 @@
         "y": 978
       },
       "geo": {
-        "lat": -23.62199,
-        "lng": -46.70204
+        "lat": -23.627222222222223,
+        "lng": -46.711666666666666
       },
       "labelTier": 3,
       "labelAnchor": "start",
@@ -4108,72 +4172,6 @@
         "lng": -46.49371
       },
       "labelTier": 1,
-      "labelAnchor": "start",
-      "labelOffset": {
-        "x": 12,
-        "y": 0
-      }
-    },
-    {
-      "id": "chacara-santo-antonio",
-      "name": "Chácara Santo Antônio",
-      "lineIds": [
-        "17"
-      ],
-      "interchange": false,
-      "schematic": {
-        "x": 537.2,
-        "y": 775
-      },
-      "geo": {
-        "lat": -23.619,
-        "lng": -46.702
-      },
-      "labelTier": 3,
-      "labelAnchor": "start",
-      "labelOffset": {
-        "x": 12,
-        "y": 0
-      }
-    },
-    {
-      "id": "congonhas",
-      "name": "Congonhas",
-      "lineIds": [
-        "17"
-      ],
-      "interchange": false,
-      "schematic": {
-        "x": 607.2,
-        "y": 820
-      },
-      "geo": {
-        "lat": -23.628,
-        "lng": -46.661
-      },
-      "labelTier": 2,
-      "labelAnchor": "middle",
-      "labelOffset": {
-        "x": 0,
-        "y": 22
-      }
-    },
-    {
-      "id": "vereador-jose-diniz",
-      "name": "Vereador José Diniz",
-      "lineIds": [
-        "17"
-      ],
-      "interchange": false,
-      "schematic": {
-        "x": 667.2,
-        "y": 850
-      },
-      "geo": {
-        "lat": -23.621,
-        "lng": -46.666
-      },
-      "labelTier": 3,
       "labelAnchor": "start",
       "labelOffset": {
         "x": 12,
@@ -5585,14 +5583,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 497.1,
-        "y": 737.1
+        "x": 484.1,
+        "y": 752.9
       },
       "geo": {
         "lat": -23.595,
         "lng": -46.715
       },
-      "labelTier": 3
+      "labelTier": 3,
+      "phase": "estudo",
+      "linePhases": {
+        "17": "estudo"
+      }
     },
     {
       "id": "l17-americo-maurano",
@@ -5602,14 +5604,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 528.8,
-        "y": 757.1
+        "x": 511,
+        "y": 793.8
       },
       "geo": {
         "lat": -23.602,
         "lng": -46.722
       },
-      "labelTier": 3
+      "labelTier": 3,
+      "phase": "estudo",
+      "linePhases": {
+        "17": "estudo"
+      }
     },
     {
       "id": "l17-paraisopolis",
@@ -5619,14 +5625,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 550.8,
-        "y": 771.1
+        "x": 537.9,
+        "y": 834.7
       },
       "geo": {
         "lat": -23.608,
         "lng": -46.725
       },
-      "labelTier": 3
+      "labelTier": 3,
+      "phase": "estudo",
+      "linePhases": {
+        "17": "estudo"
+      }
     },
     {
       "id": "l17-panamby",
@@ -5636,31 +5646,40 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 575.9,
-        "y": 786.9
+        "x": 564.8000000000001,
+        "y": 875.6
       },
       "geo": {
         "lat": -23.615,
         "lng": -46.722
       },
-      "labelTier": 3
+      "labelTier": 3,
+      "phase": "estudo",
+      "linePhases": {
+        "17": "estudo"
+      }
     },
     {
       "id": "l17-morumbi",
       "name": "Morumbi",
       "lineIds": [
+        "9",
         "17"
       ],
-      "interchange": false,
+      "interchange": true,
       "schematic": {
-        "x": 612.1,
-        "y": 809.7
+        "x": 591.7,
+        "y": 916.5
       },
       "geo": {
-        "lat": -23.622,
-        "lng": -46.713
+        "lat": -23.621591666666667,
+        "lng": -46.70166666666667
       },
-      "labelTier": 3
+      "labelTier": 1,
+      "phase": "operando",
+      "linePhases": {
+        "17": "operando"
+      }
     },
     {
       "id": "l17-chucri-zaidan",
@@ -5670,14 +5689,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 658.2,
-        "y": 838.8
+        "x": 633.5333333333334,
+        "y": 903
       },
       "geo": {
-        "lat": -23.615,
-        "lng": -46.7
+        "lat": -23.613986111111114,
+        "lng": -46.695277777777775
       },
-      "labelTier": 3
+      "labelTier": 3,
+      "phase": "operando",
+      "linePhases": {
+        "17": "operando"
+      }
     },
     {
       "id": "l17-vila-cordeiro",
@@ -5687,14 +5710,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 693.1,
-        "y": 860.8
+        "x": 675.3666666666667,
+        "y": 889.5
       },
       "geo": {
-        "lat": -23.62,
-        "lng": -46.69
+        "lat": -23.615555555555556,
+        "lng": -46.68861111111111
       },
-      "labelTier": 3
+      "labelTier": 3,
+      "phase": "operando",
+      "linePhases": {
+        "17": "operando"
+      }
     },
     {
       "id": "l17-vereador-jose-diniz",
@@ -5704,15 +5731,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 767.8,
-        "y": 873.8
+        "x": 762.2,
+        "y": 911
       },
       "geo": {
-        "lat": -23.62,
-        "lng": -46.66
+        "lat": -23.622222222222224,
+        "lng": -46.67861111111111
       },
       "labelTier": 3,
-      "phase": "estudo"
+      "phase": "operando",
+      "linePhases": {
+        "17": "operando"
+      }
     },
     {
       "id": "l17-brooklin-paulista",
@@ -5722,15 +5752,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 779.9,
-        "y": 887.2
+        "x": 807.2,
+        "y": 946
       },
       "geo": {
-        "lat": -23.625,
-        "lng": -46.655
+        "lat": -23.629444444444445,
+        "lng": -46.67361111111111
       },
-      "labelTier": 3,
-      "phase": "estudo"
+      "labelTier": 1,
+      "phase": "operando",
+      "linePhases": {
+        "17": "operando"
+      }
     },
     {
       "id": "l17-aeroporto-de-congonhas",
@@ -5740,15 +5773,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 791.6,
-        "y": 891.7
+        "x": 887.2,
+        "y": 921
       },
       "geo": {
-        "lat": -23.627,
-        "lng": -46.65
+        "lat": -23.626944444444444,
+        "lng": -46.661763888888885
       },
       "labelTier": 1,
-      "phase": "estudo"
+      "phase": "operando",
+      "linePhases": {
+        "17": "operando"
+      }
     },
     {
       "id": "l17-washington-luis",
@@ -5758,15 +5794,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 803.4,
-        "y": 899.2
+        "x": 847.2,
+        "y": 1001
       },
       "geo": {
-        "lat": -23.63,
-        "lng": -46.645
+        "lat": -23.634722222222223,
+        "lng": -46.66833333333333
       },
-      "labelTier": 3,
-      "phase": "estudo"
+      "labelTier": 1,
+      "phase": "operando",
+      "linePhases": {
+        "17": "operando"
+      }
     },
     {
       "id": "l17-vila-paulista",
@@ -5776,15 +5815,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 811.1,
-        "y": 913.1
+        "x": 841.2,
+        "y": 980
       },
       "geo": {
         "lat": -23.635,
         "lng": -46.642
       },
       "labelTier": 3,
-      "phase": "estudo"
+      "phase": "estudo",
+      "linePhases": {
+        "17": "estudo"
+      }
     },
     {
       "id": "l17-vila-babilonia",
@@ -5794,15 +5836,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 820.9,
-        "y": 926.7
+        "x": 835.2,
+        "y": 959
       },
       "geo": {
         "lat": -23.64,
         "lng": -46.638
       },
       "labelTier": 3,
-      "phase": "estudo"
+      "phase": "estudo",
+      "linePhases": {
+        "17": "estudo"
+      }
     },
     {
       "id": "l17-cidade-leonor",
@@ -5812,15 +5857,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 835,
-        "y": 933.9
+        "x": 829.2,
+        "y": 938
       },
       "geo": {
         "lat": -23.643,
         "lng": -46.632
       },
       "labelTier": 3,
-      "phase": "estudo"
+      "phase": "estudo",
+      "linePhases": {
+        "17": "estudo"
+      }
     },
     {
       "id": "l17-hospital-saboia",
@@ -5830,33 +5878,18 @@
       ],
       "interchange": false,
       "schematic": {
-        "x": 844.6,
-        "y": 941.7
+        "x": 823.2,
+        "y": 917
       },
       "geo": {
         "lat": -23.646,
         "lng": -46.628
       },
       "labelTier": 3,
-      "phase": "estudo"
-    },
-    {
-      "id": "l17-jabaquara-cpb",
-      "name": "Jabaquara-CPB",
-      "lineIds": [
-        "17"
-      ],
-      "interchange": false,
-      "schematic": {
-        "x": 862.7,
-        "y": 939.6
-      },
-      "geo": {
-        "lat": -23.646,
-        "lng": -46.62
-      },
-      "labelTier": 1,
-      "phase": "estudo"
+      "phase": "estudo",
+      "linePhases": {
+        "17": "estudo"
+      }
     },
     {
       "id": "l19-jesuino-maciel",
