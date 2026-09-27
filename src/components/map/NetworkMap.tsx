@@ -14,7 +14,6 @@ import { RiversLayer } from './RiversLayer'
 import { StationNode } from './StationNode'
 import { LabelsLayer } from './LabelsLayer'
 import { MapControls } from './MapControls'
-import { TrackLegend } from './TrackLegend'
 
 export function NetworkMap() {
   const setScale = useZoom((s) => s.setScale)
@@ -65,7 +64,6 @@ export function NetworkMap() {
             onZoomOut={() => zoomOut()}
             onReset={() => resetTransform()}
           />
-          <TrackLegend />
           <TransformComponent
             wrapperStyle={{ width: '100%', height: '100%' }}
             contentStyle={{ width: '100%', height: '100%' }}

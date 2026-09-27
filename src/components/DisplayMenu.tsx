@@ -30,6 +30,7 @@ export function DisplayMenu() {
     }
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
+        e.preventDefault()
         setOpen(false)
         triggerRef.current?.focus()
       }

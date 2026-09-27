@@ -38,6 +38,7 @@ body {
 }
 
 button:focus-visible,
+a:focus-visible,
 select:focus-visible,
 input:focus-visible {
   outline: 3px solid #3b82f6;

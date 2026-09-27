@@ -18,7 +18,7 @@ export function LineChip({ line, onClick, showName = true }: Props) {
         {line.number}
       </span>
       {showName && (
-        <span className="truncate text-sm text-gray-800">{line.name}</span>
+        <span className="truncate text-sm text-gray-800 dark:text-gray-100">{line.name}</span>
       )}
     </>
   )
@@ -30,7 +30,7 @@ export function LineChip({ line, onClick, showName = true }: Props) {
   return (
     <button
       onClick={onClick}
-      className="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-2 py-1 hover:bg-gray-50 active:scale-[0.98] transition"
+      className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-gray-200 dark:border-gray-700 px-2 py-1 hover:bg-gray-50 dark:hover:bg-gray-800 active:scale-[0.98] transition"
       title={line.fullName}
     >
       {content}
