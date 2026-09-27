@@ -36,3 +36,15 @@ body {
   overscroll-behavior: none;
   -webkit-tap-highlight-color: transparent;
 }
+
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 3px;
+}
+
+svg g[role='button']:focus-visible {
+  outline: 2px solid var(--map-label-text);
+  outline-offset: 4px;
+}

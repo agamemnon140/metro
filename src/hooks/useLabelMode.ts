@@ -12,9 +12,11 @@ const NEXT: Record<LabelMode, LabelMode> = {
 interface LabelModeState {
   mode: LabelMode
   cycle: () => void
+  set: (mode: LabelMode) => void
 }
 
 export const useLabelMode = create<LabelModeState>((set) => ({
   mode: 'hubs',
   cycle: () => set((s) => ({ mode: NEXT[s.mode] })),
+  set: (mode) => set({ mode }),
 }))
