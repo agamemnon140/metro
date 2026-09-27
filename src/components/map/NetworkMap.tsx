@@ -1,9 +1,10 @@
+import { useEffect, useRef, useState } from 'react'
 import {
   TransformWrapper,
   TransformComponent,
 } from 'react-zoom-pan-pinch'
 import { drawnLines, drawnStations } from '@/lib/network'
-import { viewBoxFor } from '@/lib/coords'
+import { pointFor, viewBoxFor } from '@/lib/coords'
 import { useZoom } from '@/hooks/useZoomLevel'
 import { useSelection } from '@/hooks/useSelection'
 import { useViewMode } from '@/hooks/useViewMode'
@@ -13,6 +14,7 @@ import { RiversLayer } from './RiversLayer'
 import { StationNode } from './StationNode'
 import { LabelsLayer } from './LabelsLayer'
 import { MapControls } from './MapControls'
+import { TrackLegend } from './TrackLegend'
 
 export function NetworkMap() {
   const setScale = useZoom((s) => s.setScale)
@@ -21,7 +23,27 @@ export function NetworkMap() {
   const layers = useLayers()
   const lines = drawnLines(layers)
   const stations = drawnStations(mode, layers)
-  const { width, height } = viewBoxFor(mode)
+  const defaultBox = viewBoxFor(mode)
+  const points = stations.map((s) => pointFor(s, mode))
+  const fitGeographic = mode === 'geographic' && points.length > 0
+  const minX = fitGeographic ? Math.min(...points.map((p) => p.x)) - 45 : 0
+  const minY = fitGeographic ? Math.min(...points.map((p) => p.y)) - 45 : 0
+  const width = fitGeographic ? Math.max(...points.map((p) => p.x)) - minX + 45 : defaultBox.width
+  const height = fitGeographic ? Math.max(...points.map((p) => p.y)) - minY + 45 : defaultBox.height
+  const svgRef = useRef<SVGSVGElement>(null)
+  const [viewport, setViewport] = useState({ width: 0, height: 0 })
+
+  useEffect(() => {
+    const svg = svgRef.current
+    if (!svg) return
+    const observer = new ResizeObserver(([entry]) => {
+      setViewport({ width: entry.contentRect.width, height: entry.contentRect.height })
+    })
+    observer.observe(svg)
+    return () => observer.disconnect()
+  }, [mode])
+
+  const viewportScale = Math.min(viewport.width / width, viewport.height / height) || 1
 
   return (
     <TransformWrapper
@@ -43,16 +65,18 @@ export function NetworkMap() {
             onZoomOut={() => zoomOut()}
             onReset={() => resetTransform()}
           />
+          <TrackLegend />
           <TransformComponent
             wrapperStyle={{ width: '100%', height: '100%' }}
             contentStyle={{ width: '100%', height: '100%' }}
           >
             <svg
-              viewBox={`0 0 ${width} ${height}`}
+              ref={svgRef}
+              viewBox={`${minX} ${minY} ${width} ${height}`}
               width="100%"
               height="100%"
               role="img"
-              aria-label="Diagrama da rede metroferroviária de São Paulo"
+              aria-label={`${mode === 'geographic' ? 'Mapa geográfico' : 'Diagrama'} da rede metroferroviária de São Paulo`}
               onClick={() => clear()}
             >
               <RiversLayer mode={mode} />
@@ -66,7 +90,7 @@ export function NetworkMap() {
                   <StationNode key={s.id} station={s} />
                 ))}
               </g>
-              <LabelsLayer stations={stations} />
+              <LabelsLayer stations={stations} viewportScale={viewportScale} />
             </svg>
           </TransformComponent>
         </>

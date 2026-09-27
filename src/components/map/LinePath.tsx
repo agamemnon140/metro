@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
 import type { Line } from '@/types/network'
-import { stationsForLine, isPhaseVisible } from '@/lib/network'
+import { stationsForLine } from '@/lib/network'
 import { pointFor } from '@/lib/coords'
 import { roundedPath } from '@/lib/geometry'
-import type { Pt } from '@/lib/geometry'
+import { lineSegments, TRACK_STYLES } from '@/lib/lineSegments'
 import { useSelection } from '@/hooks/useSelection'
 import { useViewMode } from '@/hooks/useViewMode'
 import { useLayers } from '@/hooks/useLayers'
@@ -23,21 +23,11 @@ export function LinePath({ line }: Props) {
   // arredondados (fillet) — os pontos das estações não mudam.
   const runs = useMemo(() => {
     const sts = stationsForLine(line, mode)
-    const out: Pt[][] = []
-    let cur: Pt[] | null = null
-    for (const s of sts) {
-      if (!isPhaseVisible(s, layers)) {
-        cur = null
-        continue
-      }
-      if (!cur) {
-        cur = []
-        out.push(cur)
-      }
-      cur.push(pointFor(s, mode))
-    }
     const radius = mode === 'geographic' ? 5 : 9
-    return out.filter((r) => r.length >= 2).map((r) => roundedPath(r, radius))
+    return lineSegments(line, sts, layers).map((run) => ({
+      d: roundedPath(run.stations.map((s) => pointFor(s, mode)), radius),
+      style: run.style,
+    }))
   }, [line, mode, layers])
 
   if (!runs.length) return null
@@ -66,7 +56,7 @@ export function LinePath({ line }: Props) {
       }}
     >
       {/* hit-area invisível com o MESMO d do traço visível */}
-      {runs.map((d, i) => (
+      {runs.map(({ d }, i) => (
         <path
           key={`hit-${i}`}
           d={d}
@@ -80,7 +70,7 @@ export function LinePath({ line }: Props) {
       {/* casing na cor do fundo, POR LINHA (logo antes do traço colorido):
           é o que faz a linha desenhada depois "cortar" a anterior com um
           respiro nos cruzamentos — não mover para um layer global */}
-      {runs.map((d, i) => (
+      {runs.map(({ d }, i) => (
         <path
           key={`c-${i}`}
           d={d}
@@ -91,13 +81,14 @@ export function LinePath({ line }: Props) {
           strokeLinejoin="round"
         />
       ))}
-      {runs.map((d, i) => (
+      {runs.map(({ d, style }, i) => (
         <path
           key={`l-${i}`}
           d={d}
           fill="none"
           stroke={line.color}
           strokeWidth={width}
+          strokeDasharray={TRACK_STYLES[style].dash}
           strokeLinecap="round"
           strokeLinejoin="round"
           opacity={isSelected ? 1 : 0.95}

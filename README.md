@@ -34,6 +34,18 @@ npm run build      # build de produção (dist/)
 npm run preview    # serve o build
 ```
 
+## Melhorias visuais e verificação
+
+O plano e o andamento estão em [PLANO-VISUAL.md](./PLANO-VISUAL.md).
+
+```bash
+npx playwright install chromium webkit  # primeira execução dos testes
+npm run test:ui                         # desktop, celular estreito e iPhone
+```
+
+Os testes iniciam o servidor de desenvolvimento automaticamente. As capturas
+ficam em `test-results/`.
+
 ## Dados
 
 Todo o modelo da rede vive em `src/data/network.json` (estático, sem backend).

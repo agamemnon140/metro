@@ -27,7 +27,7 @@ export function Legend() {
     <div className="absolute top-3 left-3 z-10">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-2 rounded-lg bg-white/95 dark:bg-gray-800/95 shadow border border-gray-200 dark:border-gray-700 px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200"
+        className="flex min-h-11 items-center gap-2 rounded-xl bg-white/95 dark:bg-gray-800/95 shadow-sm border border-gray-200 dark:border-gray-700 px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200"
         aria-expanded={open}
       >
         <TrainFront size={16} />
@@ -49,7 +49,7 @@ export function Legend() {
                         selectLine(line.id)
                         setOpen(false)
                       }}
-                      className="w-full flex items-center gap-2.5 rounded-lg px-2 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-700 text-left"
+                      className="w-full min-h-11 flex items-center gap-2.5 rounded-lg px-2 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-700 text-left"
                     >
                       <span
                         className="inline-flex items-center justify-center rounded-md text-xs font-bold w-6 h-6 shrink-0"
