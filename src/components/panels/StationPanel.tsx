@@ -1,5 +1,5 @@
 import type { Station } from '@/types/network'
-import { linesForStation } from '@/lib/network'
+import { linesForStation, isOperatingConnection } from '@/lib/network'
 import { googleMapsUrl, appleMapsUrl } from '@/lib/deeplinks'
 import { detectPlatform } from '@/lib/platform'
 import { useSelection } from '@/hooks/useSelection'
@@ -84,11 +84,10 @@ export function StationPanel({ station }: { station: Station }) {
         </h3>
         <div className="flex flex-wrap gap-2">
           {lines.map((line) => (
-            <LineChip
-              key={line.id}
-              line={line}
-              onClick={() => selectLine(line.id)}
-            />
+            <div key={line.id} className="flex flex-col gap-1">
+              <LineChip line={line} onClick={() => selectLine(line.id)} />
+              {!isOperatingConnection(station, line) && <span className="text-xs text-gray-500 dark:text-gray-400">Ligação prevista</span>}
+            </div>
           ))}
         </div>
       </section>

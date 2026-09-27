@@ -45,7 +45,20 @@ export function drawnLines(layers: Layers): Line[] {
 type Mode = 'schematic' | 'geographic'
 
 function orderFor(line: Line, mode: Mode): string[] {
+  if (line.routes) return [...new Set(line.routes.flatMap((route) => route.stationIds))]
   return mode === 'geographic' ? line.geoOrder ?? line.stationOrder : line.stationOrder
+}
+
+export function phaseForLine(station: Station, line: Line): NonNullable<Station['phase']> {
+  return station.linePhases?.[line.id] ?? station.phase ?? 'operando'
+}
+
+export function isOperatingConnection(station: Station, line: Line): boolean {
+  return ['operacao', 'expansao'].includes(line.status) && phaseForLine(station, line) === 'operando'
+}
+
+export function isStationVisibleOnLine(station: Station, line: Line, layers: Layers): boolean {
+  return station.lineIds.includes(line.id) && isPhaseVisible({ ...station, phase: phaseForLine(station, line) }, layers)
 }
 
 /** Estações visíveis conforme o modo e as camadas. */

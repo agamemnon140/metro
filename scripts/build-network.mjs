@@ -1,13 +1,15 @@
 // Pipeline de dados: network.curated.json + OSM (scratch/osm.json) -> network.json
 //
 // - OSM: linhas operacionais (estações reais ordenadas + coordenadas).
-// - MANUAL: linhas definidas à mão (6/16/17/19/20/22) com estações reais/projeto.
+// - MANUAL: linhas definidas à mão (6/16/19/20/22) com estações reais/projeto.
+// - Linha 17: revisão documentada aplicada por reviewed-gold-line.mjs ao resultado.
 // - EXTENSIONS: estações de expansão (futuras) anexadas a linhas operacionais (2/4).
 // - INTERCITY: trens intercidades (TIC/TIM) — toggle próprio.
 // - Estações novas não inauguradas recebem future=true (gated por "Projetos").
 // - Posição esquemática: interpolação entre âncoras + re-base afim (contínuo).
 
 import { readFileSync, writeFileSync } from 'node:fs'
+import { applyReviewedGoldLine } from './lib/reviewed-gold-line.mjs'
 
 const osm = JSON.parse(readFileSync('scratch/osm.json', 'utf8'))
 const net = JSON.parse(readFileSync('src/data/network.curated.json', 'utf8'))
@@ -21,7 +23,7 @@ const E = (name, lat, lng, tier = 3) => ({ name, lat, lng, tier, phase: 'especul
 const U = (name, lat, lng, tier = 3) => ({ name, lat, lng, tier, phase: 'estudo' }) // estudo
 
 // Linhas definidas à mão (substituem stationOrder). Estações não-ref e sem op
-// viram futuras, EXCETO quando a linha é majoritariamente operacional (17).
+// recebem a fase da linha.
 const MANUAL = {
   // 6-Laranja: trecho João Paulo I <-> Perdizes inaugurado em 02/07/2026
   // (operação assistida); Água Branca = baldeação real com a 7-Rubi.
@@ -43,15 +45,6 @@ const MANUAL = {
     S('Vila Antonieta', -23.558, -46.53), S('Rio das Pedras', -23.558, -46.518), S('Jardim Brasília', -23.557, -46.505),
     S('Santa Marcelina', -23.555, -46.49), S('Colônia', -23.56, -46.475), S('Fazenda do Carmo', -23.565, -46.465),
     S('Cidade Tiradentes', -23.575, -46.455, 1),
-  ],
-  // 17-Ouro: São Paulo-Morumbi -> Jabaquara-CPB (op = trecho em operação 2026)
-  '17': [
-    R('sao-paulo-morumbi'), S('Estádio Morumbi', -23.595, -46.715, 3, true), S('Américo Maurano', -23.602, -46.722, 3, true),
-    S('Paraisópolis', -23.608, -46.725, 3, true), S('Panamby', -23.615, -46.722, 3, true), S('Morumbi', -23.622, -46.713, 3, true),
-    S('Chucri Zaidan', -23.615, -46.7, 3, true), S('Vila Cordeiro', -23.62, -46.69, 3, true), R('campo-belo'),
-    S('Vereador José Diniz', -23.62, -46.66), S('Brooklin Paulista', -23.625, -46.655), S('Aeroporto de Congonhas', -23.627, -46.65, 1),
-    S('Washington Luís', -23.63, -46.645), S('Vila Paulista', -23.635, -46.642), S('Vila Babilônia', -23.64, -46.638),
-    S('Cidade Leonor', -23.643, -46.632), S('Hospital Sabóia', -23.646, -46.628), S('Jabaquara-CPB', -23.646, -46.62, 1),
   ],
   // 19-Celeste: fase 2 (especulação, Campo Belo->Anhangabaú) + fase 1 (estudo)
   '19': [
@@ -138,7 +131,6 @@ const INTERCITY = [
 // bloco (phase) e previsão (eta) por linha definida à mão / expansão
 const LINE_PHASE = {
   '6': { phase: 'construcao', eta: '2026–2027' },
-  '17': { phase: 'estudo' },
   '16': { phase: 'estudo' },
   '19': { phase: 'estudo' },
   '20': { phase: 'estudo' },
@@ -360,7 +352,8 @@ const stationsOut = [...stations.values()].map((s) => {
   return out
 })
 
-writeFileSync('src/data/network.json', JSON.stringify({ version: '0.4.0', updatedAt: net.updatedAt, viewBox, lines, stations: stationsOut }, null, 2) + '\n')
+const reviewedNetwork = applyReviewedGoldLine({ version: '0.4.1', updatedAt: net.updatedAt, viewBox, lines, stations: stationsOut })
+writeFileSync('src/data/network.json', JSON.stringify(reviewedNetwork, null, 2) + '\n')
 
 const byPhase = (p) => stationsOut.filter((s) => (s.phase ?? 'operando') === p).length
 console.log('Estações:', stationsOut.length, '| operando:', byPhase('operando'), 'construção:', byPhase('construcao'), 'estudo:', byPhase('estudo'))

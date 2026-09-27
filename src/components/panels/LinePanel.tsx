@@ -1,6 +1,6 @@
 ﻿import { ExternalLink } from 'lucide-react'
 import type { Line } from '@/types/network'
-import { stationsForLine } from '@/lib/network'
+import { stationsForLine, getStation, isOperatingConnection } from '@/lib/network'
 import { lineTextColor } from '@/lib/colors'
 import { metroCptmLineUrl, googleNewsUrl } from '@/lib/deeplinks'
 import { formatDate } from '@/constants/statusLabels'
@@ -15,6 +15,7 @@ const INDICATIVE_STATUS = new Set(['contratacao', 'elaboracao', 'estudo'])
 export function LinePanel({ line }: { line: Line }) {
   const clear = useSelection((s) => s.clear)
   const stations = stationsForLine(line, 'geographic')
+  const operatingCount = stations.filter((station) => isOperatingConnection(station, line)).length
 
   return (
     <Panel key={line.id} accent={line.color} onClose={clear}
@@ -32,13 +33,18 @@ export function LinePanel({ line }: { line: Line }) {
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <StatusBadge status={line.status} />
-            <span className="text-xs text-gray-500 dark:text-gray-400">{stations.length} estações</span>
+            <span className="text-xs text-gray-500 dark:text-gray-400">{line.routes ? `${operatingCount} em operação · ${stations.length - operatingCount} previstas` : `${stations.length} estações`}</span>
           </div>
-          {stations.length > 0 && <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{stations[0].name} <span aria-hidden="true">↔</span> {stations[stations.length - 1].name}</p>}
+          {stations.length > 0 && <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{line.serviceSummary ?? `${stations[0].name} ↔ ${stations[stations.length - 1].name}`}</p>}
           {INDICATIVE_STATUS.has(line.status) && <p className="mt-3 rounded-xl bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-900 dark:bg-amber-950/40 dark:text-amber-200">Linha futura: traçado e estações indicativos, para localização aproximada.</p>}
         </div>
       }>
-      <StationRoute line={line} stations={stations} />
+      {line.routes ? line.routes.map((route) => (
+        <div key={route.name} className="mb-6">
+          <h3 className="mb-2 text-sm font-semibold">{route.name}</h3>
+          <StationRoute line={line} stations={route.stationIds.map((id) => getStation(id)!)} />
+        </div>
+      )) : <StationRoute line={line} stations={stations} />}
       <section className="mt-6 border-t border-gray-100 pt-5 dark:border-gray-800">
         <h3 className="mb-3 text-sm font-semibold">Atualizações</h3>
         {line.updates.length === 0 ? <p className="text-sm text-gray-500 dark:text-gray-400">Sem atualizações registradas.</p> : (

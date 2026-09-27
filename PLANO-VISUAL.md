@@ -89,3 +89,10 @@ Os dados de infraestrutura foram preservados.
 
 O plano visual está implementado. A validação não inclui revisão factual dos
 dados de transporte nem auditoria completa de acessibilidade.
+
+## Revisão posterior — Linha 17–Ouro
+
+O relato do usuário revelou erros de dados que a validação visual não cobria.
+Foram corrigidas as fases, a bifurcação em Brooklin Paulista e a integração com
+a Linha 9 em Morumbi. O painel agora separa os ramais e as extensões futuras.
+Fontes, limites e testes estão em [docs/revisao-linha-17.md](docs/revisao-linha-17.md).

@@ -1,8 +1,9 @@
 import type { Station } from '@/types/network'
-import { getLine } from '@/lib/network'
+import { getLine, isStationVisibleOnLine } from '@/lib/network'
 import { pointFor } from '@/lib/coords'
 import { useSelection } from '@/hooks/useSelection'
 import { useViewMode } from '@/hooks/useViewMode'
+import { useLayers } from '@/hooks/useLayers'
 
 interface Props {
   station: Station
@@ -12,6 +13,7 @@ export function StationNode({ station }: Props) {
   const selectStation = useSelection((s) => s.selectStation)
   const selection = useSelection((s) => s.selection)
   const mode = useViewMode((s) => s.mode)
+  const layers = useLayers()
   const p = pointFor(station, mode)
 
   const isSelected =
@@ -19,15 +21,17 @@ export function StationNode({ station }: Props) {
 
   // foco em linha: esmaece estações que não pertencem a ela
   const focusLine = selection?.kind === 'line' ? selection.id : null
-  const dimmed = focusLine !== null && !station.lineIds.includes(focusLine)
+  const dimmed = focusLine !== null && !isStationVisibleOnLine(station, getLine(focusLine)!, layers)
 
-  const firstLine = getLine(station.lineIds[0])
+  const visibleLines = station.lineIds.map(getLine).filter((line) => line && isStationVisibleOnLine(station, line, layers))
+  const interchange = visibleLines.length > 1 || (station.interchange && station.lineIds.length === 1)
+  const firstLine = visibleLines[0]
   const color = firstLine?.color ?? '#444'
   const future = Boolean(station.phase && station.phase !== 'operando')
   // não-operando/baldeação = oca (cor do fundo); comum = preenchida na cor
-  const hollow = station.interchange || future
+  const hollow = interchange || future
   const fill = hollow ? 'var(--map-surface)' : color
-  const stroke = station.interchange
+  const stroke = interchange
     ? 'var(--map-station-ring)'
     : future
       ? color
@@ -36,11 +40,11 @@ export function StationNode({ station }: Props) {
   const mul = mode === 'geographic' ? 0.65 : 1
   // hubs crescem com o nº de linhas; cápsula orientada fica como evolução
   // futura (o dataset tem um ponto único por estação, sem orientação)
-  const n = station.lineIds.length
+  const n = visibleLines.length
   const r =
-    (station.interchange ? 5.5 + Math.min(Math.max(n - 2, 0), 3) * 1.1 : 3.5) *
+    (interchange ? 5.5 + Math.min(Math.max(n - 2, 0), 3) * 1.1 : 3.5) *
     mul
-  const bigHub = station.interchange && n >= 3
+  const bigHub = interchange && n >= 3
 
   return (
     <g
@@ -79,7 +83,7 @@ export function StationNode({ station }: Props) {
         r={r}
         fill={fill}
         stroke={stroke}
-        strokeWidth={(station.interchange ? 2 : 1.5) * mul}
+        strokeWidth={(interchange ? 2 : 1.5) * mul}
       />
       {bigHub && (
         <circle
