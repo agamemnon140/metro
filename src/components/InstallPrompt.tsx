@@ -20,20 +20,20 @@ export function InstallPrompt() {
   if (!evt || dismissed) return null
 
   return (
-    <div className="absolute bottom-4 left-3 z-10 flex items-center gap-2 rounded-xl bg-white/97 dark:bg-gray-800/97 shadow-lg border border-gray-200 dark:border-gray-700 px-3 py-2">
+    <div className="flex flex-wrap items-center gap-2 rounded-xl bg-white dark:bg-gray-900 shadow-sm border border-gray-200 dark:border-gray-700 px-3 py-2">
       <span className="text-sm text-gray-700 dark:text-gray-200">Instalar o app?</span>
       <button
         onClick={() => {
           evt.prompt()
           setDismissed(true)
         }}
-        className="rounded-lg bg-[#0455a1] px-3 py-1 text-sm font-semibold text-white"
+        className="min-h-11 rounded-lg bg-[#0455a1] px-3 py-1 text-sm font-semibold text-white"
       >
         Instalar
       </button>
       <button
         onClick={() => setDismissed(true)}
-        className="text-gray-400 text-sm px-1"
+        className="min-h-11 min-w-11 rounded-lg text-gray-600 dark:text-gray-300 text-sm hover:bg-gray-100 dark:hover:bg-gray-800"
         aria-label="Dispensar"
       >
         ✕

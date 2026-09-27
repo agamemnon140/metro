@@ -3,6 +3,7 @@ import { NetworkMap } from './components/map/NetworkMap'
 import { Legend } from './components/Legend'
 import { DisplayMenu } from './components/DisplayMenu'
 import { InstallPrompt } from './components/InstallPrompt'
+import { TrackLegend } from './components/map/TrackLegend'
 import { StationPanel } from './components/panels/StationPanel'
 import { LinePanel } from './components/panels/LinePanel'
 import { useSelection } from './hooks/useSelection'
@@ -50,7 +51,10 @@ export default function App() {
       <main className="flex-1 min-h-0 relative overflow-hidden touch-none">
         <NetworkMap />
         <Legend />
-        <InstallPrompt />
+        <div className="absolute bottom-4 left-3 z-10 flex max-w-[calc(100%-5rem)] flex-col items-start gap-2">
+          <TrackLegend />
+          <InstallPrompt />
+        </div>
         {station && <StationPanel station={station} />}
         {line && <LinePanel line={line} />}
       </main>

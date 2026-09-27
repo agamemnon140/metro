@@ -6,10 +6,10 @@ import { useSelection } from '@/hooks/useSelection'
 import { Panel } from './Panel'
 import { LineChip } from '../LineChip'
 
-const PHASE_META: Record<string, { label: string; color: string }> = {
-  construcao: { label: 'Em construção', color: '#e08a00' },
-  estudo: { label: 'Em estudo', color: '#7a52b3' },
-  especulacao: { label: 'Especulação', color: '#8a8f98' },
+const PHASE_META: Record<string, { label: string; tone: string }> = {
+  construcao: { label: 'Em construção', tone: 'bg-amber-50 text-amber-900 dark:bg-amber-950 dark:text-amber-200' },
+  estudo: { label: 'Em estudo', tone: 'bg-violet-50 text-violet-800 dark:bg-violet-950 dark:text-violet-200' },
+  especulacao: { label: 'Especulação', tone: 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200' },
 }
 
 export function StationPanel({ station }: { station: Station }) {
@@ -51,22 +51,22 @@ export function StationPanel({ station }: { station: Station }) {
 
   return (
     <Panel
+      key={station.id}
       accent={lines[0]?.color}
       onClose={clear}
       title={
         <div>
-          <p className="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500">Estação</p>
+          <p className="text-xs font-medium text-gray-500 dark:text-gray-400">Estação</p>
           <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 leading-tight">
             {station.name}
           </h2>
         </div>
       }
-    >
+      summary={<>
       {phase && (
-        <div className="mb-4 flex items-center gap-2">
+        <div className="mb-4 flex flex-wrap items-center gap-2">
           <span
-            className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold text-white"
-            style={{ backgroundColor: phase.color }}
+            className={'inline-flex items-center rounded-lg px-2 py-1 text-xs font-medium ' + phase.tone}
           >
             {phase.label}
           </span>
@@ -78,8 +78,8 @@ export function StationPanel({ station }: { station: Station }) {
         </div>
       )}
 
-      <section className="mb-5">
-        <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-2">
+      <section className="mb-4">
+        <h3 className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-2">
           {lines.length > 1 ? 'Linhas (baldeação)' : 'Linha'}
         </h3>
         <div className="flex flex-wrap gap-2">
@@ -93,21 +93,12 @@ export function StationPanel({ station }: { station: Station }) {
         </div>
       </section>
 
+      {platform === 'apple' ? appleBtn : googleBtn}
+      </>}
+    >
       <section className="flex flex-col gap-2">
-        <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1">
-          Ver no mapa
-        </h3>
-        {platform === 'apple' ? (
-          <>
-            {appleBtn}
-            {googleBtn}
-          </>
-        ) : (
-          <>
-            {googleBtn}
-            {appleBtn}
-          </>
-        )}
+        <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Outras opções de mapa</h3>
+        {platform === 'apple' ? googleBtn : appleBtn}
       </section>
     </Panel>
   )
